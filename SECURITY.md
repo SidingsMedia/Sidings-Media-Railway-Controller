@@ -8,4 +8,4 @@
 
 ## Reporting a Vulnerability
 
-To report a vulnerability please contact [contact@sidingsmedia.sytes.net](mailto:contact@sidingsmedia.sytes.net?subject=Vulnerability%20-%20Railway%20Controller)
+To report a vulnerability please contact [contact@sidingsmedia.sytes.net](mailto:contact@sidingsmedia.sytes.net?subject=Vulnerability%20-%20Railway%20Controller). We aim to respond to your email within five working days and will email you upon finishing fixing the problem.
