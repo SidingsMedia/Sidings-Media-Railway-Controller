@@ -4,10 +4,12 @@ This software will allow the user to use a custom made controll board along with
 Initially there will only be a windows version availible but once this is working an android app will be developed. This will not be availible on google play but instead must be installed manualy. This may change in the futer but that is unlikely. After completion of both of these pieces of software, the client will be made available in 
 .deb format and maybe .rpm. This is expected to happen by December at the latest. Currently there are no plans to make an IOS app or a MacOS client.
 ## Recent updates
+
 |Date|Name|Description|
 |---|---|---|
 |05/07/20|Updated main.py|main.py is no longer an empty file. It now has code to generate a white window using pygame and to set the correct icon and title.| 
 ## Requirements
+
 |Name|Version|Details|
 |---|---|---|
 |Pygame|2.0.0.dev10|Needed by main.py else the background colour of the window will not work correctly.|
