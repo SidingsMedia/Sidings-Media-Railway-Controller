@@ -2,6 +2,7 @@
 ## Relay Board
 This board controls the flow of current to the various isolated segments of the model railway. It contains 12 channels with 2 relays per channel. View it on [EasyEDA](https://easyeda.com/Sidings-Media/relay-board). The files are included in the folder marked relay as well as being linked below. To view please use the links below. The BOM (bill of materials) is listed below
 ### BOM
+
 |ID|Name|Designator|Footprint|Quantity|
 |---|---|----------|---------|--------|
 |1|2N222|Q21,Q17,Q2,Q3,Q4,Q5,Q23,Q22,Q6,Q7,Q8,Q9,Q24,<br>Q20,Q10,Q11,Q12,Q13,Q19,Q18,Q14,Q15,Q1,Q16|TO-92-3_L4.9-W3.7-P1.27-L|24|
