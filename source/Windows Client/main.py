@@ -6,7 +6,6 @@
 # Note: Pygame 2.0.0.dev10 is required as a minimum.
 
 import os
-#import os.path  # For geting path to various files
 # Hide pygame welcome message
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 import pygame
