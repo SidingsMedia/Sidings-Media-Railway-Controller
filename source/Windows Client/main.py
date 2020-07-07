@@ -2,15 +2,24 @@
 #License: MIT
 # Copyright 2020 Sidings Media
 
-# Import Pygame
+# Import packages
 # Note: Pygame 2.0.0.dev10 is required as a minimum.
-
-import os
+import ctypes
+myappid = 'sidingsmedia.railwaycontroller.windowsclient.01' # arbitrary string
+ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
+import os,sys
 # Hide pygame welcome message
-os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
+#os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"# make sure that this is before import pygame
 import pygame
 from pygame.locals import *
-currentPath = os.path.dirname(__file__)
+#can't use __file__ in frozen programs.
+if getattr(sys, 'frozen', False):
+    # frozen
+    currentPath = os.path.dirname(sys.executable)
+else:
+    # unfrozen
+    currentPath = os.path.dirname(os.path.realpath(__file__))
+#currentPath = os.path.dirname(__file__)
 # define colours
 WHITE = (255, 255, 255)
 
@@ -29,7 +38,7 @@ class App:
         self._display_surf = pygame.display.set_mode(self.size, RESIZABLE)
         pygame.display.set_caption('Railway Controller')  # Sets window title
         # Setting icon
-        self.programIcon = pygame.image.load(os.path.join(currentPath, 'images', 'Logos', "railwaycontrollerbg.png"))
+        self.programIcon = pygame.image.load(os.path.join(currentPath, 'images', 'Logos', "favicon-32x32bg.png"))
         pygame.display.set_icon(self.programIcon)
         self._running = True
 
