@@ -12,12 +12,12 @@
     "dist-linux": "electron-builder --linux",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "build":{
+  "build": {
     "appId": "com.railwaycontroller.sm",
-    "win":{
+    "win": {
       "target": "nsis"
     },
-    "linux":{
+    "linux": {
       "target": "deb",
       "maintainer": "Sidings Media",
       "vendor": "Sidings Media"
