@@ -1,11 +1,32 @@
 {
   "name": "railwaycontroller",
+  "productName": "Railway Controller",
   "version": "0.0.1",
   "description": "A simple and comprehensive system to control your DC model railway from your computer.",
   "main": "main.js",
   "scripts": {
     "start": "electron  .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "dist-win": "electron-builder --win -c.nsis.oneClick=false",
+    "dist-linux": "electron-builder --linux",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "build":{
+    "appId": "com.railwaycontroller.sm",
+    "win":{
+      "target": "nsis"
+    },
+    "linux":{
+      "target": "deb",
+      "maintainer": "Sidings Media",
+      "vendor": "Sidings Media"
+    }
+  },
+  "nsis": {
+    "oneClick": false,
+    "allowElevation": true,
+    "perMachine": false
   },
   "repository": {
     "type": "git",
