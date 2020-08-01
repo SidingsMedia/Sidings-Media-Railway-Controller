@@ -7,8 +7,8 @@ an operating system being available. For linux the application will be available
 is at a stable point in development, work will start on the android app. There are no plans as of current for an IOS app due to the lack of availibility of any devices running such an OS.
 ## The boards
 The boards are designed using Easy EDA. This software unfortunatly does not intergrate with git so we may switch to KiCad in future. At the moment, although there are some designs for 
-boards on GitHub, the most current designs will be available from the [Easy Eda Website](https://github.com/SidingsMedia/DC-Model-Railway-Controller/blob/master/source/desktop%20client/assets/railway-controller-open-graph-template.png).
-All the designs to do with this project will be prefixed by ```Model Railway Control System:```.
+boards on GitHub, the most current designs will be available from the [Easy Eda Website](https://easyeda.com/Sidings-Media/). All the designs to do with this project will be prefixed by
+ ```Model Railway Control System:```.
 ## The client software
 The client software is designed using the electron framework with a python backend to comunicate with the boards.
 ## [License](https://github.com/Sidings-Media/DC-Model-Railway-Controller/blob/Readme-update-w-license-1/LICENSE)
