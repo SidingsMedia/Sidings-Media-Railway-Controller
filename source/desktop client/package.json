@@ -47,8 +47,9 @@
   "homepage": "https://github.com/SidingsMedia/DC-Model-Railway-Controller#readme",
   "devDependencies": {
     "electron": "^9.1.2",
-    "electron-builder": "^22.8.0",
-    "typescript": "^3.9.7"
+    "electron-builder": "^22.8.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "typescript": "^3.9.7"
+  }
 }
