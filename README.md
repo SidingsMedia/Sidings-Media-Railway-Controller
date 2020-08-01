@@ -1,3 +1,4 @@
+![](https://github.com/SidingsMedia/DC-Model-Railway-Controller/blob/master/source/desktop%20client/assets/railway-controller-open-graph-template.png)
 # DC-Model-Railway-Controller
 This software will allow the user to use a custom made controll board along with custom made relay boards, L298N motor driver boards and a raspberry pi to controll a DC model railway.
 ## Plans
