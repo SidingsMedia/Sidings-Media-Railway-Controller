@@ -4,6 +4,7 @@
   "description": "A simple and comprehensive system to control your DC model railway from your computer.",
   "main": "main.js",
   "scripts": {
+    "start": "electron  .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
