@@ -48,5 +48,8 @@
   "devDependencies": {
     "electron": "^9.1.2",
     "electron-builder": "^22.8.0"
+  },
+  "dependencies": {
+    "typescript": "^3.9.7"
   }
 }
