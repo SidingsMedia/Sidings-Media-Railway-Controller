@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "description": "A simple and comprehensive system to control your DC model railway from your computer.",
   "main": "main.js",
+  "private":"true",
   "scripts": {
     "start": "electron  .",
     "pack": "electron-builder --dir",
