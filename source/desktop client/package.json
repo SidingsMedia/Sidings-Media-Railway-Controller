@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "description": "A simple and comprehensive system to control your DC model railway from your computer.",
   "main": "main.js",
-  "private":"true",
+  "private": "true",
   "scripts": {
     "start": "electron  .",
     "pack": "electron-builder --dir",
@@ -51,6 +51,9 @@
     "electron-builder": "^22.8.0"
   },
   "dependencies": {
+    "@popperjs/core": "^2.4.4",
+    "bootstrap": "^4.5.0",
+    "jquery": "^3.5.1",
     "typescript": "^3.9.7"
   }
 }
