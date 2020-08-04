@@ -1,36 +1,44 @@
 <!--Copyright 2020 Sidings Media
 License: MIT-->
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>Railway Controller</title>
+        <!--Meta-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Bootstrap-->
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="node_modules/jquery/dist/jquery.min.js"></script>
+        <!--Stylesheets-->
+        <link rel="stylesheet" type="text/css" href="css/mainstyle.css">
+        <!--Scripts-->
+        <script>
+            // 1. Require the installed module
+            const customTitlebar = require('custom-electron-titlebar');
+
+            // 2. Create the custom titlebar with your own settings
+            //    To make it work, we just need to provide the backgroundColor property
+            //    Other properties are optional.
+            let MyTitleBar = new customTitlebar.Titlebar({
+                backgroundColor: customTitlebar.Color.fromHex('#03a9f4'),
+                shadow: true,
+                icon: './icon.svg'
+            });
+            
+            // 3. Update Titlebar text
+            MyTitleBar.updateTitle('Our Code World Tutorials Rock !');
+        
+        </script>
     </head>
     <body>
-        <img src="assets/railway-controller-open-graph-template.png" alt="Sidings Media Railway Controller Logo" style="width: 400px;">
-        <h1 id="dc-model-railway-controller">DC Model Railway Controller</h1>
-        <p>This is an opensource project that aims to produce a comprehensive system for the control of a DC model rail of any guage and any scale. It uses Wi-Fi to comunicate with the<br>
-            controlling device. This means that we can have near limitless expansion. The only limit is the number of devices you can have on your network. </p>
-        <h2 id="plans">Plans</h2>
-        <p>At first only a desktop version of the client will be released. It will be released for windows, linux and macOS. Any versions for macOS will be untested due to no machines<br>
-            running such an operating system being available. For linux the application will be available in .rpm, .deb and .Appimage formats. For windows there will be a .exe installer.<br>
-            After the desktop client is at a stable point in development, work will start on the android app. There are no plans as of current for an IOS app due to the lack of<br>
-            availibility of any devices running such an OS.
-        </p>
-        <h2 id="the-boards">The boards</h2>
-        <p>The boards are designed using Easy EDA. This software unfortunatly does not intergrate with git so we may switch to KiCad in future. At the moment, although there are some <br>
-            designs for boards on GitHub, the most current designs will be available from the <a href="https://easyeda.com/Sidings-Media/">EasyEda Website</a>. All the designs to do <br>
-            with this project will be prefixed by <code>Model Railway Control System:</code>.
-        </p>
-        <h2 id="the-client-software">The client software</h2>
-        <p>The client software is designed using the electron framework with a python backend to comunicate with the boards.</p>
-        <h2 id="-license-https-github-com-sidings-media-dc-model-railway-controller-blob-readme-update-w-license-1-license-">
-            <a href="https://github.com/Sidings-Media/DC-Model-Railway-Controller/blob/Readme-update-w-license-1/LICENSE">License</a>
-        </h2>
-        <p>All software is licensed under the <a href="https://github.com/Sidings-Media/DC-Model-Railway-Controller/blob/Readme-update-w-license-1/LICENSE">MIT</a> license. In general 
-            this is anything in the source subfolder. All hardware and designs are licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/legalcode">CC-BY-SA 3.0</a>.<br>
-             I general this is anything in the boards subfolder. To view a human redable and sumarised version, click <a href="https://creativecommons.org/licenses/by-sa/3.0/">here</a>.<br>
-              This is a human-readable summary of (and not a substitute for) the <a href="https://creativecommons.org/licenses/by-sa/3.0/legalcode">license</a>.<br>
-        </p>
-        
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <h3 class="surface">Railway Controller</h3>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
