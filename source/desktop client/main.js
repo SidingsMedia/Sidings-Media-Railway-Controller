@@ -101,7 +101,10 @@ function createWindow (){
             label: 'Help',
             submenu: [
                 {
-                    label: 'Documentation'//No action
+                    label: 'Documentation',
+                    click(){
+                        shell.openExternal('https://smrcdocs.sidingsmedia.com')
+                    }
                 },
                 {
                     label: 'License',
