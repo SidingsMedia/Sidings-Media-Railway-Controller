@@ -2,7 +2,24 @@
 //Copyright 2020 Sidings Media
 //License: MIT
 
-const { app, BrowserWindow, Menu, shell } = require('electron')
+const { app, BrowserWindow, Menu, shell, dialog } = require('electron')
+var os = require('os');
+var nodeVersion = process.versions.node
+var chromeVersion = process.versions.chrome
+var electronVersion = process.versions.electron
+var appVersion = app.getVersion()
+var v8Version = process.versions.v8
+var osVersion = os.release
+var osType = os.type
+var osArch = os.arch
+const aboutOptions = {
+    type: 'info',
+    buttons: ['Ok'],
+    defaultId: 0,
+    title: "Railway Controller",
+    message: "About",
+    detail: `Version: ${appVersion} \nNode.js: ${nodeVersion}\nChrome: ${chromeVersion}\nElectron: ${electronVersion}\nV8: ${v8Version}\nOS: ${osType + " " + osArch + " " + osVersion}`
+}
 var fullscreen = false//For toggling between fullscreen and standard
 function createWindow (){
     //Create browser window
@@ -188,7 +205,13 @@ function createWindow (){
                     type: 'separator'
                 },
                 {
-                    label: 'About'//No action
+                    label: 'About',//No action
+                    click(){
+                        dialog.showMessageBox(win, aboutOptions, (response) => {
+                            console.log(response)
+                        })
+                        
+                    }
                 }
 
             ]
