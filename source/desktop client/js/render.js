@@ -1,7 +1,6 @@
-//Set custom titlebar
-const titlebar = require('custom-electron-titlebar');
-
-new titlebar.Titlebar({
-	backgroundColor: titlebar.Color.fromHex('#323233'),
+const customTitlebar = require('custom-electron-titlebar');
+let titlebar = new customTitlebar.Titlebar({
+	backgroundColor: customTitlebar.Color.fromHex('#323233'),
+	icon: './assets/logos/logo.png',
 });
-titlebar.updateIcon('../assets/logos/logo.png')
+
