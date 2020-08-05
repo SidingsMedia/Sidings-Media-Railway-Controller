@@ -2,7 +2,7 @@
 //Copyright 2020 Sidings Media
 //License: MIT
 
-const { app, BrowserWindow, Menu } = require('electron')
+const { app, BrowserWindow, Menu, shell } = require('electron')
 function createWindow (){
     //Create browser window
     const win = new BrowserWindow({
@@ -16,7 +16,7 @@ function createWindow (){
     //Load index.html
     win.loadFile('index.html')
     //Create custom menu bar
-    /*
+    
     var menu = Menu.buildFromTemplate([
         //Elements of menu bar
         {
@@ -67,7 +67,10 @@ function createWindow (){
                 },
                 {
                     label: 'Toggle Developer Tools',
-                    accelerator: 'Ctrl+Shift+I'
+                    accelerator: 'Ctrl+Shift+I',
+                    click(){
+                        win.openDevTools
+                    }
                 }
             ],
         },
@@ -87,40 +90,80 @@ function createWindow (){
                     label: 'Documentation'
                 },
                 {
-                    label: 'License'
+                    label: 'License',
+                    click(){
+                        shell.openExternal('https://raw.githubusercontent.com/SidingsMedia/DC-Model-Railway-Controller/master/LICENSE')
+                    }
                 },
                 {
                     type: 'separator'
                 },
                 {
-                    label: 'Website'
+                    label: 'Website',
+                    click(){
+                        shell.openExternal('https://www.sidingsmedia.com')
+                    }
                 },
                 {
                     label: 'Join us on social media',
                     submenu: [
                         {
-                            label:'Join us on Facebook'
+                            label:'Join us on Facebook',
+                            click(){
+                                shell.openExternal("https://www.facebook.com/Sidings-Media-589191041769930")
+                            }
                         },
                         {
-                            label: 'Join us on Twitter'
+                            label: 'Join us on Twitter',
+                            click(){
+                                shell.openExternal("https://twitter.com/sidingsmedia")
+                            }
                         },
                         {
-                            label: 'Join us on YouTube'
+                            label: 'Join us on YouTube',
+                            submenu: [
+                                {
+                                    label: "The Sidings",
+                                    click(){
+                                        shell.openExternal("https://www.youtube.com/channel/UCZmBfzy3_Jdo5YrsE6o04sg")
+                                    }
+                                },
+                                {
+                                    label: "Sidings Electric",
+                                    click(){
+                                        shell.openExternal("https://www.youtube.com/channel/UCZOIvXgjCMrqjUHvgx_213A")
+                                    }
+                                }
+
+                            ]
+                        
                         },
                         {
-                            label: 'Join us on Instagram'
+                            label: 'Join us on Instagram',
+                            click(){
+                                shell.openExternal("https://www.instagram.com/sidingsmedia/")
+                            }
                         },
                         {
-                            label: 'Join us on Tumblr'
+                            label: 'Join us on Tumblr',
+                            click(){
+                                shell.openExternal("https://sidingsmedia.tumblr.com")
+                            }
                         },
                         {
                             type: 'separator'
                         },
                         {
-                            label: 'Join us on GitHub'
+                            label: 'Join us on GitHub',
+                            click(){
+                                shell.openExternal("https://github.com/sidingsmedia")
+                            }
                         },
                         {
-                            label:'Join us on EasyEda'
+                            label:'Join us on EasyEda',
+                            click(){
+                                shell.openExternal("https://easyeda.com/Sidings-Media/")
+                            }
                         }
                     ]
                 },
@@ -137,7 +180,7 @@ function createWindow (){
 
     ])
     Menu.setApplicationMenu(menu)
-    */
+    
 }
 //Called when electron has finished initialising
 app.whenReady().then(createWindow)
