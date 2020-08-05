@@ -18,7 +18,7 @@ const aboutOptions = {
     defaultId: 0,
     title: "Railway Controller",
     message: "About",
-    detail: `Version: ${appVersion} \nNode.js: ${nodeVersion}\nChrome: ${chromeVersion}\nElectron: ${electronVersion}\nV8: ${v8Version}\nOS: ${osType + " " + osArch + " " + osVersion}`
+    detail: `Version: ${appVersion} \nNode.js: ${nodeVersion}\nChrome: ${chromeVersion}\nElectron: ${electronVersion}\nV8: ${v8Version}\nOS: ${`${osType} ${osArch} ${osVersion}`}`
 }
 var fullscreen = false//For toggling between fullscreen and standard
 function createWindow (){
