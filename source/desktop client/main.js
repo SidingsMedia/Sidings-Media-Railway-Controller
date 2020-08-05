@@ -3,6 +3,7 @@
 //License: MIT
 
 const { app, BrowserWindow, Menu, shell } = require('electron')
+var fullscreen = false//For toggling between fullscreen and standard
 function createWindow (){
     //Create browser window
     const win = new BrowserWindow({
@@ -23,7 +24,7 @@ function createWindow (){
             label: 'File',
             submenu: [
                 {
-                    label: 'Preferences'
+                    label: 'Preferences'//No action
                 },
                 {
                     type:'separator'
@@ -42,25 +43,35 @@ function createWindow (){
             label: 'Edit',
             submenu: [
                 {
-                    label: 'Copy',
-                    accelerator: 'Ctrl+C'
+                    label: 'There ain\'t nothing here yet. ',//No action
+  
                 },
-                {
-                    label: 'Select All',
-                    accelerator: 'Ctrl+A'
-                }
-            ],
+            ]
         },
         {
             label: 'View',
             submenu: [
                 {
                     label: 'Reload',
-                    accelerator: 'Ctrl+R'
+                    accelerator: 'Ctrl+R',
+                    click(){
+                        win.reload()
+                    }
                 },
                 {
                     label: 'Toggle Full Screen',
-                    accelerator: 'F11'
+                    accelerator: 'F11',
+                    click(){
+                        if (fullscreen == false){
+                            fullscreen = true
+                            win.setFullScreen(true)
+                        }
+                        else{
+                            fullscreen = false
+                            win.setFullScreen(false)
+                        }
+
+                    }
                 },
                 {
                     type: 'separator'
@@ -69,7 +80,7 @@ function createWindow (){
                     label: 'Toggle Developer Tools',
                     accelerator: 'Ctrl+Shift+I',
                     click(){
-                        win.openDevTools
+                        win.webContents.openDevTools()
                     }
                 }
             ],
@@ -79,7 +90,10 @@ function createWindow (){
             submenu: [
                 {
                     label: 'Minimize',
-                    accelerator: 'Ctrl+M'
+                    accelerator: 'Ctrl+M',
+                    click(){
+                        win.minimize()
+                    }
                 }
             ],
         },
@@ -87,7 +101,7 @@ function createWindow (){
             label: 'Help',
             submenu: [
                 {
-                    label: 'Documentation'
+                    label: 'Documentation'//No action
                 },
                 {
                     label: 'License',
@@ -171,7 +185,7 @@ function createWindow (){
                     type: 'separator'
                 },
                 {
-                    label: 'About'
+                    label: 'About'//No action
                 }
 
             ]
