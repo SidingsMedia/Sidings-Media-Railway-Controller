@@ -1,7 +1,7 @@
 {
   "name": "railwaycontroller",
   "productName": "Railway Controller",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A simple and comprehensive system to control your DC model railway from your computer.",
   "main": "main.js",
   "private": "true",
