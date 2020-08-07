@@ -1,4 +1,4 @@
-![](https://github.com/SidingsMedia/DC-Model-Railway-Controller/blob/master/source/desktop%20client/assets/railway-controller-open-graph-template.png)
+![](https://github.com/SidingsMedia/Sidings-Media-Railway-Controller/blob/master/source/desktop%20client/assets/logos/railway-controller-open-graph-template.png)
 
 
 # Sidings Media Railway Controller
