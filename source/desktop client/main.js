@@ -3,6 +3,7 @@
 //License: MIT
 
 const { app, BrowserWindow, Menu, shell, dialog, session } = require('electron')
+const { path } = require('path')
 var os = require('os');
 var nodeVersion = process.versions.node
 var chromeVersion = process.versions.chrome
