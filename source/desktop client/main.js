@@ -27,9 +27,11 @@ function createWindow (){
     const win = new BrowserWindow({
         width: 800,
         height: 600,
+        icon: 'assets/logos/logo.png',
         webPreferences: {
             nodeIntegration: true,
-            enableRemoteModule: true
+            enableRemoteModule: true,
+            
         },
         frame: false
     })
