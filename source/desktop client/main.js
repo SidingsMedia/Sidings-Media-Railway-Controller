@@ -2,7 +2,7 @@
 //Copyright 2020 Sidings Media
 //License: MIT
 
-const { app, BrowserWindow, Menu, shell, dialog } = require('electron')
+const { app, BrowserWindow, Menu, shell, dialog, session } = require('electron')
 var os = require('os');
 var nodeVersion = process.versions.node
 var chromeVersion = process.versions.chrome
@@ -20,6 +20,7 @@ const aboutOptions = {
     message: "About",
     detail: `Version: ${appVersion} \nNode.js: ${nodeVersion}\nChrome: ${chromeVersion}\nElectron: ${electronVersion}\nV8: ${v8Version}\nOS: ${`${osType} ${osArch} ${osVersion}`}`
 }
+
 var fullscreen = false//For toggling between fullscreen and standard
 function createWindow (){
     //Create browser window
@@ -27,10 +28,20 @@ function createWindow (){
         width: 800,
         height: 600,
         webPreferences: {
-            nodeIntegration: true
+            nodeIntegration: true,
+            enableRemoteModule: true
         },
         frame: false
     })
+    // session.defaultSession.webRequest.onHeadersReceived((details, callback) => {
+    //     callback({
+    //         responseHeaders: {
+    //             ...details.responseHeaders,
+    //             'Content-Security-Policy': 'default-src \'self\' \'*\'; unsafe-eval'
+    
+    //         }
+    //     })
+    // })
     //Load index.html
     win.loadFile('index.html')
     //Create custom menu bar
