@@ -28,6 +28,7 @@ function createWindow (){
         width: 800,
         height: 600,
         icon: 'assets/logos/logo.png',
+        backgroundColor: '#323233',
         webPreferences: {
             nodeIntegration: true,
             enableRemoteModule: true,
