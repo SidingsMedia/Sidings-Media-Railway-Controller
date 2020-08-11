@@ -8,12 +8,20 @@ License: MIT-->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'"> -->
+        <script>
+            window.nodeRequire = require;
+            //delete window.require;
+            delete window.exports;
+            delete window.module;
+        </script>
         <!--Bootstrap-->
         <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
         <script src="node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
         <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-        <!--Stylesheets-->
-        <link rel="stylesheet" type="text/css" href="css/mainstyle.css">
+        <!--Custom style-->
+        <link rel="stylesheet" href="css/mainstyle.css">
+
     </head>
     <body>
         <div class="container-fluid">
@@ -24,5 +32,6 @@ License: MIT-->
             </div>
         </div>
         <script src="js/render.js"></script>
+
     </body>
 </html>
