@@ -28,6 +28,8 @@ function createWindow (){
     const win = new BrowserWindow({
         width: 800,
         height: 600,
+        minWidth:800,
+        minHeight:600,
         icon: 'assets/logos/logo.png',
         backgroundColor: '#323233',
         webPreferences: {

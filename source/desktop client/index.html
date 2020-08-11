@@ -8,27 +8,34 @@ License: MIT-->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'"> -->
-        <script>
+        <!-- <script>
             window.nodeRequire = require;
             delete window.exports;
             delete window.module;
-        </script>
+        </script> -->
         <!--Bootstrap-->
-        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-        <script src="node_modules/jquery/dist/jquery.min.js"></script>
+        <!-- <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <script src="node_modules/jquery/dist/jquery.min.js"></script> -->
         <!-- <script src="node_modules/popper.js/dist/umd/popper.min.js"></script> -->
-        <script src="node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
-        <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- <script src="node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+        <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script> -->
         <!--Custom style-->
         <link rel="stylesheet" href="css/mainstyle.css">
 
     </head>
     <body>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col">
-                    <h3 class="surface">Railway Controller</h3>
-                </div>
+        <div class="main">
+            <h3>Main area</h3>
+        </div>
+        <div class="side-bar">
+            <div class="accesories">
+                <h3>Accesories</h3>
+            </div>
+            <div class="other">
+                <h3>Other</h3>
+            </div>
+            <div class="throttle">
+                <h3>Throttle</h3>
             </div>
         </div>
         <script src="js/render.js"></script>
