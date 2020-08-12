@@ -1,3 +1,5 @@
+/*Copyright 2020 Sidings Media
+License: MIT*/
 body{
     background-color: #1E1E1E;
     color: #FFFFFF;
@@ -7,57 +9,47 @@ body{
 * {
     box-sizing:border-box;
   }
-  
+.container {
+    height: 100%;
+    display: grid;
+    /* grid-column-gap: 50px; */
+    grid-template-columns: auto 250px;
+
+}
 .side-bar {
     background-color:#252526;
     /* padding:20px; */
-    float:left;
-    width:25%; /* The width is 20%, by default */
+    /* float:left; */
+    width:100%; /* The width is 20%, by default */
     height: 100%;
     overflow-x: hidden; 
     overflow-y: auto; 
+    grid-column: 2;
 }
 
 .main {
-    padding:20px;
+    /* padding:0px; */
     float:left;
-    width:75%; /* The width is 60%, by default */
+    width:100%; /* The width is 60%, by default */
     height: 100%;
+    overflow-y: auto;
+    overflow-x: auto;
+    grid-column: 1;
 
 }
-.accesories{
-    background-color: #333333;
-    width: 90%;
-    height: 40vh;
-    margin: 0 auto;
 
-}
-.throttle{
-    background-color: #333333;
-    width: 90%;
-    height: 40vh;
-    margin: 0 auto;
-
-}
-.other{
-    background-color: #333333;
-    width: 90%;
-    height: 40vh;
-    margin: 0 auto;
-
-}
-/* Use a media query to add a break point at 600px: */
+/* Use a media query to add a break point at 600px:
 @media screen and (max-width:600px) {
     .main, .side-bar {
-        width:100%; /* The width is 100%, when the viewport is 800px or smaller */
+        width:100%; /* The width is 100%, when the viewport is 800px or smaller *
         height: unset;
     }
 }
 @media screen and (max-width:1000px) {
     .side-bar {
-        width:40%; /* The width is 100%, when the viewport is 800px or smaller */
+        width:40%; /* The width is 100%, when the viewport is 800px or smaller *
     }
     .main{
         width: 60%;
     }
-}
+} */
