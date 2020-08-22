@@ -40,7 +40,8 @@ function createWindow (){
             
         },
         frame: false
-    })
+    })//const win
+
     // session.defaultSession.webRequest.onHeadersReceived((details, callback) => {
     //     callback({
     //         responseHeaders: {
@@ -279,14 +280,17 @@ function createWindow (){
 
         }
 
-    ])
-    Menu.setApplicationMenu(menu)
+    ])//Menu
+
+
+    Menu.setApplicationMenu(menu)//Sets custom menu
 
 
     
-}
+}//Create main window
+
 //Called when electron has finished initialising
-app.whenReady().then(createWindow)
+app.whenReady().then(createWindow)//Creates main window
 //Quit when all windows are closed except on macOS
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin'){
@@ -296,27 +300,5 @@ app.on('window-all-closed', () => {
 app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0){
         createWindow()
-    }
-})
-// ipcMain.on('settings', (event, arg) => {
-//     var win = createWindow.win
-//     console.log(arg)
-//     if (arg === 'Create settings window') {
-//         let settingsWindow = new BrowserWindow({ parent: win, frame: false, modal: true })
-//         settingsWindow.loadFile('html/editsettings.html')
-//         settingsWindow.show()
-//         event.sender.send('settings', 'Window Created')
-//     }
-//     else{
-//         dialog.showErrorBox('IPC Error', `The program sent an invalid response.\nThe program sent\n\'${arg}\'\n\'Create settings window\' was expected.\nPlease restart the application. If this does\nnot work try updating or contact\nsupport@sidingsmedia.com`,)
-//         event.sender.send('settings', `Error. You sent ${arg}. Create settings window was expected. `)
-//     }
-// })
-ipcMain.on('close-settings', (event, arg) => {
-    if (arg == 'Close Settings') {
-        console.log('Close recived')
-    }
-    else{
-        console.log('Other recived')
     }
 })
