@@ -2,9 +2,10 @@
 //Copyright 2020 Sidings Media
 //License: MIT
 
-const { app, BrowserWindow, Menu, shell, dialog, session } = require('electron')
+const { app, BrowserWindow, Menu, shell, dialog, session, ipcMain } = require('electron')
 const { path } = require('path')
 var os = require('os');
+const { title } = require('process');
 var nodeVersion = process.versions.node
 var chromeVersion = process.versions.chrome
 var electronVersion = process.versions.electron
@@ -13,6 +14,7 @@ var v8Version = process.versions.v8
 var osVersion = os.release
 var osType = os.type
 var osArch = os.arch
+var ipcError
 const aboutOptions = {
     type: 'info',
     buttons: ['Ok'],
@@ -54,11 +56,32 @@ function createWindow (){
     
     var menu = Menu.buildFromTemplate([
         //Elements of menu bar
+
+        //File
+
         {
             label: 'File',
             submenu: [
                 {
-                    label: 'Preferences'//No action
+                    label: 'Preferences',
+                    click() {
+                        const preferences = new BrowserWindow({
+                            width: 800,
+                            height: 600,
+                            minWidth:800,
+                            minHeight:600,
+                            icon: 'assets/logos/logo.png',
+                            backgroundColor: '#323233',
+                            webPreferences: {
+                                nodeIntegration: true,
+                                enableRemoteModule: true,
+                                
+                            },
+                            frame: false
+                        })
+                        preferences.loadFile('./html/preferences.html')
+
+                    }
                 },
                 {
                     type:'separator'
@@ -73,6 +96,9 @@ function createWindow (){
              
             ]
         },
+
+        //Edit
+
         {
             label: 'Edit',
             submenu: [
@@ -119,6 +145,9 @@ function createWindow (){
                 }
             ],
         },
+
+        //Window
+
         {
             label: 'Window',
             submenu: [
@@ -131,6 +160,9 @@ function createWindow (){
                 }
             ],
         },
+
+        //Help
+
         {
             label: 'Help',
             submenu: [
@@ -147,6 +179,12 @@ function createWindow (){
                     }
                 },
                 {
+                    label: 'Contribute',
+                    click(){
+                        shell.openExternal('https://github.com/SidingsMedia/Sidings-Media-Railway-Controller/blob/master/CONTRIBUTING.md')
+                    }
+                },
+                {
                     type: 'separator'
                 },
                 {
@@ -155,6 +193,9 @@ function createWindow (){
                         shell.openExternal('https://www.sidingsmedia.com')
                     }
                 },
+
+                //Social Media
+
                 {
                     label: 'Join us on social media',
                     submenu: [
@@ -170,6 +211,9 @@ function createWindow (){
                                 shell.openExternal("https://twitter.com/sidingsmedia")
                             }
                         },
+
+                        //YouTube
+
                         {
                             label: 'Join us on YouTube',
                             submenu: [
@@ -222,7 +266,7 @@ function createWindow (){
                     type: 'separator'
                 },
                 {
-                    label: 'About',//No action
+                    label: 'About',
                     click(){
                         dialog.showMessageBox(win, aboutOptions, (response) => {
                             console.log(response)
@@ -237,6 +281,8 @@ function createWindow (){
 
     ])
     Menu.setApplicationMenu(menu)
+
+
     
 }
 //Called when electron has finished initialising
@@ -250,5 +296,27 @@ app.on('window-all-closed', () => {
 app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0){
         createWindow()
+    }
+})
+// ipcMain.on('settings', (event, arg) => {
+//     var win = createWindow.win
+//     console.log(arg)
+//     if (arg === 'Create settings window') {
+//         let settingsWindow = new BrowserWindow({ parent: win, frame: false, modal: true })
+//         settingsWindow.loadFile('html/editsettings.html')
+//         settingsWindow.show()
+//         event.sender.send('settings', 'Window Created')
+//     }
+//     else{
+//         dialog.showErrorBox('IPC Error', `The program sent an invalid response.\nThe program sent\n\'${arg}\'\n\'Create settings window\' was expected.\nPlease restart the application. If this does\nnot work try updating or contact\nsupport@sidingsmedia.com`,)
+//         event.sender.send('settings', `Error. You sent ${arg}. Create settings window was expected. `)
+//     }
+// })
+ipcMain.on('close-settings', (event, arg) => {
+    if (arg == 'Close Settings') {
+        console.log('Close recived')
+    }
+    else{
+        console.log('Other recived')
     }
 })
