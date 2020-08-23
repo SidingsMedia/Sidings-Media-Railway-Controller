@@ -12,12 +12,12 @@ let titlebar = new customTitlebar.Titlebar({
 	icon: './assets/logos/logo.png',
 });
 function addControl() {
-	var txt1 = `
+	var html = `
 		<div class=\"control\">
 			<h1>This is a control area</h1>
 		</div>
 	`;        
-	$("#main").append(txt1);        
+	$("#main").append(html);        
 
 }
 
