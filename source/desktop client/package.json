@@ -53,6 +53,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.14.0",
     "custom-electron-titlebar": "^3.2.3",
-    "jquery": "^3.5.1"
+    "jquery": "^3.5.1",
+    "serialport": "^9.0.1"
   }
 }
