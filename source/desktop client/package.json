@@ -11,7 +11,8 @@
     "dist": "electron-builder",
     "dist-win": "electron-builder --win -c.nsis.oneClick=false",
     "dist-linux": "electron-builder --linux",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "electron-rebuild"
   },
   "build": {
     "appId": "com.railwaycontroller.sm",
@@ -48,7 +49,8 @@
   "homepage": "https://github.com/SidingsMedia/DC-Model-Railway-Controller#readme",
   "devDependencies": {
     "electron": "^9.1.2",
-    "electron-builder": "^22.8.0"
+    "electron-builder": "^22.8.0",
+    "electron-rebuild": "^2.0.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.14.0",
