@@ -15,18 +15,27 @@ License: MIT-->
         <link rel="stylesheet" href="css/editbarstyle.css">
         <!--Font awesome-->
         <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css">
+        <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+
     </head>
     <body>
         <div class="container">
-            <div class="main">
+            <div id="main" class="main">
                 <div class="edit-bar">
-                    <button class="editbar-button"><i class="fas fa-plus"></i></button>
+                    <button class="editbar-button" onclick="addControl()"><i class="fas fa-plus"></i></button>
+                </div>
+                <div class="control">
+                    <h1>This is a control area</h1>
+                </div>
+                <div class="control">
+                    <h1>This is a control area 2</h1>
                 </div>
             </div>
             <div class="side-bar">
                 <div class="edit-bar">
                     <button class="editbar-button" style="float: right;"><i class="fas fa-plus"></i></button>
                 </div>
+                
                 <h3>Throttle</h3>
             </div>
         </div>
