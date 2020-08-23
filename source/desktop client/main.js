@@ -302,3 +302,29 @@ app.on('activate', () => {
         createWindow()
     }
 })
+// let serialport = require('serialport');
+ 
+// // list serial ports:
+// serialport.list(function (err, ports) {
+//   ports.forEach(function(port) {
+//     console.log(port.comName);
+//   });
+// });
+
+
+
+const bindings = require('@serialport/bindings')
+
+var listOfPorts=[];
+
+//called automatically by bindings.list()
+function list(ports) {
+  listOfPorts=ports;
+  // now listOfPorts will be the port Objects
+  console.log(listOfPorts);
+}
+
+bindings.list().then(list, err => {
+  process.exit(1)
+})
+// console.log(bindings.list)
