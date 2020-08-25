@@ -15,12 +15,53 @@ License: MIT-->
         <link rel="stylesheet" href="css/editbarstyle.css">
         <!--Font awesome-->
         <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css">
+        <!--Javascript-->
         <script src="./node_modules/jquery/dist/jquery.min.js"></script>
 
     </head>
     <body>
         <div class="container">
             <div class="edit-bar">
+                <!--File-->
+                <div class="dropdown">
+                    <button class="editbar-button dropbtn" onclick="dropdown()"><span title="File"><i class="fas fa-folder-open"></i></span></button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <button>Preferences</button> 
+                        <button>Exit</button> 
+
+                    </div>
+                </div>
+                <!--Edit-->
+                <div class="dropdown">
+                    <button class="editbar-button"><span title="Edit"><i class="fas fa-edit"></i></span></button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <button>Add throttle control</button> 
+                        <button>Add accessory control</button> 
+                    </div>
+                </div>
+                <!--Window-->
+                <div class="dropdown">
+                    <button class="editbar-button"><span title="Window"><i class="far fa-window-maximize"></i></span></button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <button>Reload</button> 
+                        <button>Toggle full screen</button> 
+                        <button>Toggle dev tools</button> 
+                        <button>Minimize</button>
+
+                    </div>
+                </div>
+                <!--Help-->
+                <div class="dropdown">
+                    <button class="editbar-button"><span title="Help"><i class="fas fa-question"></i></span></button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <button>Documentation</button> 
+                        <button>License</button> 
+                        <button>Contribute</button> 
+                        <button>Website</button>
+                        <button>Social Media</button>
+                        <button>About</button>
+                    </div>
+                </div>
                 <button class="editbar-button" onclick="addControl()"><i class="fas fa-plus"></i></button>
                 <button class="editbar-button" style="float: right;"><i class="fas fa-plus"></i></button>
 
@@ -42,5 +83,6 @@ License: MIT-->
         </div>
         <!--Javascript-->
         <script src="js/render.js"></script>
+
     </body>
 </html>
