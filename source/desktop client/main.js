@@ -54,6 +54,8 @@ class window extends BrowserWindow {
         })
         this.fullscreen = false
         this.loadFile(indexFile)
+        // this.webContents.openDevTools()
+        Menu.setApplicationMenu(menu)
         
         
         
