@@ -58,7 +58,18 @@ License: MIT-->
                         <button>License</button> 
                         <button>Contribute</button> 
                         <button>Website</button>
-                        <button>Social Media</button>
+                        <div class="subdropdown">
+                            <button>Social Media</button>
+                            <div id="myDropdown" class="subdropdown-content">
+                                <button onclick="openURL('facebook')">Facebook</button> 
+                                <button onclick="openURL('twitter')">Twitter</button> 
+                                <button onclick="openURL('youtube')">Youtube</button><!--Add submenu that leads to each seperate channel-->
+                                <button onclick="openURL('instagram')">Instagram</button> 
+                                <button onclick="openURL('github')">GitHub</button> 
+                                <button onclick="openURL('easyeda')">EasyEDA</button> 
+
+                            </div>
+                        </div>
                         <button>About</button>
                     </div>
                 </div>
@@ -83,6 +94,7 @@ License: MIT-->
         </div>
         <!--Javascript-->
         <script src="js/render.js"></script>
+        <script src="./js/openUrl.js"></script>
 
     </body>
 </html>
