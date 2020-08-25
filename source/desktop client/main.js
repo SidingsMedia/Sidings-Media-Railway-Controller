@@ -21,7 +21,8 @@ const aboutOptions = {
     defaultId: 0,
     title: "Railway Controller",
     message: "About",
-    detail: `Version: ${appVersion} \nNode.js: ${nodeVersion}\nChrome: ${chromeVersion}\nElectron: ${electronVersion}\nV8: ${v8Version}\nOS: ${`${osType} ${osArch} ${osVersion}`}`
+    detail: `Version: ${appVersion} \nNode.js: ${nodeVersion}\nChrome: ${chromeVersion}\nElectron: ${electronVersion}\nV8: ${v8Version}\nOS: ${`${osType} ${osArch} ${osVersion}`}\nIcons by Fontawesome.\nThe license can be found here: https://fontawesome.com/license`
+
 }
 
 var fullscreen = false//For toggling between fullscreen and standard
@@ -116,7 +117,7 @@ function createWindow (){
                     label: 'Reload',
                     accelerator: 'Ctrl+R',
                     click(){
-                        win.reload()
+                        win.reload()//Needs to be changed so it reloads current window instead of main window.
                     }
                 },
                 {
