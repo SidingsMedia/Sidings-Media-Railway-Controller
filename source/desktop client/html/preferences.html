@@ -5,11 +5,44 @@ License: MIT-->
 <html lang="en">
 <html>
     <head>
+        <title>Preferences | Sidings Media Railway Controller</title>
         <!--CSS-->
-        <link rel="stylesheet" href="../css/mainstyle.css">
+        <link rel="stylesheet" href="../css/preferencesstyle.css">
+        <link rel="stylesheet" href="../css/selectstyle.css">
+        <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.css">
+
+        <!--Javascript-->
+        <script src="../js/select.js"></script>
     </head>
     <body>
-        <h1>Prefferences</h1>
+        <div class="container">
+            <div class="main">
+                <h1>Preferences</h1>
+                    <form name="preferences">
+                        <fieldset>
+                            <div>
+                                <label for="ipSelect">IP of main control board</label>
+                                
+                                <input type="text" name="ipSelect" id="ipSelect" pattern="^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"  placeholder="192.168.1.1">
+                                
+                                <div class="tooltip">&nbsp;<i class="fas fa-question-circle" ></i>
+                                    <span class="tooltiptext">This is the IP address of the main control board. Infomation on how to find this can be found in the documentation.</span>
+                                </div>
+                            </div>
+
+                        </fieldset>
+                        <fieldset style="padding: 0;">
+                            <button type="submit" class="save-button">Save</button>
+                        </fieldset>
+                        
+                    </form>
+                
+                
+            </div>
+            
+        </div>
+        
         <script src="../js/preferencesrender.js"></script>
+
     </body>
 </html>
