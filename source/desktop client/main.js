@@ -26,7 +26,7 @@ const aboutOptions = {
 }
 
 
-class window extends BrowserWindow {
+class GUI extends BrowserWindow {
     /**
      * Generates a window
      * @param {number} width - The initial width of the window. Default 800
@@ -52,19 +52,58 @@ class window extends BrowserWindow {
                 enableRemoteModule: true
             }
         })
-        this.fullscreen = false
         this.loadFile(indexFile)
-        // this.webContents.openDevTools()
+        this.webContents.openDevTools()
         Menu.setApplicationMenu(menu)
+
+        this.fullScreenStatus = false
         
         
         
+    }//Constructor
+    closeWin(){
+        console.log(this.webContents.isDevToolsOpened())
+        //     this.webContents.closeDevTools()
+        // }
+        // this.close()
+        if (this.webContents.isDevToolsOpened()) {
+            this.webContents.closeDevTools()
+        }
+        console.log('close win activated')
+        this.close()
+        console.log('It should be closed by now')
+    }//Close
+    minimizeWin(){
+        this.minimize()
+    }//Minimize
+    toggleFullscreen() {
+        console.log('full screen selected')
+        console.log(this.isFullScreen())
+        if (this.isFullScreen() != true){
+            this.setFullScreen(true)
+        }
+        else if (this.isFullScreen() == true) {
+            this.setFullScreen(false)
+        }
+    }//toggleFullScreen
+    toggleDev() {
+        this.openDevTools()
+    }//toggleDev
+    test() {
+        console.log('Test has been called')
     }
 }
+var mainWindow;
 
 //Called when electron has finished initialising
 app.on('ready', () => {
-    let mainWindow = new window(800,600,800,600,'#323233','./assets/logos/logo.png', 'index.html')
+    mainWindow = new GUI(800,600,800,600,'#323233','./assets/logos/logo.png', 'index.html')
+    mainWindow.on('close', function() { //   <---- Catch close event
+        if (mainWindow.webContents.isDevToolsOpened()){
+            mainWindow.webContents.closeDevTools()
+            app.quit()
+        }
+    });
 })
 //Quit when all windows are closed except on macOS
 app.on('window-all-closed', () => {
@@ -72,21 +111,6 @@ app.on('window-all-closed', () => {
         app.quit()
     }
 })
-// app.on('activate', () => {
-//     if (BrowserWindow.getAllWindows().length === 0){
-//         createWindow()
-//     }
-// })
-// let serialport = require('serialport');
- 
-// // list serial ports:
-// serialport.list(function (err, ports) {
-//   ports.forEach(function(port) {
-//     console.log(port.comName);
-//   });
-// });
-
-
 
 const bindings = require('@serialport/bindings')
 
@@ -103,3 +127,41 @@ bindings.list().then(list, err => {
   process.exit(1)
 })
 // console.log(bindings.list)
+ipcMain.on('windowControl', (event, arg) => {
+    console.log(arg)
+    // var request = JSON.parse(arg)
+    var request = arg
+    console.log(request)
+    console.log(request.window)
+    if (request.window == 'mainWindow'){
+        if (request.func == 'openPreferences') {
+            //Create preferences window
+            let preferencesWindow = new GUI(800,600,800,600,'#323233','./assets/logos/logo.png','./html/preferences.html')
+            //On close close dev tools if open
+            preferencesWindow.on('close', function() { 
+                if (preferencesWindow.webContents.isDevToolsOpened()){
+                    preferencesWindow.webContents.closeDevTools()
+                }
+            })
+        
+        }
+        if (request.func == 'close'){
+            mainWindow.closeWin()
+        }
+        if (request.func == 'min'){
+            mainWindow.minimizeWin()
+        }
+        if (request.func == 'toggleFullscreen'){
+            mainWindow.toggleFullscreen()
+        }
+        if (request.func == 'toggleDev'){
+            mainWindow.toggleDev()
+        }
+        if (request.func == 'reload'){
+            mainWindow.reload()
+        }
+    } 
+    if (request.window == 'app' && request.func == 'exit' && process.platform !== 'darwin'){
+        app.quit()
+    }
+})

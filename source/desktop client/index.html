@@ -26,8 +26,9 @@ License: MIT-->
                 <div class="dropdown">
                     <button class="editbar-button dropbtn" onclick="dropdown()"><span title="File"><i class="fas fa-folder-open"></i></span></button>
                     <div id="myDropdown" class="dropdown-content">
-                        <button>Preferences</button> 
-                        <button>Exit</button> 
+                        <button onclick="sendRequest({window:'mainWindow', func:'openPreferences'})">Preferences</button> 
+                        <button onclick="sendRequest({window:'mainWindow', func:'close'})">Close</button>
+                        <button onclick="sendRequest({window:'app', func:'exit'})">Exit</button> 
 
                     </div>
                 </div>
@@ -43,10 +44,10 @@ License: MIT-->
                 <div class="dropdown">
                     <button class="editbar-button"><span title="Window"><i class="far fa-window-maximize"></i></span></button>
                     <div id="myDropdown" class="dropdown-content">
-                        <button>Reload</button> 
-                        <button>Toggle full screen</button> 
-                        <button>Toggle dev tools</button> 
-                        <button>Minimize</button>
+                        <button onclick="sendRequest({window:'mainWindow', func:'reload'})">Reload</button> 
+                        <button onclick="sendRequest({window:'mainWindow', func:'toggleFullscreen'})">Toggle full screen</button> 
+                        <button onclick="sendRequest({window:'mainWindow', func:'toggleDev'})">Toggle dev tools</button> 
+                        <button onclick="sendRequest({window:'mainWindow', func:'min'})">Minimize</button>
 
                     </div>
                 </div>
@@ -54,16 +55,22 @@ License: MIT-->
                 <div class="dropdown">
                     <button class="editbar-button"><span title="Help"><i class="fas fa-question"></i></span></button>
                     <div id="myDropdown" class="dropdown-content">
-                        <button>Documentation</button> 
-                        <button>License</button> 
-                        <button>Contribute</button> 
-                        <button>Website</button>
+                        <button onclick="openURL('docs')">Documentation</button> 
+                        <button onclick="openURL('license')">License</button> 
+                        <button onclick="openURL('contribute')">Contribute</button> 
+                        <button onclick="openURL('website')">Website</button>
                         <div class="subdropdown">
                             <button>Social Media</button>
                             <div id="myDropdown" class="subdropdown-content">
                                 <button onclick="openURL('facebook')">Facebook</button> 
                                 <button onclick="openURL('twitter')">Twitter</button> 
-                                <button onclick="openURL('youtube')">Youtube</button><!--Add submenu that leads to each seperate channel-->
+                                <div class="subsubdropdown">
+                                    <button>Youtube</button>
+                                    <div class="subsubdropdown-content" id="myDropdown">
+                                        <button onclick="openURL('thesidings')">The Sidings</button> 
+                                        <button onclick="openURL('sidingselectric')">Sidings Electric</button>                                     
+                                    </div>
+                                </div>
                                 <button onclick="openURL('instagram')">Instagram</button> 
                                 <button onclick="openURL('github')">GitHub</button> 
                                 <button onclick="openURL('easyeda')">EasyEDA</button> 
@@ -95,6 +102,7 @@ License: MIT-->
         <!--Javascript-->
         <script src="js/render.js"></script>
         <script src="./js/openUrl.js"></script>
+        <script src="./js/editbarComs.js"></script>
 
     </body>
 </html>
