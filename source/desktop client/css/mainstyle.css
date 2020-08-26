@@ -42,7 +42,27 @@ body{
 
 
 }
-
+/*Custom scroll bar*/
+/* width */
+::-webkit-scrollbar {
+    width: 14px;
+}
+  
+  /* Track */
+::-webkit-scrollbar-track {
+    background: #323233;
+    
+}
+  
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: #48484A;
+}
+  
+  /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #464647;
+}
 /* Use a media query to add a break point at 600px:
 @media screen and (max-width:600px) {
     .main, .side-bar {
