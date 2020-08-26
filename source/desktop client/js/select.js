@@ -4,7 +4,7 @@
 
 //Include JQuery
 var script = document.createElement('script'); 
-script.src = './node_modules/jquery/dist/jquery.min.js'; 
+script.src = '../node_modules/jquery/dist/jquery.min.js'; 
 document.getElementsByTagName('head')[0].appendChild(script);
 
 // Iterate over each select element
