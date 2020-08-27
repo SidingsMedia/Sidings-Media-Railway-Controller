@@ -63,6 +63,38 @@ body{
 ::-webkit-scrollbar-thumb:hover {
     background: #464647;
 }
+.swal-modal{
+    background: #252526;
+    color: #FFFFFF;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+
+}
+.swal-text{
+    color: #FFFFFF;
+}
+/* .swal-icon {
+    border-color: #FFFFFF;
+    color: #FFFFFF;
+  } */
+.swal-icon--info{
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+}
+.swal-title{
+    color: #FFFFFF;
+}
+.infoPopup{
+    text-align: left;
+}
+.swal-button{
+    background-color: #333333;
+    border: none;
+    box-shadow: none;
+}
+.swal-button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background: #464647 !important;
+}
 /* Use a media query to add a break point at 600px:
 @media screen and (max-width:600px) {
     .main, .side-bar {
