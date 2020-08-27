@@ -71,7 +71,6 @@ class GUI extends BrowserWindow {
         
     }//Constructor
     closeWin(){
-        console.log(this.webContents.isDevToolsOpened())
         //     this.webContents.closeDevTools()
         // }
         // this.close()
@@ -84,7 +83,6 @@ class GUI extends BrowserWindow {
         this.minimize()
     }//Minimize
     toggleFullscreen() {
-        console.log(this.isFullScreen())
         if (this.isFullScreen() != true){
             this.setFullScreen(true)
         }
@@ -95,11 +93,7 @@ class GUI extends BrowserWindow {
     toggleDev() {
         this.openDevTools()
     }//toggleDev
-    openAbout(){
-        dialog.showMessageBoxSync(this, this.aboutOptions, (response) => {
-            console.log(response)
-        })    
-    }
+    
     test() {
     }
 }
