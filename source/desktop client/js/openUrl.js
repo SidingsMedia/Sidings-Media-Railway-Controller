@@ -15,7 +15,8 @@ var urls = {
     contribute: 'https://github.com/SidingsMedia/Sidings-Media-Railway-Controller/blob/master/CONTRIBUTING.md',
     website: 'https://sidingsmedia.com',
     thesidings: 'https://www.youtube.com/channel/UCZmBfzy3_Jdo5YrsE6o04sg',
-    sidingselectric: 'https://www.youtube.com/channel/UCZOIvXgjCMrqjUHvgx_213A'
+    sidingselectric: 'https://www.youtube.com/channel/UCZOIvXgjCMrqjUHvgx_213A',
+    fontslicense: 'https://fontawesome.com/license'
 }
 function openURL(platform){
     shell.openExternal(urls[platform])
