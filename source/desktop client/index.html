@@ -26,9 +26,9 @@ License: MIT-->
                 <div class="dropdown">
                     <button class="editbar-button dropbtn" onclick="dropdown()"><span title="File"><i class="fas fa-folder-open"></i></span></button>
                     <div id="myDropdown" class="dropdown-content">
-                        <button onclick="sendRequest({window:'mainWindow', func:'openPreferences'})">Preferences</button> 
-                        <button onclick="sendRequest({window:'mainWindow', func:'close'})">Close</button>
-                        <button onclick="sendRequest({window:'app', func:'exit'})">Exit</button> 
+                        <button onclick="sendRequest({window:'mainWindow', func:'openPreferences'})"><span class="left">Preferences</span><span class="right">Ctrl+,</span></button> 
+                        <button onclick="sendRequest({window:'mainWindow', func:'close'})"><span class="left">Close</span><span class="right">Ctrl+W</span></button>
+                        <button onclick="sendRequest({window:'app', func:'exit'})"><span class="left">Exit</span><span class="right">Ctrl+Q</span></button> 
 
                     </div>
                 </div>
@@ -44,10 +44,10 @@ License: MIT-->
                 <div class="dropdown">
                     <button class="editbar-button"><span title="Window"><i class="far fa-window-maximize"></i></span></button>
                     <div id="myDropdown" class="dropdown-content">
-                        <button onclick="sendRequest({window:'mainWindow', func:'reload'})">Reload</button> 
-                        <button onclick="sendRequest({window:'mainWindow', func:'toggleFullscreen'})">Toggle full screen</button> 
-                        <button onclick="sendRequest({window:'mainWindow', func:'toggleDev'})">Toggle dev tools</button> 
-                        <button onclick="sendRequest({window:'mainWindow', func:'min'})">Minimize</button>
+                        <button onclick="sendRequest({window:'mainWindow', func:'reload'})"><span class="left">Reload</span><span class="right">Ctrl+R</span></button> 
+                        <button onclick="sendRequest({window:'mainWindow', func:'toggleFullscreen'})"><span class="left">Toggle full screen</span><span class="right">F11</span></button> 
+                        <button onclick="sendRequest({window:'mainWindow', func:'toggleDev'})"><span class="left">Open dev tools   </span><span class="right">Ctrl+Shift+I</span></button> 
+                        <button onclick="sendRequest({window:'mainWindow', func:'min'})"><span class="left">Minimize</span><span class="right">Ctrl+M</span></button>
 
                     </div>
                 </div>
@@ -60,12 +60,12 @@ License: MIT-->
                         <button onclick="openURL('contribute')">Contribute</button> 
                         <button onclick="openURL('website')">Website</button>
                         <div class="subdropdown">
-                            <button>Social Media</button>
+                            <button><span class="left">Social Media</span><span class="right">></span></button>
                             <div id="myDropdown" class="subdropdown-content">
                                 <button onclick="openURL('facebook')">Facebook</button> 
                                 <button onclick="openURL('twitter')">Twitter</button> 
                                 <div class="subsubdropdown">
-                                    <button>Youtube</button>
+                                    <button><span class="left">YouTube</span><span class="right">></span></button>
                                     <div class="subsubdropdown-content" id="myDropdown">
                                         <button onclick="openURL('thesidings')">The Sidings</button> 
                                         <button onclick="openURL('sidingselectric')">Sidings Electric</button>                                     
