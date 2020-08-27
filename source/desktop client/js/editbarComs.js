@@ -26,6 +26,4 @@ ipc.on('aboutData', (event, arg) => {
     })
     
 })
-function testAlert(){
-    
-}
+
