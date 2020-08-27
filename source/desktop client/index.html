@@ -77,7 +77,8 @@ License: MIT-->
 
                             </div>
                         </div>
-                        <button>About</button>
+                        <button onclick="sendRequest({window:'mainWindow', func:'about'})">About</button>
+                        <button onclick="testAlert()">Test</button>
                     </div>
                 </div>
                 <button class="editbar-button" onclick="addControl()"><i class="fas fa-plus"></i></button>
@@ -99,6 +100,7 @@ License: MIT-->
                 <h3>Throttle</h3>
             </div>
         </div>
+        
         <!--Javascript-->
         <script src="js/render.js"></script>
         <script src="./js/openUrl.js"></script>

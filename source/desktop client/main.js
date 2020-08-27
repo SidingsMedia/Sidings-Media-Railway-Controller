@@ -15,15 +15,15 @@ var osVersion = os.release
 var osType = os.type
 var osArch = os.arch
 var ipcError
-const aboutOptions = {
-    type: 'info',
-    buttons: ['Ok'],
-    defaultId: 0,
-    title: "Railway Controller",
-    message: "About",
-    detail: `Version: ${appVersion} \nNode.js: ${nodeVersion}\nChrome: ${chromeVersion}\nElectron: ${electronVersion}\nV8: ${v8Version}\nOS: ${`${osType} ${osArch} ${osVersion}`}\nIcons by Fontawesome.\nThe license can be found here: https://fontawesome.com/license`
-
+var aboutData = {
+    nodeVersion: `${process.versions.node}`,
+    chromeVersion: `${process.versions.chrome}`,
+    electronVersion: `${process.versions.electron}`,
+    appVersion: `${app.getVersion()}`,
+    v8Version: `${process.versions.v8}`,
+    os: `${`${os.type} ${os.arch} ${os.release}`}`
 }
+
 
 
 class GUI extends BrowserWindow {
@@ -57,6 +57,15 @@ class GUI extends BrowserWindow {
         Menu.setApplicationMenu(menu)
 
         this.fullScreenStatus = false
+        this.aboutOptions = {
+            type: 'info',
+            buttons: ['Ok'],
+            defaultId: 0,
+            title: "Railway Controller",
+            message: "About",
+            detail: `Version: ${appVersion} \nNode.js: ${nodeVersion}\nChrome: ${chromeVersion}\nElectron: ${electronVersion}\nV8: ${v8Version}\nOS: ${`${osType} ${osArch} ${osVersion}`}\nIcons by Fontawesome.\nThe license can be found here: https://fontawesome.com/license`
+        
+        }
         
         
         
@@ -69,15 +78,12 @@ class GUI extends BrowserWindow {
         if (this.webContents.isDevToolsOpened()) {
             this.webContents.closeDevTools()
         }
-        console.log('close win activated')
         this.close()
-        console.log('It should be closed by now')
     }//Close
     minimizeWin(){
         this.minimize()
     }//Minimize
     toggleFullscreen() {
-        console.log('full screen selected')
         console.log(this.isFullScreen())
         if (this.isFullScreen() != true){
             this.setFullScreen(true)
@@ -89,8 +95,12 @@ class GUI extends BrowserWindow {
     toggleDev() {
         this.openDevTools()
     }//toggleDev
+    openAbout(){
+        dialog.showMessageBoxSync(this, this.aboutOptions, (response) => {
+            console.log(response)
+        })    
+    }
     test() {
-        console.log('Test has been called')
     }
 }
 var mainWindow;
@@ -128,11 +138,8 @@ bindings.list().then(list, err => {
 })
 // console.log(bindings.list)
 ipcMain.on('windowControl', (event, arg) => {
-    console.log(arg)
     // var request = JSON.parse(arg)
     var request = arg
-    console.log(request)
-    console.log(request.window)
     if (request.window == 'mainWindow'){
         if (request.func == 'openPreferences') {
             //Create preferences window
@@ -159,6 +166,9 @@ ipcMain.on('windowControl', (event, arg) => {
         }
         if (request.func == 'reload'){
             mainWindow.reload()
+        }
+        if (request.func == 'about'){
+            event.reply('aboutData', aboutData)        
         }
     } 
     if (request.window == 'app' && request.func == 'exit' && process.platform !== 'darwin'){
