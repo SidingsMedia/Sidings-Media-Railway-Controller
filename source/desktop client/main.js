@@ -81,6 +81,7 @@ class GUI extends BrowserWindow {
 
 }
 var mainWindow;
+var preferencesWindow;
 
 //Called when electron has finished initialising
 app.on('ready', () => {
@@ -122,12 +123,13 @@ bindings.list().then(list, err => {
 //IPC messages for window Controls
 ipcMain.on('windowControl', (event, arg) => {
     var request = arg
+    //Main Window
     if (request.window == 'mainWindow'){
 
         //Open preferences window if func = openPreferences
         if (request.func == 'openPreferences') {
             //Create preferences window
-            let preferencesWindow = new GUI(800,600,800,600,'#323233','./assets/logos/logo.png','./html/preferences.html')
+            preferencesWindow = new GUI(800,600,800,600,'#323233','./assets/logos/logo.png','./html/preferences.html')
             //On close close dev tools if open
             preferencesWindow.on('close', function() { 
                 if (preferencesWindow.webContents.isDevToolsOpened()){
@@ -168,6 +170,38 @@ ipcMain.on('windowControl', (event, arg) => {
         }
     } 
 
+    //Preferences
+    if (request.window == 'preferences'){        
+        //Close
+        if (request.func == 'close'){
+            preferencesWindow.closeWin()
+        }
+
+        //Minimize
+        if (request.func == 'min'){
+            preferencesWindow.minimizeWin()
+        }
+
+        //Full screen
+        if (request.func == 'toggleFullscreen'){
+            preferencesWindow.toggleFullscreen()
+        }
+
+        //Open devtools
+        if (request.func == 'toggleDev'){
+            preferencesWindow.toggleDev()
+        }
+
+        //Reload window
+        if (request.func == 'reload'){
+            preferencesWindow.reload()
+        }
+
+        //Open about dialog
+        if (request.func == 'about'){
+            event.reply('aboutData', aboutData)        
+        }
+    } 
     //Quit 
     if (request.window == 'app' && request.func == 'exit' && process.platform !== 'darwin'){
         app.quit()

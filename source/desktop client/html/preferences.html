@@ -7,6 +7,8 @@ License: MIT-->
     <head>
         <title>Preferences | Sidings Media Railway Controller</title>
         <!--CSS-->
+        <link rel="stylesheet" href="../css/mainstyle.css">
+        <link rel="stylesheet" href="../css/editbarstyle.css">
         <link rel="stylesheet" href="../css/preferencesstyle.css">
         <link rel="stylesheet" href="../css/selectstyle.css">
         <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.css">
@@ -15,9 +17,65 @@ License: MIT-->
 </head>
     <body>
         <div class="container">
+            <div class="edit-bar">
+                <!--File-->
+                <div class="dropdown">
+                    <button class="editbar-button dropbtn" onclick="dropdown()"><span title="File"><i class="fas fa-folder-open"></i></span></button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <button onclick="sendRequest({window:'preferences', func:'close'})"><span class="left">Close</span><span class="right"></span></button>
+                        <button onclick="sendRequest({window:'app', func:'exit'})"><span class="left">Exit</span><span class="right"></span></button> 
+
+                    </div>
+                </div>
+                <!--Window-->
+                <div class="dropdown">
+                    <button class="editbar-button"><span title="Window"><i class="far fa-window-maximize"></i></span></button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <button onclick="sendRequest({window:'preferences', func:'reload'})"><span class="left">Reload</span><span class="right"></span></button> 
+                        <button onclick="sendRequest({window:'preferences', func:'toggleFullscreen'})"><span class="left">Toggle full screen</span><span class="right"></span></button> 
+                        <button onclick="sendRequest({window:'preferences', func:'toggleDev'})"><span class="left">Open dev tools   </span><span class="right"></span></button> 
+                        <button onclick="sendRequest({window:'preferences', func:'min'})"><span class="left">Minimize</span><span class="right"></span></button>
+
+                    </div>
+                </div>
+                <!--Help-->
+                <div class="dropdown">
+                    <button class="editbar-button"><span title="Help"><i class="fas fa-question"></i></span></button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <button onclick="openURL('docs')">Documentation</button> 
+                        <button onclick="openURL('license')">License</button> 
+                        <button onclick="openURL('contribute')">Contribute</button> 
+                        <button onclick="openURL('website')">Website</button>
+                        <!--Social Media-->
+                        <div class="subdropdown">
+                            <button><span class="left">Social Media</span><span class="right">></span></button>
+                            <div id="myDropdown" class="subdropdown-content">
+                                <button onclick="openURL('facebook')">Facebook</button> 
+                                <button onclick="openURL('twitter')">Twitter</button> 
+                                <!--YouTube-->
+                                <div class="subsubdropdown">
+                                    <button><span class="left">YouTube</span><span class="right">></span></button>
+                                    <div class="subsubdropdown-content" id="myDropdown">
+                                        <button onclick="openURL('thesidings')">The Sidings</button> 
+                                        <button onclick="openURL('sidingselectric')">Sidings Electric</button>                                     
+                                    </div>
+                                </div>
+                                <button onclick="openURL('instagram')">Instagram</button> 
+                                <button onclick="openURL('github')">GitHub</button> 
+                                <button onclick="openURL('easyeda')">EasyEDA</button> 
+
+                            </div>
+                        </div>
+                        <button onclick="sendRequest({window:'preferences', func:'about'})">About</button>
+                    </div>
+                </div>
+
+            </div><!--End editbar-->
             <div class="main">
-                <h1>Preferences</h1>
                     <form name="preferences">
+                        <fieldset style="    margin-top: 20px;">
+                            <h1 style="text-align: center;">Preferences</h1>
+                        </fieldset>
                         <fieldset>
                             <div>
                                 <label for="ipSelect">IP of main control board</label>
@@ -40,7 +98,9 @@ License: MIT-->
             </div>
             
         </div>
-        
+        <!--Javascript-->
+        <script src="../js/openUrl.js"></script>
+        <script src="../js/editbarComs.js"></script>
         <script src="../js/preferencesrender.js"></script>
 
     </body>
