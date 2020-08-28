@@ -2,8 +2,7 @@
 
 
 # Sidings Media Railway Controller
-[![Documentation Status](https://readthedocs.org/projects/dc-model-railway-controller/badge/?version=latest)](https://smrcdocs.sidingsmedia.com/en/latest/?badge=latest) [![Join the chat at https://gitter.im/SidingsMedia/Railway-Controller](https://badges.gitter.im/SidingsMedia/Railway-Controller.svg)](https://gitter.im/SidingsMedia/Railway-Controller?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
+[![Documentation Status](https://readthedocs.org/projects/dc-model-railway-controller/badge/?version=latest)](https://smrcdocs.sidingsmedia.com/en/latest/?badge=latest) [![Join the chat at https://gitter.im/SidingsMedia/Railway-Controller](https://badges.gitter.im/SidingsMedia/Railway-Controller.svg)](https://gitter.im/SidingsMedia/Railway-Controller?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)![GitHub issues](https://img.shields.io/github/issues/sidingsmedia/sidings-media-railway-controller)![GitHub commit activity](https://img.shields.io/github/commit-activity/m/sidingsmedia/sidings-media-railway-controller)https://img.shields.io/github/last-commit/sidingsmedia/sidings-media-railway-controller
 This is an opensource project that aims to produce a comprehensive system for the control of a DC model rail of any guage and any scale. It uses Wi-Fi to comunicate with the controlling device. This means that we can have near limitless expansion. The only limit is the number of devices you can have on your network. 
 
 
