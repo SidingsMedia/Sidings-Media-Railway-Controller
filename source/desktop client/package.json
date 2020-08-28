@@ -1,7 +1,7 @@
 {
   "name": "railwaycontroller",
   "productName": "Sidings Media Railway Controller",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "A simple and comprehensive system to control your DC model railway from your computer.",
   "main": "main.js",
   "private": "true",
@@ -56,6 +56,8 @@
     "@fortawesome/fontawesome-free": "^5.14.0",
     "custom-electron-titlebar": "^3.2.3",
     "jquery": "^3.5.1",
-    "serialport": "^9.0.1"
+    "mousetrap": "^1.6.5",
+    "serialport": "^9.0.1",
+    "sweetalert": "^2.1.2"
   }
 }

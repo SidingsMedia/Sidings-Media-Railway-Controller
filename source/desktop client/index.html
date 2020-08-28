@@ -15,24 +15,77 @@ License: MIT-->
         <link rel="stylesheet" href="css/editbarstyle.css">
         <!--Font awesome-->
         <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css">
+        <!--Javascript-->
         <script src="./node_modules/jquery/dist/jquery.min.js"></script>
 
     </head>
     <body>
         <div class="container">
             <div class="edit-bar">
-                <button class="editbar-button" onclick="addControl()"><i class="fas fa-plus"></i></button>
-                <button class="editbar-button" style="float: right;"><i class="fas fa-plus"></i></button>
+                <!--File-->
+                <div class="dropdown">
+                    <button class="editbar-button dropbtn" onclick="dropdown()"><span title="File"><i class="fas fa-folder-open"></i></span></button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <button onclick="sendRequest({window:'mainWindow', func:'openPreferences'})"><span class="left">Preferences</span><span class="right">Ctrl+,</span></button> 
+                        <button onclick="sendRequest({window:'mainWindow', func:'close'})"><span class="left">Close</span><span class="right">Ctrl+W</span></button>
+                        <button onclick="sendRequest({window:'app', func:'exit'})"><span class="left">Exit</span><span class="right">Ctrl+Q</span></button> 
+
+                    </div>
+                </div>
+                <!--Edit-->
+                <div class="dropdown">
+                    <button class="editbar-button"><span title="Edit"><i class="fas fa-edit"></i></span></button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <button>Add throttle control</button> 
+                        <button onclick="addControl()">Add accessory control</button> 
+                    </div>
+                </div>
+                <!--Window-->
+                <div class="dropdown">
+                    <button class="editbar-button"><span title="Window"><i class="far fa-window-maximize"></i></span></button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <button onclick="sendRequest({window:'mainWindow', func:'reload'})"><span class="left">Reload</span><span class="right">Ctrl+R</span></button> 
+                        <button onclick="sendRequest({window:'mainWindow', func:'toggleFullscreen'})"><span class="left">Toggle full screen</span><span class="right">F11</span></button> 
+                        <button onclick="sendRequest({window:'mainWindow', func:'toggleDev'})"><span class="left">Open dev tools   </span><span class="right">Ctrl+Shift+I</span></button> 
+                        <button onclick="sendRequest({window:'mainWindow', func:'min'})"><span class="left">Minimize</span><span class="right">Ctrl+M</span></button>
+
+                    </div>
+                </div>
+                <!--Help-->
+                <div class="dropdown">
+                    <button class="editbar-button"><span title="Help"><i class="fas fa-question"></i></span></button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <button onclick="openURL('docs')">Documentation</button> 
+                        <button onclick="openURL('license')">License</button> 
+                        <button onclick="openURL('contribute')">Contribute</button> 
+                        <button onclick="openURL('website')">Website</button>
+                        <!--Social Media-->
+                        <div class="subdropdown">
+                            <button><span class="left">Social Media</span><span class="right">></span></button>
+                            <div id="myDropdown" class="subdropdown-content">
+                                <button onclick="openURL('facebook')">Facebook</button> 
+                                <button onclick="openURL('twitter')">Twitter</button> 
+                                <!--YouTube-->
+                                <div class="subsubdropdown">
+                                    <button><span class="left">YouTube</span><span class="right">></span></button>
+                                    <div class="subsubdropdown-content" id="myDropdown">
+                                        <button onclick="openURL('thesidings')">The Sidings</button> 
+                                        <button onclick="openURL('sidingselectric')">Sidings Electric</button>                                     
+                                    </div>
+                                </div>
+                                <button onclick="openURL('instagram')">Instagram</button> 
+                                <button onclick="openURL('github')">GitHub</button> 
+                                <button onclick="openURL('easyeda')">EasyEDA</button> 
+
+                            </div>
+                        </div>
+                        <button onclick="sendRequest({window:'mainWindow', func:'about'})">About</button>
+                    </div>
+                </div>
 
             </div>
             <div id="main" class="main">
                 
-                <div class="control">
-                    <h1>This is a control area</h1>
-                </div>
-                <div class="control">
-                    <h1>This is a control area 2</h1>
-                </div>
             </div>
             <div class="side-bar">
                 
@@ -40,7 +93,12 @@ License: MIT-->
                 <h3>Throttle</h3>
             </div>
         </div>
+        
         <!--Javascript-->
+        
+        <script src="./js/openUrl.js"></script>
+        <script src="./js/editbarComs.js"></script>
         <script src="js/render.js"></script>
+
     </body>
 </html>
