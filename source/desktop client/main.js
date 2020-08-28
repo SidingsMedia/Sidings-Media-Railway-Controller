@@ -6,14 +6,6 @@ const { app, BrowserWindow, Menu, shell, dialog, session, ipcMain, webContents }
 const { path } = require('path')
 var os = require('os');
 const { title } = require('process');
-var nodeVersion = process.versions.node
-var chromeVersion = process.versions.chrome
-var electronVersion = process.versions.electron
-var appVersion = app.getVersion()
-var v8Version = process.versions.v8
-var osVersion = os.release
-var osType = os.type
-var osArch = os.arch
 var ipcError
 var aboutData = {
     nodeVersion: `${process.versions.node}`,
@@ -27,8 +19,10 @@ var aboutData = {
 
 
 class GUI extends BrowserWindow {
+
     /**
-     * Generates a window
+     * Constructor
+     * 
      * @param {number} width - The initial width of the window. Default 800
      * @param {number} height - The initial height of the window. Default 600
      * @param {number} minWidth - The minimum width the window can possibly be. Default 800
@@ -39,6 +33,7 @@ class GUI extends BrowserWindow {
      * @param {Electron.Menu} menu - The menu that should be displayed. Default null
      */
     constructor(width = 800, height = 600, minWidth = 800, minHeight = 600, backgroundColor = '#FFF', icon = null, indexFile = null, menu = null){
+        //Create window with parameters
         super({
             width: width,
             height: height,
@@ -52,36 +47,25 @@ class GUI extends BrowserWindow {
                 enableRemoteModule: true
             }
         })
+        //Load file to window
         this.loadFile(indexFile)
-        this.webContents.openDevTools()
+        //Open devtools if app not packaged
+        if (app.isPackaged != true){
+            this.webContents.openDevTools()
+     
+        }
         Menu.setApplicationMenu(menu)
 
-        this.fullScreenStatus = false
-        this.aboutOptions = {
-            type: 'info',
-            buttons: ['Ok'],
-            defaultId: 0,
-            title: "Railway Controller",
-            message: "About",
-            detail: `Version: ${appVersion} \nNode.js: ${nodeVersion}\nChrome: ${chromeVersion}\nElectron: ${electronVersion}\nV8: ${v8Version}\nOS: ${`${osType} ${osArch} ${osVersion}`}\nIcons by Fontawesome.\nThe license can be found here: https://fontawesome.com/license`
-        
-        }
-        
-        
-        
-    }//Constructor
+    }
     closeWin(){
-        //     this.webContents.closeDevTools()
-        // }
-        // this.close()
         if (this.webContents.isDevToolsOpened()) {
             this.webContents.closeDevTools()
         }
         this.close()
-    }//Close
+    }
     minimizeWin(){
         this.minimize()
-    }//Minimize
+    }
     toggleFullscreen() {
         if (this.isFullScreen() != true){
             this.setFullScreen(true)
@@ -89,24 +73,27 @@ class GUI extends BrowserWindow {
         else if (this.isFullScreen() == true) {
             this.setFullScreen(false)
         }
-    }//toggleFullScreen
+    }
+
     toggleDev() {
         this.openDevTools()
-    }//toggleDev
-    
-    test() {
     }
+
 }
 var mainWindow;
 
 //Called when electron has finished initialising
 app.on('ready', () => {
+    //Create mainWindow
     mainWindow = new GUI(800,600,800,600,'#323233','./assets/logos/logo.png', 'index.html')
-    mainWindow.on('close', function() { //   <---- Catch close event
+    //Catch close event for custom close function
+    mainWindow.on('close', function() { 
+        //If devtools open close it
         if (mainWindow.webContents.isDevToolsOpened()){
             mainWindow.webContents.closeDevTools()
-            app.quit()
         }
+        //Quit entire app
+        app.quit()
     });
 })
 //Quit when all windows are closed except on macOS
@@ -131,10 +118,13 @@ bindings.list().then(list, err => {
   process.exit(1)
 })
 // console.log(bindings.list)
+
+//IPC messages for window Controls
 ipcMain.on('windowControl', (event, arg) => {
-    // var request = JSON.parse(arg)
     var request = arg
     if (request.window == 'mainWindow'){
+
+        //Open preferences window if func = openPreferences
         if (request.func == 'openPreferences') {
             //Create preferences window
             let preferencesWindow = new GUI(800,600,800,600,'#323233','./assets/logos/logo.png','./html/preferences.html')
@@ -146,25 +136,39 @@ ipcMain.on('windowControl', (event, arg) => {
             })
         
         }
+        
+        //Close
         if (request.func == 'close'){
             mainWindow.closeWin()
         }
+
+        //Minimize
         if (request.func == 'min'){
             mainWindow.minimizeWin()
         }
+
+        //Full screen
         if (request.func == 'toggleFullscreen'){
             mainWindow.toggleFullscreen()
         }
+
+        //Open devtools
         if (request.func == 'toggleDev'){
             mainWindow.toggleDev()
         }
+
+        //Reload window
         if (request.func == 'reload'){
             mainWindow.reload()
         }
+
+        //Open about dialog
         if (request.func == 'about'){
             event.reply('aboutData', aboutData)        
         }
     } 
+
+    //Quit 
     if (request.window == 'app' && request.func == 'exit' && process.platform !== 'darwin'){
         app.quit()
     }
