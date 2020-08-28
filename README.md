@@ -3,6 +3,7 @@
 
 # Sidings Media Railway Controller
 [![Documentation Status](https://readthedocs.org/projects/dc-model-railway-controller/badge/?version=latest)](https://smrcdocs.sidingsmedia.com/en/latest/?badge=latest)
+
 This is an opensource project that aims to produce a comprehensive system for the control of a DC model rail of any guage and any scale. It uses Wi-Fi to comunicate with the controlling device. This means that we can have near limitless expansion. The only limit is the number of devices you can have on your network. 
 
 
