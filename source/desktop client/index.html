@@ -37,7 +37,7 @@ License: MIT-->
                     <button class="editbar-button"><span title="Edit"><i class="fas fa-edit"></i></span></button>
                     <div id="myDropdown" class="dropdown-content">
                         <button>Add throttle control</button> 
-                        <button>Add accessory control</button> 
+                        <button onclick="addControl()">Add accessory control</button> 
                     </div>
                 </div>
                 <!--Window-->
@@ -59,11 +59,13 @@ License: MIT-->
                         <button onclick="openURL('license')">License</button> 
                         <button onclick="openURL('contribute')">Contribute</button> 
                         <button onclick="openURL('website')">Website</button>
+                        <!--Social Media-->
                         <div class="subdropdown">
                             <button><span class="left">Social Media</span><span class="right">></span></button>
                             <div id="myDropdown" class="subdropdown-content">
                                 <button onclick="openURL('facebook')">Facebook</button> 
                                 <button onclick="openURL('twitter')">Twitter</button> 
+                                <!--YouTube-->
                                 <div class="subsubdropdown">
                                     <button><span class="left">YouTube</span><span class="right">></span></button>
                                     <div class="subsubdropdown-content" id="myDropdown">
@@ -80,18 +82,10 @@ License: MIT-->
                         <button onclick="sendRequest({window:'mainWindow', func:'about'})">About</button>
                     </div>
                 </div>
-                <button class="editbar-button" onclick="addControl()"><i class="fas fa-plus"></i></button>
-                <button class="editbar-button" style="float: right;"><i class="fas fa-plus"></i></button>
 
             </div>
             <div id="main" class="main">
                 
-                <div class="control">
-                    <h1>This is a control area</h1>
-                </div>
-                <div class="control">
-                    <h1>This is a control area 2</h1>
-                </div>
             </div>
             <div class="side-bar">
                 
