@@ -86,7 +86,7 @@ var preferencesWindow;
 //Called when electron has finished initialising
 app.on('ready', () => {
     //Create mainWindow
-    mainWindow = new GUI(800,600,800,600,'#323233','./assets/logos/logo.png', '../index.html')
+    mainWindow = new GUI(900,600,900,600,'#323233','./assets/logos/logo.png', '../index.html')
     //Catch close event for custom close function
     mainWindow.on('close', function() { 
         //If devtools open close it
