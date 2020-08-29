@@ -56,6 +56,7 @@
     "@fortawesome/fontawesome-free": "^5.14.0",
     "custom-electron-titlebar": "^3.2.3",
     "jquery": "^3.5.1",
+    "jquery-ui": "^1.12.1",
     "mousetrap": "^1.6.5",
     "serialport": "^9.0.1",
     "sweetalert": "^2.1.2"
