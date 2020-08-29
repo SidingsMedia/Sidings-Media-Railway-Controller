@@ -86,7 +86,7 @@ var preferencesWindow;
 //Called when electron has finished initialising
 app.on('ready', () => {
     //Create mainWindow
-    mainWindow = new GUI(800,600,800,600,'#323233','./assets/logos/logo.png', 'index.html')
+    mainWindow = new GUI(800,600,800,600,'#323233','./assets/logos/logo.png', '../index.html')
     //Catch close event for custom close function
     mainWindow.on('close', function() { 
         //If devtools open close it
@@ -129,7 +129,7 @@ ipcMain.on('windowControl', (event, arg) => {
         //Open preferences window if func = openPreferences
         if (request.func == 'openPreferences') {
             //Create preferences window
-            preferencesWindow = new GUI(800,600,800,600,'#323233','./assets/logos/logo.png','./html/preferences.html')
+            preferencesWindow = new GUI(800,600,800,600,'#323233','./assets/logos/logo.png','../html/preferences.html')
             //On close close dev tools if open
             preferencesWindow.on('close', function() { 
                 if (preferencesWindow.webContents.isDevToolsOpened()){

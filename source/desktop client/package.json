@@ -6,7 +6,7 @@
   "main": "main.js",
   "private": "true",
   "scripts": {
-    "start": "electron  .",
+    "start": "electron  ./js/main.js",
     "pack": "electron-builder --dir",
     "dist": "electron-builder",
     "dist-win": "electron-builder --win -c.nsis.oneClick=false",
