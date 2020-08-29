@@ -15,13 +15,63 @@ let titlebar = new customTitlebar.Titlebar({
 });
 function addControl() {
 	var html = `
-		<div class=\"control\">
-			<h1>This is a control area</h1>
-		</div>
+				<div class="control">
+                    <div class="control-main">
+                        <h2>Relay Board 1</h2>
+                        <table class="control-main-buttons">
+                            <tr>
+                                <td><button>Channel 1</button></td>
+                                <td><button>Channel 2</button></td>
+                                <td><button>Channel 3</button></td>
+                                <td><button>Channel 4</button></td>
+                            </tr>
+                            <tr>
+                                <td><button>Channel 5</button></td>
+                                <td><button>Channel 6</button></td>
+                                <td><button>Channel 7</button></td>
+                                <td><button>Channel 8</button></td>
+                            </tr>
+                            <tr>
+                                <td><button>Channel 9</button></td>
+                                <td><button>Channel 10</button></td>
+                                <td><button>Channel 11</button></td>
+                                <td><button>Channel 12</button></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="control-sidebar">
+                        <div class="settingsDropdown">
+                            <button onclick="showSettingsDropdown('settingsDropdown')" class="settingsDropdownBtn control-sidebar-button"><i class="fas fa-ellipsis-h"></i></button>
+                            <div id="settingsDropdown" class="settingsDropdown-content">
+							  <button class="control-sidebar-button"><i class="fas fa-trash-alt"></i></button>
+							  <button class="control-sidebar-button"><i class="fas fa-pen"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 	`;        
 	$("#main").append(html);        
 
 }
+/* When the user clicks on the button, 
+            toggle between hiding and showing the dropdown content */
+function showSettingsDropdown(id) {
+	document.getElementById(id).classList.toggle("show");
+	}
+	
+	// Close the dropdown if the user clicks outside of it
+	window.onclick = function(event) {
+	if (!event.target.matches('.settingsDropdownBtn')) {
+		var dropdowns = document.getElementsByClassName("settingsDropdown-content");
+		var i;
+		for (i = 0; i < dropdowns.length; i++) {
+		var openDropdown = dropdowns[i];
+		if (openDropdown.classList.contains('show')) {
+			openDropdown.classList.remove('show');
+		}
+		}
+	}
+	}
 
 
 
