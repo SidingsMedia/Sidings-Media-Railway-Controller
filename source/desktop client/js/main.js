@@ -104,20 +104,20 @@ app.on('window-all-closed', () => {
     }
 })
 
-const bindings = require('@serialport/bindings')
+// const bindings = require('@serialport/bindings')
 
-var listOfPorts=[];
+// var listOfPorts=[];
 
-//called automatically by bindings.list()
-function list(ports) {
-  listOfPorts=ports;
-  // now listOfPorts will be the port Objects
-  console.log(listOfPorts);
-}
+// //called automatically by bindings.list()
+// function list(ports) {
+//   listOfPorts=ports;
+//   // now listOfPorts will be the port Objects
+//   console.log(listOfPorts);
+// }
 
-bindings.list().then(list, err => {
-  process.exit(1)
-})
+// bindings.list().then(list, err => {
+//   process.exit(1)
+// })
 // console.log(bindings.list)
 
 //IPC messages for window Controls
