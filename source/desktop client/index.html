@@ -13,11 +13,17 @@ License: MIT-->
         <link rel="stylesheet" href="css/mainstyle.css">
         <link rel="stylesheet" href="css/mainareastyle.css">
         <link rel="stylesheet" href="css/editbarstyle.css">
+        <link rel="stylesheet" href="./css/throttlebarstyle.css">
+        
         <!--Font awesome-->
         <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css">
-        <!--Javascript-->
-        <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+        <link rel="stylesheet" href="./node_modules/jquery-ui-dist/jquery-ui.min.css">
+        <script>
+            var $=require('jQuery')
+        </script>
+        <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
 
+        <!--Javascript-->
     </head>
     <body>
         <div class="container">
@@ -85,44 +91,33 @@ License: MIT-->
 
             </div>
             <div id="main" class="main">
-                
-                <div class="control">
-                    <div class="control-main">
-                        <h2>Relay Board 1</h2>
-                        <table class="control-main-buttons">
-                            <tr>
-                                <td><button>Channel 1</button></td>
-                                <td><button>Channel 2</button></td>
-                                <td><button>Channel 3</button></td>
-                                <td><button>Channel 4</button></td>
-                            </tr>
-                            <tr>
-                                <td><button>Channel 5</button></td>
-                                <td><button>Channel 6</button></td>
-                                <td><button>Channel 7</button></td>
-                                <td><button>Channel 8</button></td>
-                            </tr>
-                            <tr>
-                                <td><button>Channel 9</button></td>
-                                <td><button>Channel 10</button></td>
-                                <td><button>Channel 11</button></td>
-                                <td><button>Channel 12</button></td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div class="control-sidebar">
-                        <div class="settingsDropdown">
-                            <button onclick="showSettingsDropdown('settingsDropdown')" class="settingsDropdownBtn control-sidebar-button"><i class="fas fa-ellipsis-h"></i></button>
-                            <div id="settingsDropdown" class="settingsDropdown-content">
-                              <button class="control-sidebar-button"><i class="fas fa-trash-alt"></i></button>
-                              <button class="control-sidebar-button"><i class="fas fa-pen"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <!--This will be populated by javascript-->
             </div>
             <div class="side-bar">
-                <h3>Throttle</h3>
+                <div class="throttle-title">
+                    <h2>Throttle</h2>
+                </div>
+                <div class="throttle-area">
+                    <div class="throttle">
+                        <div class="throttle-info">
+                            <h3>Throttle 1</h3>
+                            <table>
+                                <tr>
+                                    <td><button class="throttle-button"><i class="fas fa-pause"></i></button></td>
+                                    <td><button class="throttle-button">></button></td>
+                                    <td><button class="throttle-button">>></button></td>
+                                </tr>
+                                <tr>
+                                    <td><button class="throttle-button"><i class="fas fa-ellipsis-h"></i></button></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <input type="range" min="0" max="255" value="0" class="slider" >
+                    </div>
+                </div>
+                <div class="e-stop">
+                    <button><h1>Stop!</h1></button>
+                </div>
             </div>
         </div>
         
