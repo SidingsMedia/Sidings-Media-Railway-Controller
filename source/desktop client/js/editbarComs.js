@@ -3,7 +3,6 @@
 //License: MIT
 const electron = require('electron')
 const ipc = electron.ipcRenderer
-const $ = require('jQuery'); 
 const swal = require('sweetalert')
 /**
  * 
