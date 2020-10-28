@@ -42,6 +42,8 @@ class GUI extends BrowserWindow {
             icon: icon,
             backgroundColor: backgroundColor,
             frame: false,
+            worldSafeExecuteJavaScript: true,
+            contextIsolation: true,
             webPreferences: {
                 nodeIntegration: true,
                 enableRemoteModule: true
