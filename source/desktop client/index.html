@@ -27,6 +27,47 @@ License: MIT-->
     </head>
     <body>
         <div class="container">
+            <div class="add-control-popup" id="add-control-popup">
+                <div class="popup-content">
+                    <span class="popup-close">&times;</span>
+                    <br>
+                    <form name="preferences" onsubmit="return ">
+                        <fieldset style="    margin-top: 20px;">
+                            <h1 style="text-align: center;">Add accessory control</h1>
+                        </fieldset>
+                        <fieldset>
+                            <div>
+                                <label for='friendly-name'>Friendly name</label>
+                                <input type="text" name="friendly-name" id="friendly-name" placeholder="Station Isolation">
+                                <div class="tooltip">&nbsp;<i class="fas fa-question-circle" ></i>
+                                    <span class="tooltiptext">This is friendly name of the board. This is meant to make boards easier to identify.</span>
+                                </div>
+                                <br>
+                                <label for="macInput">Board MAC address</label>
+                                
+                                <input type="text" name="macInput" id="macInput" pattern="^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$"  placeholder="FF:FF:FF:FF:FF:FF">
+                                
+                                <div class="tooltip">&nbsp;<i class="fas fa-question-circle" ></i>
+                                    <span class="tooltiptext">This is the MAC address of the accessory control board. Infomation on how to find this can be found in the documentation.</span>
+                                </div>
+                                <label for="boardType">Board type</label>
+                                <select name="boardType" id="boardType">
+                                    <option value="12Relay">12 Channel Relay</option>
+                                </select>
+                                <div class="tooltip">&nbsp;<i class="fas fa-question-circle" ></i>
+                                    <span class="tooltiptext">Select the type of board you have from the dropdown.</span>
+                                </div>
+                            </div>
+
+                        </fieldset>
+                        <fieldset style="padding: 0;">
+                            <button type="submit" class="save-button">Add Board</button>
+                        </fieldset>
+                        
+                    </form>
+                    <br>
+                </div>
+            </div>
             <div class="edit-bar">
                 <!--File-->
                 <div class="dropdown">
@@ -43,7 +84,8 @@ License: MIT-->
                     <button class="editbar-button"><span title="Edit"><i class="fas fa-edit"></i></span></button>
                     <div id="myDropdown" class="dropdown-content">
                         <button>Add throttle control</button> 
-                        <button onclick="addControl()">Add accessory control</button> 
+                        <!-- onclick="addControl()" -->
+                        <button id="add-control">Add accessory control</button> 
                     </div>
                 </div>
                 <!--Window-->
