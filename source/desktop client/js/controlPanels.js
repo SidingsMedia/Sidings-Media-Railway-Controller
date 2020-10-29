@@ -51,6 +51,25 @@ function showSettingsDropdown(id) {
 	}
 }
 
+//Delete panel
+function deletePanel(id){
+    try{
+        var rawData = fs.readFileSync(path.join(saveDir, 'smrc', 'panels.json'))
+        var data = JSON.parse(rawData)
+        delete data[id]
+        let saveData = JSON.stringify(data, null, 2)
+        fs.writeFile(path.join(saveDir, 'smrc', 'panels.json'), saveData, (err) =>{
+            if (err) throw err;
+        })
+        sendRequest({window:'mainWindow', func:'reload'})
+    }
+
+    
+    catch{
+        return
+    }
+}
+
 //Add control pannels
 function addControl(macAddress, friendlyName) {
     
@@ -83,7 +102,7 @@ function addControl(macAddress, friendlyName) {
                         <div class="settingsDropdown">
                             <button onclick="showSettingsDropdown('${macAddress}')" class="settingsDropdownBtn control-sidebar-button"><i class="fas fa-ellipsis-h"></i></button>
                             <div id="${macAddress}" class="settingsDropdown-content">
-							  <button class="control-sidebar-button"><i class="fas fa-trash-alt"></i></button>
+							  <button class="control-sidebar-button" onclick="deletePanel('${macAddress}')"><i class="fas fa-trash-alt"></i></button>
 							  <button class="control-sidebar-button"><i class="fas fa-pen"></i></button>
                             </div>
                         </div>
@@ -92,13 +111,16 @@ function addControl(macAddress, friendlyName) {
 	`;        
     $("#main").append(html); //Add pannel
     addControlPopup.style.display = 'none'  //Close popup
-    document.getElementById('macInput').value = ''
-    document.getElementById('friendly-name').value = ''
+    // document.getElementById('macInput').value = ''
+    // document.getElementById('friendly-name').value = ''
+    return true
 }
 
 //Add pannel from user input
-function userAddPannel(){
-    var rawData = fs.readFileSync(path.join(saveDir, 'smrc', 'panels.json'))
+function userAddPanel(){
+    var rawData = fs.readFileSync(path.join(saveDir, 'smrc', 'panels.json'), (err) =>{
+        if (err) throw err;
+    })
     var data = JSON.parse(rawData)
     var macAddress =  document.getElementById('macInput').value.toLowerCase().replace(/:/g, '-')
     var friendlyName = document.getElementById('friendly-name').value
@@ -118,18 +140,17 @@ function userAddPannel(){
     }
     data[macAddress] = friendlyName
     let saveData = JSON.stringify(data, null, 2)
-    fs.writeFile(path.join(saveDir, 'smrc', 'panels.json'), saveData, function(err){
-        if (err){
-            console.log(err)
-            return false
-        } 
+    fs.writeFile(path.join(saveDir, 'smrc', 'panels.json'), saveData, (err) =>{
+        if (err) throw err;
     })
     addControl(macAddress, friendlyName)
     return false//Prevent page reload
 }
 window.onload = function(){
     try{
-        var rawData = fs.readFileSync(path.join(saveDir, 'smrc', 'panels.json'))
+        var rawData = fs.readFileSync(path.join(saveDir, 'smrc', 'panels.json'), (err) => {
+            if (err) throw err;
+        })
         var data = JSON.parse(rawData)
         for(let k in data){
             addControl(k, data[k])
