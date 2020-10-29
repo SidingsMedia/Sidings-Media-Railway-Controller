@@ -9,7 +9,7 @@ const os = require('os')
 function saveSettings(){
     var outDir = process.env.LOCALAPPDATA || (process.platform == 'darwin' ? process.env.HOME + '/Library/Preferences' : process.env.HOME + "/.local/share")//Get outdir depending on os
     var ipAddress = document.getElementById('ipSelect').value
-    var ipCheck = RegExp("^(10|172\.1[6-9]|172\.2[0-9]|172\.3[0-1]|192\.168)\.")//Make sure that ip is private excluding 127.0.0.0/8 (localhost) and 169.254.0.0/16 (APIPA)
+    var ipCheck = RegExp("^(10|172.1[6-9]|172.2[0-9]|172.3[0-1]|192.168).")//Make sure that ip is private excluding 127.0.0.0/8 (localhost) and 169.254.0.0/16 (APIPA)
     if(ipCheck.test(ipAddress) === false){
         var el = document.createElement('div')
         el.className = 'infoPopup'
