@@ -88,6 +88,9 @@ body{
 .infoPopup{
     text-align: left;
 }
+.settingsSavePopup{
+    text-align: center;
+}
 .swal-button{
     background-color: #333333;
     border: none;
@@ -96,6 +99,12 @@ body{
 .swal-button:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     background: #464647 !important;
+}
+.swal-icon--success:after, .swal-icon--success:before {
+    background: #252526;
+}
+.swal-icon--success__hide-corners{
+    background-color: #252526;
 }
 .right{
     float: right;
