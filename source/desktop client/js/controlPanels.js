@@ -13,20 +13,30 @@ script.src = './node_modules/jquery/dist/jquery.min.js';
 document.getElementsByTagName('head')[0].appendChild(script);
 //Get Path to appdata or OS equivilent
 var saveDir = process.env.LOCALAPPDATA || (process.platform == 'darwin' ? process.env.HOME + '/Library/Preferences' : process.env.HOME + "/.local/share")//Get outdir depending on os
-//Handles opening and closing of add pannel popup
+//Handles opening and closing of popups
+//Add panel popup
 var addControlPopup = document.getElementById("add-control-popup");
 var addControlBtn = document.getElementById("add-control");
-var span = document.getElementsByClassName("popup-close")[0];
+var addControlSpan = document.getElementsByClassName("popup-close")[0];
 addControlBtn.onclick = function() {
-  addControlPopup.style.display = "block";
+    addControlPopup.style.display = "block";
 }
-//Close window when x clicked or click outside of popup
-span.onclick = function() {
+//Close popup when x clicked
+addControlSpan.onclick = function() {
     addControlPopup.style.display = "none";
+}
+//Edit panel popup
+var editControlPopup = document.getElementById("edit-control-popup");
+var editControlSpan = document.getElementsByClassName("popup-close")[1];
+editControlSpan.onclick = function(){
+    editControlPopup.style.display = "none"
 }
 window.onclick = function(event) {
     if (event.target == addControlPopup) {
-      addControlPopup.style.display = "none";
+        addControlPopup.style.display = "none";
+    }
+    if (event.target == editControlPopup){
+        editControlPopup.style.display = "none";
     }
 }
 
@@ -50,7 +60,40 @@ function showSettingsDropdown(id) {
 		}
 	}
 }
+//Show edit popup
+function showEditPanelPopup(id){
+    editControlPopup.style.display = "block"
+    try{
+        var rawData = fs.readFileSync(path.join(saveDir, 'smrc', 'panels.json'))
+        var data = JSON.parse(rawData)
+    }
+    catch{
+        return
+    }
+    document.getElementById('edit-friendly-name').value = data[id]
+    document.getElementById('edit-macInput').value = id.toUpperCase().replace(/-/g, ':')
+    document.getElementById('edit-macInput').readOnly = true
+    document.getElementById('edit-macInput').style.cursor = 'not-allowed'
 
+}
+function editPanel(){
+    macAddress = document.getElementById('edit-macInput').value.toLowerCase().replace(/:/g, '-')
+    friendlyName = document.getElementById('edit-friendly-name').value
+    try{
+        var rawData = fs.readFileSync(path.join(saveDir, 'smrc', 'panels.json'))
+        var data = JSON.parse(rawData)
+        data[macAddress] = friendlyName
+        let saveData = JSON.stringify(data, null, 2)
+        fs.writeFile(path.join(saveDir, 'smrc', 'panels.json'), saveData, (err) =>{
+            if (err) throw err;
+        })
+        sendRequest({window:'mainWindow', func:'reload'})
+    }
+    catch{
+        return
+    }
+    
+}
 //Delete panel
 function deletePanel(id){
     try{
@@ -103,20 +146,20 @@ function addControl(macAddress, friendlyName) {
                             <button onclick="showSettingsDropdown('${macAddress}')" class="settingsDropdownBtn control-sidebar-button"><i class="fas fa-ellipsis-h"></i></button>
                             <div id="${macAddress}" class="settingsDropdown-content">
 							  <button class="control-sidebar-button" onclick="deletePanel('${macAddress}')"><i class="fas fa-trash-alt"></i></button>
-							  <button class="control-sidebar-button"><i class="fas fa-pen"></i></button>
+							  <button class="control-sidebar-button" onclick="showEditPanelPopup('${macAddress}')"><i class="fas fa-pen"></i></button>
                             </div>
                         </div>
                     </div>
                 </div>
 	`;        
-    $("#main").append(html); //Add pannel
+    $("#main").append(html); //Add panel
     addControlPopup.style.display = 'none'  //Close popup
     // document.getElementById('macInput').value = ''
     // document.getElementById('friendly-name').value = ''
     return true
 }
 
-//Add pannel from user input
+//Add panel from user input
 function userAddPanel(){
     var rawData = fs.readFileSync(path.join(saveDir, 'smrc', 'panels.json'), (err) =>{
         if (err) throw err;

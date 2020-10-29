@@ -95,7 +95,7 @@ License: MIT*/
     padding-left: 12px;
 }
 /* The Modal (background) */
-.add-control-popup {
+.control-popup {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
