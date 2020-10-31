@@ -31,14 +31,7 @@ var editControlSpan = document.getElementsByClassName("popup-close")[1];
 editControlSpan.onclick = function(){
     editControlPopup.style.display = "none"
 }
-window.onclick = function(event) {
-    if (event.target == addControlPopup) {
-        addControlPopup.style.display = "none";
-    }
-    if (event.target == editControlPopup){
-        editControlPopup.style.display = "none";
-    }
-}
+
 
 //Show edit popup
 function showEditPanelPopup(id){
@@ -123,7 +116,7 @@ function addControl(macAddress, friendlyName) {
                     </div>
                     <div class="control-sidebar">
                         <div class="settingsDropdown">
-                            <button onclick="showSettingsDropdown('${macAddress}')" class="settingsDropdownBtn control-sidebar-button"><i class="fas fa-ellipsis-h"></i></button>
+                            <button onclick="showSettingsDropdown('${macAddress}')" class="settingsDropdownBtn control-sidebar-button"><i class="fas fa-ellipsis-h settingsDropdownBtn"></i></button>
                             <div id="${macAddress}" class="settingsDropdown-content">
 							  <button class="control-sidebar-button" onclick="deletePanel('${macAddress}')"><i class="fas fa-trash-alt"></i></button>
 							  <button class="control-sidebar-button" onclick="showEditPanelPopup('${macAddress}')"><i class="fas fa-pen"></i></button>
