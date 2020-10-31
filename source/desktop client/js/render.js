@@ -6,6 +6,25 @@
 const Mousetrap = require('mousetrap');
 const customTitlebar = require('custom-electron-titlebar');
 
+//Toggle dropdown
+function showSettingsDropdown(id) {
+	document.getElementById(id).classList.toggle("show");
+	}
+	
+	// Close the dropdown if the user clicks outside of it
+	window.onclick = function(event) {
+	if (!event.target.matches('.settingsDropdownBtn')) {
+		var dropdowns = document.getElementsByClassName("settingsDropdown-content");
+		var i;
+		for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+		}
+	}
+}
+
 //Set titlebar
 const bgcolour = '#323233';
 let titlebar = new customTitlebar.Titlebar({
