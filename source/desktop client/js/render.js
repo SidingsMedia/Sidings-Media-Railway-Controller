@@ -16,7 +16,7 @@ function showSettingsDropdown(id) {
 const bgcolour = "#323233";
 let titlebar = new customTitlebar.Titlebar({
 	backgroundColor: customTitlebar.Color.fromHex(bgcolour),
-	icon: "./assets/logos/logo.png",
+	icon: "../assets/logos/logo.png",
 });
 
 window.onclick = function (event) {

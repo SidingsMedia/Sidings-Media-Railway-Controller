@@ -107,7 +107,7 @@ app.on("ready", () => {
 		600,
 		"#323233",
 		"./assets/logos/logo.png",
-		"../index.html"
+		"../html/index.html"
 	);
 	//Catch close event for custom close function
 	mainWindow.on("close", function () {
