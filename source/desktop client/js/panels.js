@@ -7,11 +7,6 @@
 const fs = require("fs");
 const path = require("path");
 const os = require("os");
-// const { $ } = require('custom-electron-titlebar/lib/common/dom');
-//Include JQuery
-var script = document.createElement("script");
-script.src = "./node_modules/jquery/dist/jquery.min.js";
-document.getElementsByTagName("head")[0].appendChild(script);
 //Get Path to appdata or OS equivilent
 var saveDir =
 	process.env.LOCALAPPDATA ||
