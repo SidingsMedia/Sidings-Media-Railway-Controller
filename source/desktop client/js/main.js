@@ -1,6 +1,7 @@
 // ./main.js
-//Copyright 2020 Sidings Media
+//Copyright (c) 2020 Sidings Media, All rights reserved
 //License: MIT
+//See LICENSE in the project root for license information.
 
 const {
 	app,

@@ -1,6 +1,7 @@
 // ./js/openUrl.js
-//Copyright 2020 Sidings Media
+//Copyright (c) 2020 Sidings Media, All rights reserved
 //License: MIT
+//See LICENSE in the project root for license information.
 const { shell } = require("electron");
 var urls = {
 	facebook: "https://www.facebook.com/Sidings-Media-589191041769930",
