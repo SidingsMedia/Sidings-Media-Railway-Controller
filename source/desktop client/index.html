@@ -36,7 +36,7 @@ License: MIT-->
                             <h1 style="text-align: center;">Add accessory control</h1>
                         </fieldset>
                         <fieldset>
-                            <div>
+                            <div id="options">
                                 <label for='friendly-name'>Friendly name</label>
                                 <input type="text" name="friendly-name" id="friendly-name" placeholder="Station Isolation" required>
                                 <div class="tooltip">&nbsp;<i class="fas fa-question-circle" ></i>
@@ -51,8 +51,10 @@ License: MIT-->
                                     <span class="tooltiptext">This is the MAC address of the accessory control board. Infomation on how to find this can be found in the documentation.</span>
                                 </div>
                                 <label for="boardType">Board type</label>
-                                <select name="boardType" id="boardType">
+                                <select name="boardType" id="boardType" onchange="extraFormInputs()" required>
+                                    <option value="" selected disabled hidden >--Select--</option>
                                     <option value="12Relay">12 Channel Relay</option>
+                                    <option value="throttle">Throttle</option>
                                 </select>
                                 <div class="tooltip">&nbsp;<i class="fas fa-question-circle" ></i>
                                     <span class="tooltiptext">Select the type of board you have from the dropdown.</span>
@@ -68,7 +70,7 @@ License: MIT-->
                     <br>
                 </div>
             </div>
-            <div class="control-popup" id="edit-control-popup">
+            <!-- <div class="control-popup" id="edit-control-popup">
                 <div class="popup-content">
                     <span class="popup-close">&times;</span>
                     <br>
@@ -92,8 +94,10 @@ License: MIT-->
                                     <span class="tooltiptext">This is the MAC address of the accessory control board. You cannot edit this after adding a board.</span>
                                 </div>
                                 <label for="edit-boardType">Board type</label>
-                                <select name="edit-boardType" id="edit-boardType">
+                                <select name="edit-boardType" id="edit-boardType" required>
+                                    <option value="" selected disabled hidden>--Select--</option>
                                     <option value="12Relay">12 Channel Relay</option>
+                                    <option value="throttle">Throttle</option>
                                 </select>
                                 <div class="tooltip">&nbsp;<i class="fas fa-question-circle" ></i>
                                     <span class="tooltiptext">Select the type of board you have from the dropdown.</span>
@@ -108,7 +112,7 @@ License: MIT-->
                     </form>
                     <br>
                 </div>
-            </div>
+            </div> -->
             <div class="edit-bar">
                 <!--File-->
                 <div class="dropdown">
@@ -124,7 +128,6 @@ License: MIT-->
                 <div class="dropdown">
                     <button class="editbar-button"><span title="Edit"><i class="fas fa-edit"></i></span></button>
                     <div id="myDropdown" class="dropdown-content">
-                        <button>Add throttle control</button> 
                         <button id="add-control">Add accessory control</button> 
                     </div>
                 </div>
@@ -179,7 +182,7 @@ License: MIT-->
                 <div class="throttle-title">
                     <h2>Throttle</h2>
                 </div>
-                <div class="throttle-area">
+                <div class="throttle-area" id="throttle-area">
                     <div class="throttle">
                         <div class="throttle-info">
                             <h3>Throttle 1</h3>
@@ -190,7 +193,16 @@ License: MIT-->
                                     <td><button class="throttle-button">>></button></td>
                                 </tr>
                                 <tr>
-                                    <td><button class="throttle-button"><i class="fas fa-ellipsis-h"></i></button></td>
+                                    <!-- <td><button class="throttle-button"><i class="fas fa-ellipsis-h"></i></button></td> -->
+                                    <td>
+                                    <div class="settingsDropdown">
+                                        <button onclick="showSettingsDropdown('test')" class="settingsDropdownBtn throttle-button"><i class="fas fa-ellipsis-h settingsDropdownBtn"></i></button>
+                                        <div id="test" class="settingsDropdown-content throttleDropdown-content">
+                                          <button class="throttle-dropdown-button" onclick="deletePanel('test')"><i class="fas fa-trash-alt"></i></button>
+                                          <button class="throttle-dropdown-button" onclick="showEditPanelPopup('test')"><i class="fas fa-pen"></i></button>
+                                        </div>
+                                    </div>
+                                    </td>
                                 </tr>
                             </table>
                         </div>
@@ -208,7 +220,7 @@ License: MIT-->
         <script src="./js/openUrl.js"></script>
         <script src="./js/editbarComs.js"></script>
         <script src="js/render.js"></script>
-        <script src="./js/controlPanels.js"></script>
+        <script src="./js/panels.js"></script>
 
     </body>
 </html>
