@@ -66,6 +66,123 @@ addControlSpan.onclick = function () {
 //     }
 
 // }
+function showEditPanelPopup(id) {
+	try {
+		var rawData = fs.readFileSync(
+			path.join(saveDir, "smrc", "panels.json")
+		);
+		var data = JSON.parse(rawData);
+	} catch {
+		var el = document.createElement("div");
+		el.className = "settingsSavePopup";
+		el.innerHTML = `An error occured when trying to access the config file`;
+		swal({
+			title: "Error",
+			content: el,
+			icon: "error",
+		});
+	}
+	var html = `
+            <div class="control-popup" id="edit-control-popup">
+                <div class="popup-content">
+                    <span onclick="$('#edit-control-popup').remove();" class="popup-close">&times;</span>
+                    <br>
+                    <form name="preferences" onsubmit="return editPanel('${id}') ">
+                        <fieldset style="    margin-top: 20px;">
+                            <h1 style="text-align: center;">Edit accessory control</h1>
+                        </fieldset>
+                        <fieldset>
+                            <div id="edit-options">
+                                <label for='edit-friendly-name'>Friendly name</label>
+                                <input type="text" name="edit-friendly-name" id="edit-friendly-name" placeholder="Station Isolation" required value="${
+									data[id]["friendlyName"]
+								}">
+                                <div class="tooltip">&nbsp;<i class="fas fa-question-circle" ></i>
+                                    <span class="tooltiptext">This is friendly name of the board. This is meant to make boards easier to identify.</span>
+                                </div>
+                                <br>
+                                <label for="edit-macInput">Board MAC address</label>
+                                
+                                <input type="text" name="edit-macInput" id="edit-macInput" pattern="^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$"  placeholder="FF:FF:FF:FF:FF:FF" required value="${data[
+									id
+								]["macAddress"]
+									.toUpperCase()
+									.replace(/-/g, ":")}">
+                                
+                                <div class="tooltip">&nbsp;<i class="fas fa-question-circle" ></i>
+                                    <span class="tooltiptext">This is the MAC address of the accessory control board. You cannot edit this after adding a board.</span>
+                                </div>
+                                <label for="edit-boardType">Board type</label>
+                                <select name="edit-boardType" id="edit-boardType" required>
+                                    <option value="" selected disabled hidden>--Select--</option>
+                                    <option value="12Relay">12 Channel Relay</option>
+                                    <option value="throttle">Throttle</option>
+                                </select>
+                                <div class="tooltip">&nbsp;<i class="fas fa-question-circle" ></i>
+                                    <span class="tooltiptext">Select the type of board you have from the dropdown. You cannot edit this after adding a board.</span>
+                                </div>
+                            </div>
+
+                        </fieldset>
+                        <fieldset style="padding: 0;">
+                            <button type="submit" class="save-button">Save</button>
+                        </fieldset>
+                        
+                    </form>
+                    <br>
+                </div>
+            </div>
+    `;
+	$("#main").append(html);
+	switch (data[id]["boardType"]) {
+		case "throttle":
+			var additionalHtml = `
+                <div class="otherOption">
+                    <label for='edit-channelNo'>Channel Number</label>
+                    <input type="text" name="channelNo" id="edit-channelNo" placeholder="1" pattern"(?<!\\S)[1-4](?!\\S)" required value="${data[id]["channelNo"]}">
+                    <div class="tooltip">&nbsp;<i class="fas fa-question-circle" ></i>
+                        <span class="tooltiptext">This is number of the channel that you are using. You cannot edit this after adding a board.</span>
+                    </div>
+                </div
+            `;
+			$("#edit-options").append(additionalHtml);
+			document.getElementById("edit-channelNo").readOnly = true;
+			document.getElementById("edit-channelNo").style.cursor =
+				"not-allowed";
+			break;
+		default:
+		//pass
+	}
+
+	document.getElementById("edit-control-popup").style.display = "block";
+	document.getElementById("edit-boardType").value = data[id]["boardType"];
+	document.getElementById("edit-boardType").disabled = true;
+	document.getElementById("edit-boardType").style.cursor = "not-allowed";
+	document.getElementById("edit-macInput").readOnly = true;
+	document.getElementById("edit-macInput").style.cursor = "not-allowed";
+}
+function editPanel(id) {
+	var boardType = document.getElementById("edit-boardType").value;
+	try {
+		var rawData = fs.readFileSync(
+			path.join(saveDir, "smrc", "panels.json")
+		);
+		var data = JSON.parse(rawData);
+		data[id]["friendlyName"] = document.getElementById(
+			"edit-friendly-name"
+		).value;
+		let saveData = JSON.stringify(data, null, 2);
+		fs.writeFile(
+			path.join(saveDir, "smrc", "panels.json"),
+			saveData,
+			(err) => {
+				if (err) throw err;
+			}
+		);
+	} catch {
+		return;
+	}
+}
 //Delete panel
 function deletePanel(id) {
 	try {
