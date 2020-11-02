@@ -14,7 +14,7 @@ body{
     height: 100%;
     display: grid;
     /* grid-column-gap: 50px; */
-    grid-template-columns: auto 250px;
+    grid-template-columns: auto 260px;
     grid-template-rows: 50px auto;
 
 }
