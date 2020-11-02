@@ -196,12 +196,14 @@ fieldset{
     opacity: 0;
     transition: opacity 0.3s;
 }
-input[type=text], select, textarea {
+input[type=text], select, textarea, select:disabled {
     width: calc(100% - 260px);
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
     resize: vertical;
+    opacity: 1;
+    color: black;
 }
 label{
     float: left;

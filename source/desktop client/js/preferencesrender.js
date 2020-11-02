@@ -1,9 +1,10 @@
 // ./js/preferencesrender.js
-//Copyright 2020 Sidings Media
+//Copyright (c) 2020 Sidings Media, All rights reserved
 //License: MIT
-const customTitlebar = require('custom-electron-titlebar');
-const bgcolour = '#323233';
+//See LICENSE in the project root for license information.
+const customTitlebar = require("custom-electron-titlebar");
+const bgcolour = "#323233";
 let titlebar = new customTitlebar.Titlebar({
 	backgroundColor: customTitlebar.Color.fromHex(bgcolour),
-	icon: '../assets/logos/logo.png',
+	icon: "../assets/logos/logo.png",
 });
