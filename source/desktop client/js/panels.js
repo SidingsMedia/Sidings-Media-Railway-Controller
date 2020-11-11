@@ -115,7 +115,8 @@ function showEditPanelPopup(id) {
                                 <label for="edit-boardType">Board type</label>
                                 <select name="edit-boardType" id="edit-boardType" required>
                                     <option value="" selected disabled hidden>--Select--</option>
-                                    <option value="12Relay">12 Channel Relay</option>
+									<option value="12Relay">12 Channel Relay</option>
+									<option value="10Relay">10 Channel Relay</option>
                                     <option value="throttle">Throttle</option>
                                 </select>
                                 <div class="tooltip">&nbsp;<i class="fas fa-question-circle" ></i>
@@ -279,6 +280,47 @@ function addControl(boardID, friendlyName, boardType, macAddress) {
                     </div>
                 </div>
             `;
+			break;
+		case "10Relay":
+			var insertLocation = "#main";
+			var html = `
+				<div class="control">
+                    <div class="control-main">
+                        <h2>${friendlyName}</h2>
+                        <table class="control-main-buttons">
+                            <tr>
+                                <td><button>Channel 1</button></td>
+                                <td><button>Channel 6</button></td>
+							</tr>
+							<tr>
+                                <td><button>Channel 2</button></td>
+                                <td><button>Channel 7</button></td>
+							</tr>
+							<tr>
+                                <td><button>Channel 3</button></td>
+                                <td><button>Channel 8</button></td>
+							</tr>
+							<tr>
+                                <td><button>Channel 4</button></td>
+                                <td><button>Channel 9</button></td>
+							</tr>
+							<tr>
+                                <td><button>Channel 5</button></td>
+                                <td><button>Channel 10</button></td>
+							</tr>
+                        </table>
+                    </div>
+                    <div class="control-sidebar">
+                        <div class="settingsDropdown">
+                            <button onclick="showSettingsDropdown('${boardID}')" class="settingsDropdownBtn control-sidebar-button"><i class="fas fa-ellipsis-h settingsDropdownBtn"></i></button>
+                            <div id="${boardID}" class="settingsDropdown-content">
+							  <button class="control-sidebar-button" onclick="deletePanel('${boardID}')"><i class="fas fa-trash-alt"></i></button>
+							  <button class="control-sidebar-button" onclick="showEditPanelPopup('${boardID}')"><i class="fas fa-pen"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+			`;
 			break;
 		default:
 			return;
