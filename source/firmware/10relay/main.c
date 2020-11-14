@@ -16,7 +16,6 @@
 #define UBRR 103//(F_CPU/(16*9600))-1 //Calculate baud rate
 //Include necessary header files
 #include <avr/io.h>
-#include <util/delay.h>
 void serialOut(char ch)
 {
 	while ((UCSR0A & (1<<UDRE0))==0);
