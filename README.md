@@ -1,29 +1,14 @@
-![](https://github.com/SidingsMedia/Sidings-Media-Railway-Controller/blob/master/source/desktop%20client/assets/logos/railway-controller-open-graph-template.png)
-
-
 # Sidings Media Railway Controller
-[![Documentation Status](https://readthedocs.org/projects/dc-model-railway-controller/badge/?version=latest)](https://smrcdocs.sidingsmedia.com/en/latest/?badge=latest) [![Join the chat at https://gitter.im/SidingsMedia/Railway-Controller](https://badges.gitter.im/SidingsMedia/Railway-Controller.svg)](https://gitter.im/SidingsMedia/Railway-Controller?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) ![GitHub issues](https://img.shields.io/github/issues/sidingsmedia/sidings-media-railway-controller) ![GitHub last commit](https://img.shields.io/github/last-commit/sidingsmedia/sidings-media-railway-controller)
+<!-- [![Documentation Status](https://readthedocs.org/projects/dc-model-railway-controller/badge/?version=latest)](https://smrcdocs.sidingsmedia.com/en/latest/?badge=latest) [![Join the chat at https://gitter.im/SidingsMedia/Railway-Controller](https://badges.gitter.im/SidingsMedia/Railway-Controller.svg)](https://gitter.im/SidingsMedia/Railway-Controller?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) ![GitHub issues](https://img.shields.io/github/issues/sidingsmedia/sidings-media-railway-controller) ![GitHub last commit](https://img.shields.io/github/last-commit/sidingsmedia/sidings-media-railway-controller) -->
 
-This is an opensource project that aims to produce a comprehensive system for the control of a DC model rail of any guage and any scale. It uses Wi-Fi to comunicate with the controlling device. This means that we can have near limitless expansion. The only limit is the number of devices you can have on your network. 
+Sidings Media Railway Controller aims to provide you a quick and easy way of controlling your model railway from your computer without all of the complications of DCC.
 
+## Repositories
 
-## Plans
-At first only a desktop version of the client will be released. It will be released for windows, linux and macOS. Any versions for macOS will be untested due to no machines running such
-an operating system being available. For linux the application will be available in .rpm, .deb and .Appimage formats. For windows there will be a .exe installer. After the desktop client 
-is at a stable point in development, work will start on the android app. There are no plans as of current for an IOS app due to the lack of availibility of any devices running such an OS.
+This project is split into multiple repositories. Each repo can be found in the Sidings Media organization and are prefixed with SMRC. There are repos for firmware, hardware and various clients. An extensive list can be found below. All documentation for the project can be found in this repo under the docs directory.
 
+| Repo URL | Description          |
+| -------- | -------------------- |
 
-## The boards
-The boards are designed using Easy EDA. This software unfortunatly does not intergrate with git so we may switch to KiCad in future. At the moment, although there are some designs for 
-boards on GitHub, the most current designs will be available from the [EasyEda Website](https://easyeda.com/Sidings-Media/). All the designs to do with this project will be prefixed by
- ```Model Railway Control System:```.
-
-
-## The client software
-The client software is designed using the electron framework with a python backend to comunicate with the boards.
-
-## Tasks
-For a more indepth look into tasks, bugs and milestones then please check out our openproject instance [openproject.sidingsmedia.com](https://openproject.sidingsmedia.com/projects/sidings-media-railway-controller/)
-
-## [License](https://github.com/SidingsMedia/Sidings-Media-Railway-Controller/blob/master/LICENSE)
-All software is licensed under the [MIT](https://github.com/SidingsMedia/Sidings-Media-Railway-Controller/blob/master/LICENSE) license. In general this is anything in the source subfolder. All hardware and designs are licensed under [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/legalcode). I general this is anything in the boards subfolder. To view a human redable and sumarised version, click [here](https://creativecommons.org/licenses/by-sa/3.0/). This is a human-readable summary of (and not a substitute for) the [license](https://creativecommons.org/licenses/by-sa/3.0/legalcode). 
+## Licence
+The licence for each repository can be found in the project root. You can also obtain the licence by contacting [contact@sidingsmedia.com](mailto:contact@sidingsmedia.com?subject=SMRC%20Licence) and detailing the repository you are enquiring about.
