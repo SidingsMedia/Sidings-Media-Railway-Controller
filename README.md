@@ -9,6 +9,7 @@ This project is split into multiple repositories. Each repo can be found in the 
 
 | Repo URL | Description          |
 | -------- | -------------------- |
+| https://github.com/SidingsMedia/SMRC-Desktop-Client | The cross platform desktop client |
 
 ## Licence
 The licence for each repository can be found in the project root. You can also obtain the licence by contacting [contact@sidingsmedia.com](mailto:contact@sidingsmedia.com?subject=SMRC%20Licence) and detailing the repository you are enquiring about.
