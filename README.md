@@ -1,7 +1,7 @@
 # Sidings Media Railway Controller
 [![Documentation Status](https://readthedocs.org/projects/dc-model-railway-controller/badge/?version=latest)](https://smrcdocs.sidingsmedia.com/en/latest/?badge=latest) 
 
-![SMRC Project Logo](https://github.com/SidingsMedia/Sidings-Media-Railway-Controller/blob/master/logo/track-bw-square-long.svg)
+![SMRC Project Logo](https://github.com/SidingsMedia/SMRC-logos/blob/master/track-bw-square-long.svg)
 
 Sidings Media Railway Controller aims to provide you a quick and easy way of controlling your model railway from your computer without all of the complications of DCC.
 
