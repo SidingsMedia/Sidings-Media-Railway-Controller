@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright (c) 2021 Sidings Media
+
+# SPDX-License-Identifier: CC0-1.0
 .vscode
 node_modules
 dist

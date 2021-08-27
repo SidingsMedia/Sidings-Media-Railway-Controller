@@ -1,0 +1,8 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Sidings-Media-Railway-Controller
+Upstream-Contact: Matthew Nickson <contact@sidingsmedia.com>
+Source: https://github.com/SidingsMedia/Sidings-Media-Railway-Controller
+
+Files: docs/*
+Copyright: Copyright (c) 2021 Sidings Media
+License: CC-BY-SA-4.0

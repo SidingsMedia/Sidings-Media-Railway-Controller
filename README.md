@@ -1,3 +1,8 @@
+<!-- 
+SPDX-FileCopyrightText: Copyright (c) 2021 Sidings Media 
+
+SPDX-License-Identifier: MIT
+-->
 # Sidings Media Railway Controller
 [![Documentation Status](https://readthedocs.org/projects/dc-model-railway-controller/badge/?version=latest)](https://smrcdocs.sidingsmedia.com/en/latest/?badge=latest) 
 
@@ -11,10 +16,11 @@ This project is split into multiple repositories. Each repo can be found in the 
 
 | Repo URL | Description          | Maintained |
 | -------- | -------------------- | ---------- |
-| https://github.com/SidingsMedia/SMRC-Desktop-Client | The cross platform desktop client | [x] |
-| https://github.com/SidingsMedia/SMRC-hardware| All board designs and schematics | [x] |
-| https://github.com/SidingsMedia/SMRC-firmware | All firmware for the boards | [x] |
-| https://github.com/SidingsMedia/SMRC-logos | The logos for the projct | [x] |
+| https://github.com/SidingsMedia/SMRC-Desktop-Client | The cross platform desktop client | ✓ |
+| https://github.com/SidingsMedia/SMRC-hardware| All board designs and schematics | ✓ |
+| https://github.com/SidingsMedia/SMRC-firmware | All firmware for the boards | ✓ |
+| https://github.com/SidingsMedia/SMRC-logos | The logos for the projct | ✓ |
 
 ## Licence
-The licence for each repository can be found in the project root. You can also obtain the licence by contacting [contact@sidingsmedia.com](mailto:contact@sidingsmedia.com?subject=SMRC%20Licence) and detailing the repository you are enquiring about. Some content in a repository may be licenced under different terms to the licence in the project root. In this case there will be a LICENCE file in the sub directory. If you are unsure of te licencing terms please contact [contact@sidingsmedia.com](mailto:contact@sidingsmedia.com?subject=SMRC%20Licence). The root licence is overridden by any licences in sub direcories.
+All official SMRC projects (i.e all in the table above), use the [REUSE](https://reuse.software) standard in order to communicate the correct licence for the file. For those unfamiliar with the 
+standard the licence for each file can be found in one of three places. The licence will either be in a comment block at the top of the file, in a `.license` file with the same name as the file, or in the dep5 file located in the `.reuse` directory. If you are unsure of the licencing terms please contact [contact@sidingsmedia.com](mailto:contact@sidingsmedia.com?subject=SMRC%20Licence). All files committed to any SMRC repo must contain valid licencing information or the pull request can not be accepted.
