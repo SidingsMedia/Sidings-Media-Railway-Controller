@@ -6,7 +6,7 @@ SPDX-License-Identifier: MIT
 # Sidings Media Railway Controller
 [![Documentation Status](https://readthedocs.org/projects/dc-model-railway-controller/badge/?version=latest)](https://smrcdocs.sidingsmedia.com/en/latest/?badge=latest) [![REUSE status](https://api.reuse.software/badge/github.com/SidingsMedia/Sidings-Media-Railway-Controller)](https://api.reuse.software/info/github.com/SidingsMedia/Sidings-Media-Railway-Controller)
 
-![SMRC Project Logo](https://github.com/SidingsMedia/SMRC-logos/blob/master/track-bw-square-long.svg)
+![SMRC Project Logo](https://github.com/SidingsMedia/SMRC-logos/blob/main/track-bw-square-long.svg)
 
 Sidings Media Railway Controller aims to provide you a quick and easy way of controlling your model railway from your computer without all of the complications of DCC.
 
