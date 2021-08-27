@@ -4,7 +4,7 @@ SPDX-FileCopyrightText: Copyright (c) 2021 Sidings Media
 SPDX-License-Identifier: MIT
 -->
 # Sidings Media Railway Controller
-[![Documentation Status](https://readthedocs.org/projects/dc-model-railway-controller/badge/?version=latest)](https://smrcdocs.sidingsmedia.com/en/latest/?badge=latest) 
+[![Documentation Status](https://readthedocs.org/projects/dc-model-railway-controller/badge/?version=latest)](https://smrcdocs.sidingsmedia.com/en/latest/?badge=latest) [![REUSE status](https://api.reuse.software/badge/github.com/SidingsMedia/Sidings-Media-Railway-Controller)](https://api.reuse.software/info/github.com/SidingsMedia/Sidings-Media-Railway-Controller)
 
 ![SMRC Project Logo](https://github.com/SidingsMedia/SMRC-logos/blob/master/track-bw-square-long.svg)
 
