@@ -1,3 +1,9 @@
+<!-- 
+SPDX-FileCopyrightText: Copyright (c) 2021 Sidings Media 
+SPDX-FileCopyrightText: Copyright (c) 2014 Coraline Ada Ehmke
+
+SPDX-License-Identifier: CC-BY-4.0
+-->
 # Contributor Covenant Code of Conduct
 
 ## Our Pledge
