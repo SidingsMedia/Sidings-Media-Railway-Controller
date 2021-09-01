@@ -19,7 +19,9 @@ This project is split into multiple repositories. Each repo can be found in the 
 | https://github.com/SidingsMedia/SMRC-Desktop-Client | The cross platform desktop client | ✓ |
 | https://github.com/SidingsMedia/SMRC-hardware| All board designs and schematics | ✓ |
 | https://github.com/SidingsMedia/SMRC-firmware | All firmware for the boards | ✓ |
-| https://github.com/SidingsMedia/SMRC-logos | The logos for the projct | ✓ |
+| https://github.com/SidingsMedia/SMRC-logos | The logos for the project | ✓ |
+| https://github.com/SidingsMedia/SMRC-bootloader | The bootloaders for all official SMRC boards | ✓ |
+| https://github.com/SidingsMedia/SMRC-template | The template for all SMRC repos | ✓ |
 
 ## Licence
 All official SMRC projects (i.e all in the table above), use the [REUSE](https://reuse.software) standard in order to communicate the correct licence for the file. For those unfamiliar with the 
