@@ -55,16 +55,18 @@ directory. If you are unsure of the licencing terms please email
 .. toctree::
     :caption: Boards
     :maxdepth: 2
+
     boards/firmware
     boards/hardware
-    logos
 
 .. toctree::
     :caption: Clients
     :maxdepth: 2
+
     clients/desktop-client
 
 .. toctree::
     :caption: For developers
     :maxdepth: 3
+    
     developers/logos
