@@ -11,7 +11,6 @@ way of controlling your model railway from your computer without all of
 the complications of DCC.
 
 .. toctree::
-    :hidden:
     index
     firmware
     hardware
