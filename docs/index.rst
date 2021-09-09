@@ -10,11 +10,6 @@ Sidings Media Railway Controller aims to provide you a quick and easy
 way of controlling your model railway from your computer without all of
 the complications of DCC.
 
-.. toctree::
-    firmware
-    hardware
-    desktop-client
-    logos
 
 Repositories
 ------------
@@ -56,3 +51,20 @@ directory. If you are unsure of the licencing terms please email
 
 .. _contact@sidingsmedia.com: mailto:contact@sidingsmedia.com
 .. _REUSE: https://reuse.software
+
+.. toctree::
+    :caption: Boards
+    :maxdepth: 2
+    boards/firmware
+    boards/hardware
+    logos
+
+.. toctree::
+    :caption: Clients
+    :maxdepth: 2
+    clients/desktop-client
+
+.. toctree::
+    :caption: For developers
+    :maxdepth: 3
+    developers/logos
