@@ -12,7 +12,6 @@ the complications of DCC.
 
 .. toctree::
     :maxdepth: 1
-    index
     firmware
     hardware
     desktop-client
