@@ -98,7 +98,7 @@ html_theme_path = ["_themes", ]
 
 
 html_logo = 'https://raw.githubusercontent.com/SidingsMedia/SMRC-logos/main/rendered/track-bw-square-192.png',
-html_favicon = 'https://raw.githubusercontent.com/SidingsMedia/SMRC-logos/main/rendered/favicon.ico'
+# html_favicon = 'https://raw.githubusercontent.com/SidingsMedia/SMRC-logos/main/rendered/favicon.ico'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
