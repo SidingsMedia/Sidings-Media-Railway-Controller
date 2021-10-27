@@ -70,3 +70,4 @@ directory. If you are unsure of the licencing terms please email
     :maxdepth: 3
     
     developers/logos
+    developers/desktop-client
