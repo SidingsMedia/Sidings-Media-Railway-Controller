@@ -1,5 +1,6 @@
+################################
 Sidings Media Railway Controller
-================================
+################################
 
 .. figure::https://raw.githubusercontent.com/SidingsMedia/SMRC-logos/main/track-bw-square-long.svg
     :alt: SMRC Project Logo
@@ -9,6 +10,10 @@ Sidings Media Railway Controller
 Sidings Media Railway Controller aims to provide you a quick and easy
 way of controlling your model railway from your computer without all of
 the complications of DCC.
+
+========
+Contents
+========
 
 Repository information
 ----------------------
