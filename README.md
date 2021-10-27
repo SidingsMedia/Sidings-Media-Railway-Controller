@@ -6,7 +6,7 @@ SPDX-License-Identifier: MIT
 # Sidings Media Railway Controller
 [![Documentation Status](https://readthedocs.org/projects/sidings-media-railway-controller/badge/?version=latest)](https://docs.sidingsmedia.com/projects/smrc/en/latest/?badge=latest) [![REUSE status](https://api.reuse.software/badge/github.com/SidingsMedia/Sidings-Media-Railway-Controller)](https://api.reuse.software/info/github.com/SidingsMedia/Sidings-Media-Railway-Controller) ![GitHub branch checks state](https://img.shields.io/github/checks-status/SidingsMedia/Sidings-Media-Railway-Controller/main?label=main%20checks) ![GitHub branch checks state](https://img.shields.io/github/checks-status/SidingsMedia/Sidings-Media-Railway-Controller/develop?label=develop%20checks) ![GitHub issues](https://img.shields.io/github/issues/SidingsMedia/Sidings-Media-Railway-Controller) ![GitHub last commit](https://img.shields.io/github/last-commit/sidingsmedia/sidings-media-railway-controller) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/SidingsMedia/Sidings-Media-Railway-Controller) ![Lines of code](https://img.shields.io/tokei/lines/github/SidingsMedia/Sidings-Media-Railway-Controller)
 
-![SMRC Project Logo](https://github.com/SidingsMedia/SMRC-logos/blob/main/track-bw-square-long.svg)
+![SMRC Project Logo](https://raw.githubusercontent.com/SidingsMedia/SMRC-logos/main/track-bw-square-long.svg)
 
 Sidings Media Railway Controller aims to provide you a quick and easy way of controlling your model railway from your computer without all of the complications of DCC.
 
