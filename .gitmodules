@@ -2,5 +2,5 @@
 
 # SPDX-License-Identifier: CC0-1.0
 [submodule "logos"]
-	path = logos
+	path = docs/_static/logos
 	url = https://github.com/SidingsMedia/SMRC-logos
