@@ -91,7 +91,9 @@ html_theme_options = {
     'sticky_navigation': True,
     'navigation_depth': 3,
     'includehidden': True,
-    'titles_only': False
+    'titles_only': False,
+    'html_logo': './_static/logos/rendered/track-bw-square-192.png',
+    'html_favicon': './_static/logos/rendered/favicon.ico'
 }
 
 html_theme_path = ["_themes", ]
