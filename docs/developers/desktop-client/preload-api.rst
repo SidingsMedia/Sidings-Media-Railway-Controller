@@ -26,10 +26,13 @@ window.control.registerIPC(channel, callback)
 * callback - A function that is called when an IPC message is received from the main proccess. 
 
 This method registers the IPC handlers for window control features. It also sets the channel 
-name that the API should use when sending requests to the main proccess. If this method is not called then features such as detecting when the window goes in and out of focus or when it is 
-minimized or maximized will not work and requests sent to control the window will be sent on 
-the ``win-ctrl`` channel which may or may not have any handlers registered and may cause errors in the main proccess as well as the render proccess. If the ``window.control`` API is to
-be used this method should be called as soon as possible after page load.
+name that the API should use when sending requests to the main proccess. 
+.. note::
+    
+    If this method is not called then features such as detecting when the window goes in and out of focus or when it is 
+    minimized or maximized will not work and requests sent to control the window will be sent on 
+    the ``win-ctrl`` channel which may or may not have any handlers registered and may cause errors in the main proccess as well as the render proccess. If the ``window.control`` API is to
+    be used this method should be called as soon as possible after page load.
 
 window.control.openDevTools()
 """"""""""""""""""""""""""""""
