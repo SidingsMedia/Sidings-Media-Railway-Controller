@@ -1,5 +1,5 @@
 Desktop Client
-==============
+##############
 
 Directory structure
 -------------------
@@ -69,3 +69,9 @@ before running these commands as this is done during packaging. The
 compiled binarys will then be availible in the ``dist/`` directory. The
 unpacked files are located in ``dist/<platform>-unpacked``. An installer
 is also provided in the ``dist/`` directory.
+
+.. toctree::
+    :caption: Desktop Client
+    :maxdepth: 2
+
+    desktop-client/preload-api
