@@ -20,7 +20,7 @@ Repository information
 .. toctree::
     :caption: Repository Information
     :hidden:
-    :maxdepth: 2
+    :maxdepth: 3
 
     /repo-info/repos
     /repo-info/licence
@@ -37,7 +37,7 @@ devices that control the trains on the track and lights in the model houses.
 .. toctree::
     :caption: Boards
     :hidden:
-    :maxdepth: 2
+    :maxdepth: 3
 
     boards/firmware
     boards/hardware
@@ -54,7 +54,7 @@ inerfaces to allow the user to control their model railway from the comfort of t
 .. toctree::
     :caption: Clients
     :hidden:
-    :maxdepth: 2
+    :maxdepth: 3
 
     clients/desktop-client
 
