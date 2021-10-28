@@ -9,4 +9,4 @@ into other repositories via submodules. The logos can be found at https://github
     :maxdepth: 2
 
     logos/directory-structure
-	logos/using
+	logos/using-logos

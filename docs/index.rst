@@ -71,8 +71,8 @@ this is the place for you.
 
 .. only:: html
 
-    * :doc:`developers/logos`
-    * :doc:`developers/desktop-client`
+    * :doc:`developers/logos/index`
+    * :doc:`developers/desktop-client/index`
 
 .. toctree::
     :caption: For developers
