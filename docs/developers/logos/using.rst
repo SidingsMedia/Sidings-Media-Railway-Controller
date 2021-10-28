@@ -2,7 +2,7 @@ Using the Logos
 ===============
 
 Adding the repository
-^^^^^^^^^^^^^^^^^^^^^
+---------------------
 
 Using the logos in the SMRC-logos repository is fairly simple. All you need
 to do is add the repository as a submodule in your projects repository using
@@ -21,7 +21,7 @@ After you have added the logos repo as a submodule you can reference the logos
 in your code, just use the path to the logos directory within your project.
 
 Updating the repository
-^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------
 
 To update your submodule to the latest commit you can run the following command:
 
