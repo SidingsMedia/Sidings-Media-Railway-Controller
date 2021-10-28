@@ -1,5 +1,5 @@
 Directory structure
--------------------
+===================
 
 The logos repository uses the following directory structure:
 
