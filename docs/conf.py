@@ -101,8 +101,8 @@ html_theme_path = ["_themes", ]
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-# html_logo = '_static/track-bw-square-192.png',
-# html_favicon = 'https://raw.githubusercontent.com/SidingsMedia/SMRC-logos/main/rendered/favicon.ico'
+html_logo = '_static/track-bw-square-192.png'
+html_favicon = '_static/favicon.ico'
 
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.
