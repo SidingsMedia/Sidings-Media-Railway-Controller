@@ -184,11 +184,6 @@ latex_elements = {
         %\fancyhead[RO]{\small \nouppercase{\rightmark}}
         %\fancyhead[LE]{\small \nouppercase{\leftmark}}
 
-        %% for oneside: change footer at right side. If you want to use Left and right then use same as header defined above.
-        \fancyfoot[R]{\ifthenelse{\isodd{\value{page}}}{{\tiny Meher Krishna Patel} }{\href{http://pythondsp.readthedocs.io/en/latest/pythondsp/toc.html}{\tiny PythonDSP}}}
-
-        %%% Alternating Footer for two side
-        %\fancyfoot[RO, RE]{\scriptsize Meher Krishna Patel (mekrip@gmail.com)}
 
         %%% page number
         \fancyfoot[CO, CE]{\thepage}
@@ -198,8 +193,6 @@ latex_elements = {
 
         \RequirePackage{tocbibind} %%% comment this to remove page number for following
         \addto\captionsenglish{\renewcommand{\contentsname}{Table of contents}}
-        \addto\captionsenglish{\renewcommand{\listfigurename}{List of figures}}
-        \addto\captionsenglish{\renewcommand{\listtablename}{List of tables}}
         % \addto\captionsenglish{\renewcommand{\chaptername}{Chapter}}
 
 
@@ -216,44 +209,44 @@ latex_elements = {
     ''',
 
 
-    'maketitle': r'''
-        \pagenumbering{Roman} %%% to avoid page 1 conflict with actual page 1
+    # 'maketitle': r'''
+    #     \pagenumbering{Roman} %%% to avoid page 1 conflict with actual page 1
 
-        \begin{titlepage}
-            \centering
+    #     \begin{titlepage}
+    #         \centering
 
-            \vspace*{40mm} %%% * is used to give space from top
-            \textbf{\Huge {Sphinx format for Latex and HTML}}
+    #         \vspace*{40mm} %%% * is used to give space from top
+    #         \textbf{\Huge {Sphinx format for Latex and HTML}}
 
-            \vspace{0mm}
-            \begin{figure}[!h]
-                \centering
-                \includegraphics[scale=0.3]{logo.jpg}
-            \end{figure}
+    #         \vspace{0mm}
+    #         \begin{figure}[!h]
+    #             \centering
+    #             \includegraphics[scale=0.3]{logo.jpg}
+    #         \end{figure}
 
-            \vspace{0mm}
-            \Large \textbf{{Meher Krishna Patel}}
+    #         \vspace{0mm}
+    #         \Large \textbf{{Meher Krishna Patel}}
 
-            \small Created on : Octorber, 2017
+    #         \small Created on : Octorber, 2017
 
-            \vspace*{0mm}
-            \small  Last updated : \MonthYearFormat\today
+    #         \vspace*{0mm}
+    #         \small  Last updated : \MonthYearFormat\today
 
 
-            %% \vfill adds at the bottom
-            \vfill
-            \small \textit{More documents are freely available at }{\href{http://pythondsp.readthedocs.io/en/latest/pythondsp/toc.html}{PythonDSP}}
-        \end{titlepage}
+    #         %% \vfill adds at the bottom
+    #         \vfill
+    #         \small \textit{More documents are freely available at }{\href{http://pythondsp.readthedocs.io/en/latest/pythondsp/toc.html}{PythonDSP}}
+    #     \end{titlepage}
 
-        \clearpage
-        \pagenumbering{roman}
-        \tableofcontents
-        \listoffigures
-        \listoftables
-        \clearpage
-        \pagenumbering{arabic}
+    #     \clearpage
+    #     \pagenumbering{roman}
+    #     \tableofcontents
+    #     \listoffigures
+    #     \listoftables
+    #     \clearpage
+    #     \pagenumbering{arabic}
 
-        ''',
+    #     ''',
 
     # Latex figure (float) alignment
     #
