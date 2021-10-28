@@ -3,8 +3,8 @@ Directory structure
 
 The project uses the following directory structure:
 
-::
-
+.. code-block:: none
+	
     SMRC-Desktop-Client/
     ├─ .github/
     ├─ .reuse/
