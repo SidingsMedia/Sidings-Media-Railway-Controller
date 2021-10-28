@@ -170,17 +170,6 @@ latex_elements = {
         \RequirePackage{tocbibind} %%% comment this to remove page number for following
         \addto\captionsenglish{\renewcommand{\contentsname}{Table of contents}}
         % \addto\captionsenglish{\renewcommand{\chaptername}{Chapter}}
-		%%%% Custom copyright
-		\fancyfoot[LO,RE]{{Copyright \textcopyright\ 2021, Sidings Media. Unless stated otherwise, the content of the website is licensed under a Creative Commons Attribution-ShareAlike 4.0 License}}
-		\fancypagestyle{plain}{
-		\fancyhf{}
-		\fancyfoot[LE,RO]{{\thepage}}
-		\renewcommand{\headrulewidth}{0pt}
-		\renewcommand{\footrulewidth}{0.4pt}
-		% add copyright stuff for example at left of footer on odd pages,
-		% which is the case for chapter opening page by default
-		\fancyfoot[LO,RE]{{Copyright \textcopyright\ 2021, Sidings Media. Unless stated otherwise, the content of the website is licensed under a Creative Commons Attribution-ShareAlike 4.0 License}}
-		}
     ''',
 
     # Latex figure (float) alignment
