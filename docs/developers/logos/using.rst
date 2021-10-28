@@ -1,5 +1,5 @@
 Using the Logos
----------------
+===============
 
 Adding the repository
 ^^^^^^^^^^^^^^^^^^^^^

@@ -1,5 +1,5 @@
 Logos
-========
+#####
 
 All logos for the SMRC project are located in their own repository. This is to help with
 keeping the logos up to date across the entire project and allows them to be imported 
