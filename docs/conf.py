@@ -163,90 +163,14 @@ latex_elements = {
         \singlespacing
 
 
-        %%%%%%%%%%% datetime
-        \usepackage{datetime}
-
-        \newdateformat{MonthYearFormat}{%
-            \monthname[\THEMONTH], \THEYEAR}
-
-
-        %% RO, LE will not work for 'oneside' layout.
-        %% Change oneside to twoside in document class
-        \usepackage{fancyhdr}
-        \pagestyle{fancy}
-        \fancyhf{}
-
-        %%% Alternating Header for oneside
-        \fancyhead[L]{\ifthenelse{\isodd{\value{page}}}{ \small \nouppercase{\leftmark} }{}}
-        \fancyhead[R]{\ifthenelse{\isodd{\value{page}}}{}{ \small \nouppercase{\rightmark} }}
-
-        %%% Alternating Header for two side
-        %\fancyhead[RO]{\small \nouppercase{\rightmark}}
-        %\fancyhead[LE]{\small \nouppercase{\leftmark}}
-
-
         %%% page number
         \fancyfoot[CO, CE]{\thepage}
 
-        \renewcommand{\headrulewidth}{0.5pt}
-        \renewcommand{\footrulewidth}{0.5pt}
 
         \RequirePackage{tocbibind} %%% comment this to remove page number for following
         \addto\captionsenglish{\renewcommand{\contentsname}{Table of contents}}
         % \addto\captionsenglish{\renewcommand{\chaptername}{Chapter}}
-
-
-        %%reduce spacing for itemize
-        \usepackage{enumitem}
-        \setlist{nosep}
-
-        %%%%%%%%%%% Quote Styles at the top of chapter
-        \usepackage{epigraph}
-        \setlength{\epigraphwidth}{0.8\columnwidth}
-        \newcommand{\chapterquote}[2]{\epigraphhead[60]{\epigraph{\textit{#1}}{\textbf {\textit{--#2}}}}}
-        %%%%%%%%%%% Quote for all places except Chapter
-        \newcommand{\sectionquote}[2]{{\quote{\textit{``#1''}}{\textbf {\textit{--#2}}}}}
     ''',
-
-
-    # 'maketitle': r'''
-    #     \pagenumbering{Roman} %%% to avoid page 1 conflict with actual page 1
-
-    #     \begin{titlepage}
-    #         \centering
-
-    #         \vspace*{40mm} %%% * is used to give space from top
-    #         \textbf{\Huge {Sphinx format for Latex and HTML}}
-
-    #         \vspace{0mm}
-    #         \begin{figure}[!h]
-    #             \centering
-    #             \includegraphics[scale=0.3]{logo.jpg}
-    #         \end{figure}
-
-    #         \vspace{0mm}
-    #         \Large \textbf{{Meher Krishna Patel}}
-
-    #         \small Created on : Octorber, 2017
-
-    #         \vspace*{0mm}
-    #         \small  Last updated : \MonthYearFormat\today
-
-
-    #         %% \vfill adds at the bottom
-    #         \vfill
-    #         \small \textit{More documents are freely available at }{\href{http://pythondsp.readthedocs.io/en/latest/pythondsp/toc.html}{PythonDSP}}
-    #     \end{titlepage}
-
-    #     \clearpage
-    #     \pagenumbering{roman}
-    #     \tableofcontents
-    #     \listoffigures
-    #     \listoftables
-    #     \clearpage
-    #     \pagenumbering{arabic}
-
-    #     ''',
 
     # Latex figure (float) alignment
     #
