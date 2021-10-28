@@ -13,10 +13,10 @@ the complications of DCC.
 
 Repository information
 ----------------------
-.. only::html
+.. only:: html
 
-    * :doc:`/repo-info/repos` 
-    * :doc:`/repo-info/licence` 
+    * :doc:`repo-info/repos` 
+    * :doc:`repo-info/licence` 
 
 .. toctree::
     :caption: Repository Information
@@ -32,10 +32,10 @@ Boards
 The boards for SMRC provide the physical bridge between the hardware and software. They are the
 devices that control the trains on the track and lights in the model houses. 
 
-.. only::html
+.. only:: html
 
-    * :doc:`/boards/firmware` 
-    * :doc:`/boards/hardware`
+    * :doc:`boards/firmware` 
+    * :doc:`boards/hardware`
 
 .. toctree::
     :caption: Boards
@@ -52,9 +52,9 @@ Just as the boards provide the physical interface between the software and the t
 clients provide the bridge between the user and the software. They provide easy to use 
 inerfaces to allow the user to control their model railway from the comfort of their device.
 
-.. only::html
+.. only:: html
 
-    * :doc:`/clients/desktop-client`
+    * :doc:`clients/desktop-client`
 
 .. toctree::
     :caption: Clients
@@ -69,10 +69,10 @@ For Developers
 If you are developing for SMRC or just want to find out more about how the system works then 
 this is the place for you.
 
-.. only::html
+.. only:: html
 
-    * :doc:`/developers/logos`
-    * :doc:`/developers/desktop-client`
+    * :doc:`developers/logos`
+    * :doc:`developers/desktop-client`
 
 .. toctree::
     :caption: For developers
