@@ -8,6 +8,6 @@ into other repositories via submodules. The logos can be found at https://github
 .. toctree::
     :maxdepth: 2
 
-	logos/using-logos	
+	logos/using-logos
     logos/directory-structure
 	
