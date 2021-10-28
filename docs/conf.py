@@ -174,7 +174,7 @@ latex_elements = {
 		\fancyfoot[LO,RE]{{Copyright \textcopyright\ 2021, Sidings Media. Unless stated otherwise, the content of the website is licensed under a Creative Commons Attribution-ShareAlike 4.0 License}}
 		\fancypagestyle{plain}{
 		\fancyhf{}
-		\fancyfoot[LE,RO]{{\py@HeaderFamily\thepage}}
+		\fancyfoot[LE,RO]{{\thepage}}
 		\renewcommand{\headrulewidth}{0pt}
 		\renewcommand{\footrulewidth}{0.4pt}
 		% add copyright stuff for example at left of footer on odd pages,
