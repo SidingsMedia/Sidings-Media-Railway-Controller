@@ -24,10 +24,13 @@ project = 'Sidings Media Railway Controller'
 copyright = '2021, Sidings Media'
 author = 'Sidings Media'
 
+revision = subprocess.check_output(['git', 'rev-parse', '--short', 'HEAD']).strip().decode('ascii')
 # The short X.Y version
-version = subprocess.check_output(['git', 'rev-parse', '--short', 'HEAD']).strip().decode('ascii')
+# version = subprocess.check_output(['git', 'rev-parse', '--short', 'HEAD']).strip().decode('ascii')
+version = ''
 # The full version, including alpha/beta/rc tags
-release = subprocess.check_output(['git', 'rev-parse', '--short', 'HEAD']).strip().decode('ascii')
+# release = subprocess.check_output(['git', 'rev-parse', '--short', 'HEAD']).strip().decode('ascii')
+release = ''
 
 
 # -- General configuration ---------------------------------------------------
@@ -134,65 +137,55 @@ latex_elements = {
     # 'pointsize': '10pt',
 
     # Additional stuff for the LaTeX preamble.
-    'preamble': r'''
-		%% Getting commit ID
-		\usepackage{xstring}
-		\usepackage{catchfile}
-
-		\CatchFileDef{\headfull}{../.git/HEAD.}{}
-		\StrGobbleRight{\headfull}{1}[\head]
-		\StrBehind[2]{\head}{/}[\branch]
-		\IfFileExists{../.git/refs/heads/\branch.}{%
-			\CatchFileDef{\commit}{.git/refs/heads/\branch.}{}}{%
-			\newcommand{\commit}{\dots~(in \emph{packed-refs})}}
+    'preamble': f'''
         %%%%%%%%%%%%%%%%%%%% Meher %%%%%%%%%%%%%%%%%%
         %%%add number to subsubsection 2=subsection, 3=subsubsection
         %%% below subsubsection is not good idea.
-        \setcounter{secnumdepth}{3}
+        \\setcounter{{secnumdepth}}{{3}}
         %
         %%%% Table of content upto 2=subsection, 3=subsubsection
-        \setcounter{tocdepth}{2}
+        \\setcounter{{tocdepth}}{{2}}
 
-        \usepackage{amsmath,amsfonts,amssymb,amsthm}
-        \usepackage{graphicx}
+        \\usepackage{{amsmath,amsfonts,amssymb,amsthm}}
+        \\usepackage{{graphicx}}
 
         %%% reduce spaces for Table of contents, figures and tables
-        %%% it is used "\addtocontents{toc}{\vskip -1.2cm}" etc. in the document
-        \usepackage[notlot,nottoc,notlof]{}
+        %%% it is used "\\addtocontents{{toc}}{{\\vskip -1.2cm}}" etc. in the document
+        \\usepackage[notlot,nottoc,notlof]{{}}
 
-        \usepackage{color}
-        \usepackage{transparent}
-        \usepackage{eso-pic}
-        \usepackage{lipsum}
+        \\usepackage{{color}}
+        \\usepackage{{transparent}}
+        \\usepackage{{eso-pic}}
+        \\usepackage{{lipsum}}
 
-        \usepackage{footnotebackref} %%link at the footnote to go to the place of footnote in the text
+        \\usepackage{{footnotebackref}} %%link at the footnote to go to the place of footnote in the text
 
         %% spacing between line
-        \usepackage{setspace}
-        %%%%\onehalfspacing
-        %%%%\doublespacing
-        \singlespacing
+        \\usepackage{{setspace}}
+        %%%%\\onehalfspacing
+        %%%%\\doublespacing
+        \\singlespacing
 
 
         %%% page number
-        \fancyfoot[CO, CE]{\thepage}
+        \\fancyfoot[CO, CE]{{\\thepage}}
 
 
-        \RequirePackage{tocbibind} %%% comment this to remove page number for following
-        \addto\captionsenglish{\renewcommand{\contentsname}{Table of contents}}
-        % \addto\captionsenglish{\renewcommand{\chaptername}{Chapter}}
+        \\RequirePackage{{tocbibind}} %%% comment this to remove page number for following
+        \\addto\\captionsenglish{{\\renewcommand{{\\contentsname}}{{Table of contents}}}}
+        % \\addto\\captionsenglish{{\\renewcommand{{\\chaptername}}{{Chapter}}}}
 		%%%% Custom copyright
-		\fancyfoot[LO,RE]{{Copyright \textcopyright\ 2021, Sidings Media. Licensed under CC-BY-SA-4.0}}
-		\fancypagestyle{plain}{
-		\fancyhf{}
-		\fancyfoot[LE,RO]{{\thepage}}
-		\renewcommand{\headrulewidth}{0pt}
-		\renewcommand{\footrulewidth}{0.4pt}
+		\\fancyfoot[LO,RE]{{Copyright \\textcopyright\\ 2021, Sidings Media. Licensed under CC-BY-SA-4.0}}
+		\\fancypagestyle{{plain}}{{
+		\\fancyhf{{}}
+		\\fancyfoot[LE,RO]{{\\thepage}}
+		\\renewcommand{{\\headrulewidth}}{{0pt}}
+		\\renewcommand{{\\footrulewidth}}{{0.4pt}}
 		% add copyright stuff for example at left of footer on odd pages,
 		% which is the case for chapter opening page by default
-        \fancyfoot[LO,RE]{{Copyright \textcopyright\ 2021, Sidings
-        Media. Licensed under CC-BY-SA-4.0\\Revision: {\commit}}}
-		}
+        \\fancyfoot[LO,RE]{{Copyright \\textcopyright\\ 2021, Sidings
+        Media. Licensed under CC-BY-SA-4.0\\\\Revision: {revision}}}}}
+		}}
     ''',
 	'maketitle': r'''
 	\newcommand\sphinxbackoftitlepage{{This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.}}\sphinxmaketitle
