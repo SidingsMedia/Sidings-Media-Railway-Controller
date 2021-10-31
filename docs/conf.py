@@ -190,6 +190,8 @@ latex_elements = {
     # 'figure_align': 'htbp',
 }
 
+latex_show_urls = 'footnote'
+
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
