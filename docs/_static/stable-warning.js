@@ -10,16 +10,14 @@ function warnUnstable() {
   }else if (window.READTHEDOCS_DATA.version === 'develop'){
 	warning.innerHTML = "<p class='first admonition-title'>Note</p> " +
 		"<p class='last'> " +
-		"This document is for an <strong>unreleased development version</strong>. " +
+		"This documentation is unstable and is prone to change at any time." +
 		"Documentation is available for the <a href='/en/stable/'>current stable release</a>, " +
-		"or for older versions through the &ldquo;v:&rdquo; menu at bottom left." +
-		"</p>";
+		+ "</p>";
   } else{
 	warning.innerHTML = "<p class='first admonition-title'>Note</p> " +
 	"<p class='last'> " +
-	"This document is for the latest version. This version may be unstable so it is reccomended that the stable version is used. " +
+	"This document is for the latest version. This documentation may be unstable and may change." +
 	"Documentation is available for the <a href='/en/stable/'>current stable release</a>, " +
-	"or for older versions through the &ldquo;v:&rdquo; menu at bottom left." +
 	"</p>";
   }
 
