@@ -29,9 +29,12 @@ out = subprocess.check_output(["git", "branch"]).decode("utf8")
 current = next(line for line in out.split("\n") if line.startswith("*"))
 branch = current.strip("*").strip()[25:-1]
 
-if branch == 'main':
+if branch == 'develop':
 	version = f'DEV-{revision}'
 	release = f'DEV-{revision}'
+elif branch == 'main':
+	version = f'Latest-{revision}'
+	release = f'Latest-{revision}'
 else:
 	# The short X.Y version
 	version = ''
