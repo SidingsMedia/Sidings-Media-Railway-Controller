@@ -16,7 +16,7 @@ function warnUnstable() {
   } else{
 	warning.innerHTML = "<p class='first admonition-title'>Note</p> " +
 	"<p class='last'> " +
-	"This document is for the latest version and is in the process of being finalized. This documentation may be unstable and may change. " +
+	"This document is a pre-release version and as such this documentation may be unstable and may change. " +
 	"Documentation is available for the <a href='/projects/smrc/en/stable/'>current stable release</a> and previous versions can be selected by using the &ldquo;v:&rdquo; menu in the navigation pane on the left." +
 	"</p>";
   }
