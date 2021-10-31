@@ -11,13 +11,13 @@ function warnUnstable() {
 	warning.innerHTML = "<p class='first admonition-title'>Note</p> " +
 		"<p class='last'> " +
 		"This documentation is unstable and is prone to change at any time." +
-		"Documentation is available for the <a href='/en/stable/'>current stable release</a>, " +
+		"Documentation is available for the <a href='/projects/smrc/en/stable/'>current stable release</a>, " +
 		+ "</p>";
   } else{
 	warning.innerHTML = "<p class='first admonition-title'>Note</p> " +
 	"<p class='last'> " +
 	"This document is for the latest version. This documentation may be unstable and may change." +
-	"Documentation is available for the <a href='/en/stable/'>current stable release</a>, " +
+	"Documentation is available for the <a href='/projects/smrc/en/stable/'>current stable release</a>, " +
 	"</p>";
   }
 
