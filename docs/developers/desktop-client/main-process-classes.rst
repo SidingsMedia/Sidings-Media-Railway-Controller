@@ -19,6 +19,9 @@ creates an instance of the BrowserWindow class it's self and controls
 that. There are a number of public methods made available by the class
 as well as a few public properties.
 
+Constructor
+^^^^^^^^^^^
+
 new Window([windowSettings], ctrlChannel)
 """"""""""""""""""""""""""""""""""""""""""
 
