@@ -25,7 +25,9 @@ copyright = '2021, Sidings Media'
 author = 'Sidings Media'
 
 revision = subprocess.check_output(['git', 'rev-parse', '--short', 'HEAD']).strip().decode('ascii')
-branch = subprocess.check_output(['git', 'branch', '--show-current']).strip().decode('ascii')
+out = subprocess.check_output(["git", "branch"]).decode("utf8")
+current = next(line for line in out.split("\n") if line.startswith("*"))
+branch = current.strip("*").strip()
 # The short X.Y version
 # version = subprocess.check_output(['git', 'rev-parse', '--short', 'HEAD']).strip().decode('ascii')
 version = ''
