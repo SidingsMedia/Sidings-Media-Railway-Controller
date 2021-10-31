@@ -27,7 +27,7 @@ author = 'Sidings Media'
 # The short X.Y version
 version = subprocess.check_output(['git', 'rev-parse', '--short', 'HEAD']).strip().decode('ascii')
 # The full version, including alpha/beta/rc tags
-release = ''
+release = subprocess.check_output(['git', 'rev-parse', '--short', 'HEAD']).strip().decode('ascii')
 
 
 # -- General configuration ---------------------------------------------------
