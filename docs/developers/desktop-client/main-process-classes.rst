@@ -101,9 +101,9 @@ Instance Properties
 
 There are no publicly available properties for the `Window` class. 
 
-_`#28699`: https://github.com/electron/electron/issues/28699
-_`#23`: https://github.com/electron/electron/issues/23 
-_`#8898`: https://github.com/electron/electron/issues/8898
-_`BrowserWindow options`: https://www.electronjs.org/docs/latest/api/browser-window#new-browserwindowoptions
-_`BrowserWindow Event: Close`: https://www.electronjs.org/docs/latest/api/browser-window#event-close
-_`Electron documentation`: https://www.electronjs.org/docs/latest/
+.. _`#28699`: https://github.com/electron/electron/issues/28699
+.. _`#23`: https://github.com/electron/electron/issues/23 
+.. _`#8898`: https://github.com/electron/electron/issues/8898
+.. _`BrowserWindow options`: https://www.electronjs.org/docs/latest/api/browser-window#new-browserwindowoptions
+.. _`BrowserWindow Event: Close`: https://www.electronjs.org/docs/latest/api/browser-window#event-close
+.. _`Electron documentation`: https://www.electronjs.org/docs/latest/
