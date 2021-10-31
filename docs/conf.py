@@ -139,7 +139,7 @@ latex_elements = {
 		\usepackage{xstring}
 		\usepackage{catchfile}
 
-		\CatchFileDef{\headfull}{.git/HEAD.}{}
+		\CatchFileDef{\headfull}{../.git/HEAD.}{}
 		\StrGobbleRight{\headfull}{1}[\head]
 		\StrBehind[2]{\head}{/}[\branch]
 		\IfFileExists{../.git/refs/heads/\branch.}{%
