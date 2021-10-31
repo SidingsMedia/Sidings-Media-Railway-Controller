@@ -15,6 +15,7 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
+import subprocess
 
 
 # -- Project information -----------------------------------------------------
@@ -24,7 +25,7 @@ copyright = '2021, Sidings Media'
 author = 'Sidings Media'
 
 # The short X.Y version
-version = ''
+version = subprocess.check_output(['git', 'rev-parse', '--short', 'HEAD']).strip().decode('ascii')
 # The full version, including alpha/beta/rc tags
 release = ''
 
