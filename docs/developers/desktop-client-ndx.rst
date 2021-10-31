@@ -13,3 +13,4 @@ use an object oriented style where feasible.
     desktop-client/running
     desktop-client/packaging
     desktop-client/preload-api
+	desktop-client/main-process-classes
