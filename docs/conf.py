@@ -25,6 +25,7 @@ copyright = '2021, Sidings Media'
 author = 'Sidings Media'
 
 revision = subprocess.check_output(['git', 'rev-parse', '--short', 'HEAD']).strip().decode('ascii')
+branch = subprocess.check_output(['git', 'rev-parse', '--abbrev-ref', 'HEAD']).strip().decode('ascii')
 # The short X.Y version
 # version = subprocess.check_output(['git', 'rev-parse', '--short', 'HEAD']).strip().decode('ascii')
 version = ''
@@ -184,7 +185,8 @@ latex_elements = {
 		% add copyright stuff for example at left of footer on odd pages,
 		% which is the case for chapter opening page by default
         \\fancyfoot[LO,RE]{{Copyright \\textcopyright\\ 2021, Sidings
-        Media. Licensed under CC-BY-SA-4.0\\\\Revision: {revision}}}}}
+        Media. Licensed under CC-BY-SA-4.0\\\\Revision {revision} on
+        branch {branch}}}}}
 		}}
     ''',
 	'maketitle': r'''
