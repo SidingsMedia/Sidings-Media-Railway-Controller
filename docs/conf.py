@@ -28,13 +28,15 @@ revision = subprocess.check_output(['git', 'rev-parse', '--short', 'HEAD']).stri
 out = subprocess.check_output(["git", "branch"]).decode("utf8")
 current = next(line for line in out.split("\n") if line.startswith("*"))
 branch = current.strip("*").strip()[25:-1]
-# The short X.Y version
-# version = subprocess.check_output(['git', 'rev-parse', '--short', 'HEAD']).strip().decode('ascii')
-version = ''
-# The full version, including alpha/beta/rc tags
-# release = subprocess.check_output(['git', 'rev-parse', '--short', 'HEAD']).strip().decode('ascii')
-release = ''
 
+if branch == 'main':
+	version = f'DEV-{revision}'
+	release = f'DEV-{revision}'
+else:
+	# The short X.Y version
+	version = ''
+	# The full version, including alpha/beta/rc tags
+	release = ''
 
 # -- General configuration ---------------------------------------------------
 
