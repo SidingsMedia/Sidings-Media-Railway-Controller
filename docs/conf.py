@@ -142,7 +142,7 @@ latex_elements = {
 		\CatchFileDef{\headfull}{.git/HEAD.}{}
 		\StrGobbleRight{\headfull}{1}[\head]
 		\StrBehind[2]{\head}{/}[\branch]
-		\IfFileExists{.git/refs/heads/\branch.}{%
+		\IfFileExists{../.git/refs/heads/\branch.}{%
 			\CatchFileDef{\commit}{.git/refs/heads/\branch.}{}}{%
 			\newcommand{\commit}{\dots~(in \emph{packed-refs})}}
         %%%%%%%%%%%%%%%%%%%% Meher %%%%%%%%%%%%%%%%%%
@@ -191,7 +191,7 @@ latex_elements = {
 		% add copyright stuff for example at left of footer on odd pages,
 		% which is the case for chapter opening page by default
         \fancyfoot[LO,RE]{{Copyright \textcopyright\ 2021, Sidings
-        Media. Licensed under CC-BY-SA-4.0\\Documentation revision: {\commit}}}
+        Media. Licensed under CC-BY-SA-4.0\\Revision: {\commit}}}
 		}
     ''',
 	'maketitle': r'''
