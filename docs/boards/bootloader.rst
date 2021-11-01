@@ -4,14 +4,16 @@ Bootloader
 Repository
 ----------
 
-The repository for the bootloaders can be located at https://github.com/SidingsMedia/SMRC-bootloader  
+The source files for the bootloaders can be located in the
+`SMRC-bootloader`_ repository.  
 
 Use of bootloaders
 ------------------
 
-The bootloader is used on all official SMRC boards (i.e all boards in the `SMRC-hardware repo`_). It can also be used in your own SMRC boards.
+The bootloader is used on all official SMRC boards (i.e all boards in
+the `SMRC-hardware`_) repository. It can also be used in your own SMRC
+boards.
 
-.. _`SMRC-hardware repo`: https://github.com/SidingsMedia/SMRC-hardware
 
 General Requirements
 --------------------
@@ -38,3 +40,6 @@ Requirements
 ^^^^^^^^^^^^
 
 - Must verify that the firmware being uploaded is correct for the specific board
+
+.. _`SMRC-hardware`: https://github.com/SidingsMedia/SMRC-hardware
+.. _`SMRC-bootloader`: https://github.com/SidingsMedia/SMRC-bootloader
