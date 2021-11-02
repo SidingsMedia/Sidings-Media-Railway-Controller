@@ -5,7 +5,7 @@ Getting started on your contribution is often one of the hardest parts
 of opensource, especially if your new. If you have a new idea for a
 feature or have found a bug then you should `create an issue`_ in the
 appropriate repository. More information on which parts of the project
-belong to which repository can be found in the :ref:`/repo-info/repos`
+belong to which repository can be found in the :doc:`/repo-info/repos`
 section. We ask that you do this so that we can discuss your proposal
 and decide if we want to incorporate the feature into the project. We
 don't want you to spend hours working on your contribution only for it
@@ -38,7 +38,7 @@ also giving some idea about what you want to do. Using the example from
 before, a good title would be something like:
 
 .. code-block:: none
-	
+
 	[FEATURE] Update AJAX requests to use fetch()
 
 Describing your bug or feature
