@@ -1,0 +1,78 @@
+Getting Started
+===============
+
+Getting started on your contribution is often one of the hardest parts
+of opensource, especially if your new. If you have a new idea for a
+feature or have found a bug then you should `create an issue`_ in the
+appropriate repository. More information on which parts of the project
+belong to which repository can be found in the :ref:`/repo-info/repos`
+section. We ask that you do this so that we can discuss your proposal
+and decide if we want to incorporate the feature into the project. We
+don't want you to spend hours working on your contribution only for it
+to be rejected. Don't worry if we don't think that your idea should be
+incorporated, this just means that we feel the project isn't quite ready
+for such a feature, you never know, we may come back to you once the
+project has progressed a little further to see if you still want to work
+on your idea.
+
+Creating your issue
+-------------------
+
+This is a fairly simple process. Most of the repos will have pre-made
+templates for you to fill in when creating an issue. If this is the case
+then when you create an issue you will be given the option of creating a
+feature or bug issue. Pick whichever one is appropriate. This will give
+you a form to fill in. Just fill this in to the best of your ability,
+remember, try to be detailed yet concise, we won't know what your
+talking about if you just write something like ``Update request to
+board`` but then again, we can't spend an hour reading one issue so
+don't be too in depth. 
+
+Giving your issue a title
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This is one of the most important parts of creating your issue as this
+is the first thing we see when we scan down the list of new issues and
+pull requests. Your issue title should be breif and to the point, whilst
+also giving some idea about what you want to do. Using the example from
+before, a good title would be something like:
+
+.. codeblock::none
+	[FEATURE] Update AJAX requests to use fetch()
+
+Describing your bug or feature
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+This is key to helping us understand what you want to do. As we said
+before, you should try and be as detailed as possible whilst still being
+breif. Something like this is great:
+
+.. codeblock::none
+	I want to update the AJAX requests in the desktop client to use the
+	new fetch method instead of XMLHttpRequest. I think that this would
+	be beneficial as the fetch API is more geared towards the modern web
+	app and provides numerous helpfull features.
+
+This clearly tells us what the contributer wants to do, replace all of
+the AJAX calls with a new method, and it tells us why they think it
+would be beneficial to the project, a more modern API designed for web
+apps.
+
+Describing alternatives
+^^^^^^^^^^^^^^^^^^^^^^^
+Although this may seem a bit unnecessary, it is actually very important
+as it allows us to see if your idea is the best way of approaching the
+issue. This allows us to get the overall best possible solution for the
+project. Something like this is good:
+
+.. codeblock::none
+	I have considered keeping the original XMLHttpRequest calls. This
+	would mean that large portions of the request code would not need to
+	be rewritten but overtime these old sections of code would become
+	harder to maintain.
+
+This is good because it details both the pros and cons of the
+alternative. This allows us to form a balanced assesement of what is
+best for the project.
+
+
+.. _`create an issue`: https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue
