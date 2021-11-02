@@ -85,4 +85,4 @@ this is the place for you.
     
     developers/logos-ndx
     developers/desktop-client-ndx
-	developers/contributing
+    developers/contributing
