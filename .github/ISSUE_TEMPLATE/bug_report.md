@@ -1,3 +1,9 @@
+<!-- 
+SPDX-FileCopyrightText: Copyright (c) 2021 Sidings Media 
+
+SPDX-License-Identifier: CC0-1.0
+-->
+
 ---
 name: Bug report
 about: Create a report to help us improve
