@@ -37,7 +37,8 @@ pull requests. Your issue title should be breif and to the point, whilst
 also giving some idea about what you want to do. Using the example from
 before, a good title would be something like:
 
-.. codeblock::none
+.. code-block:: none
+	
 	[FEATURE] Update AJAX requests to use fetch()
 
 Describing your bug or feature
@@ -46,7 +47,8 @@ This is key to helping us understand what you want to do. As we said
 before, you should try and be as detailed as possible whilst still being
 breif. Something like this is great:
 
-.. codeblock::none
+.. code-block:: none
+
 	I want to update the AJAX requests in the desktop client to use the
 	new fetch method instead of XMLHttpRequest. I think that this would
 	be beneficial as the fetch API is more geared towards the modern web
@@ -64,7 +66,8 @@ as it allows us to see if your idea is the best way of approaching the
 issue. This allows us to get the overall best possible solution for the
 project. Something like this is good:
 
-.. codeblock::none
+.. code-block:: none
+
 	I have considered keeping the original XMLHttpRequest calls. This
 	would mean that large portions of the request code would not need to
 	be rewritten but overtime these old sections of code would become
