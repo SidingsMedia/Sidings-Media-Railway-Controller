@@ -39,7 +39,15 @@ before, a good title would be something like:
 
 .. code-block:: none
 
-	[FEATURE] Update AJAX requests to use fetch()
+	[FEATURE]: Update AJAX requests to use fetch()
+
+Notice the [FEATURE]: section of the title. This should be pre-filled if
+you use the templates but if it isn't it should be one of the following:
+
+*  [BUG]:
+*  [FEATURE]:
+
+You should choose the appropriate option for your issue. 
 
 Describing your bug or feature
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -76,6 +84,26 @@ project. Something like this is good:
 This is good because it details both the pros and cons of the
 alternative. This allows us to form a balanced assesement of what is
 best for the project.
+
+What to do next
+---------------
+
+After you have created your issue, all you need to do is wait. We know
+this may seem a bit boring but we will try to respond to your issue
+within a couple of days. It may take us a little longer if we are really
+busy with a new release or lots of issues are comming in. We may not
+give you a definite answer at first and we may want to discuss it
+further with you. Don't worry, we are just trying to find out more about
+your idea or bug so we can make a decision on it.
+
+Once you have gotten the go ahead for your idea then you can start
+making your changes. Just fork the repository and make your changes
+there. Once your done you can `create a pull request`_ proposing to
+merge your changes into the ``develop`` branch. You can also create a
+pull request when you start working on your feature by creating a 
+:doc:`/developers/contributing/pr-guide#_wip` pull request. This isn't
+essential but it just makes it a bit easier for us to see how your
+feature is progressing and assist you if you need any help.
 
 
 .. _`create an issue`: https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue
