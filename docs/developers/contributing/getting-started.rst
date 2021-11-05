@@ -98,12 +98,12 @@ your idea or bug so we can make a decision on it.
 
 Once you have gotten the go ahead for your idea then you can start
 making your changes. Just fork the repository and make your changes
-there. Once your done you can `create a pull request`_ proposing to
-merge your changes into the ``develop`` branch. You can also create a
-pull request when you start working on your feature by creating a 
-:doc:`/developers/contributing/pr-guide#_wip` pull request. This isn't
-essential but it just makes it a bit easier for us to see how your
-feature is progressing and assist you if you need any help.
+there. Once your done you can :doc:`/developers/contributing/pr-guide`
+proposing to merge your changes into the ``develop`` branch. You can
+also create a pull request when you start working on your feature by
+creating a :ref:`wip` pull request.
+This isn't essential but it just makes it a bit easier for us to see how
+your feature is progressing and assist you if you need any help.
 
 
 .. _`create an issue`: https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue
