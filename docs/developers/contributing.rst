@@ -18,6 +18,7 @@ technical information.
     :maxdepth: 2
 
     contributing/getting-started
+    contributing/pr-guide
 
 .. _`SMRC-help`: https://gitter.im/SidingsMedia/SMRC-help?utm_source=share-link&utm_medium=link&utm_campaign=share-link
 .. _`How to Contribute to Open Source`: https://opensource.guide/how-to-contribute/
