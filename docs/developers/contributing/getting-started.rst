@@ -15,6 +15,36 @@ for such a feature, you never know, we may come back to you once the
 project has progressed a little further to see if you still want to work
 on your idea.
 
+Forking and Cloning the repository
+----------------------------------
+
+In order to start making your changes you will first need to `create a
+fork`_ of the repository you wish to make changes on. Once you have
+created the fork you need to clone your version of the repository. This
+is fairly simple but because we use `submodules`_, there are a few more
+step that you must undertake to successfully pull all of the required
+files to your local environment. The commands that you should run are as
+follows:
+
+.. code-block:: console
+
+    $ git clone https://github.com/(username)/(repository).git
+    $ git submodule init
+    $ git submodule update
+
+In this example we first clone the repository as normal. The next two
+commands initilize the submodules and pull them from their repositories.
+If you are running Git 2.13 or later you can run the following command
+instead:
+
+.. code-block:: console
+
+    $ git clone --recurse-submodules https://github.com/(username)/(repository).git 
+    
+This command does all that was done with the previous three commands at
+once. It doesn't really matter which you use as both methods do the same
+thing.
+
 Creating your issue
 -------------------
 
@@ -27,6 +57,8 @@ remember, try to be detailed yet concise, we won't know what your
 talking about if you just write something like ``Update request to
 board`` but then again, we can't spend an hour reading one issue so
 don't be too in depth. 
+
+.. _issue-title:
 
 Giving your issue a title
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -105,5 +137,6 @@ creating a :ref:`wip` pull request.
 This isn't essential but it just makes it a bit easier for us to see how
 your feature is progressing and assist you if you need any help.
 
-
+.. _`submodules`: https://git-scm.com/book/en/v2/Git-Tools-Submodules
+.. _`create a fork`: https://docs.github.com/en/get-started/quickstart/fork-a-repo
 .. _`create an issue`: https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue
