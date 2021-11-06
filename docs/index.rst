@@ -74,15 +74,16 @@ this is the place for you.
 
 .. only:: html
 
+    * :doc:`developers/contributing`
     * :doc:`developers/logos-ndx`
     * :doc:`developers/desktop-client-ndx`
-    * :doc:`developers/contributing`
+    
 
 .. toctree::
     :caption: For developers
     :hidden:
     :maxdepth: 3
     
-    developers/logos-ndx
-    developers/desktop-client-ndx
     developers/contributing
+    developers/logos-ndx
+    developers/desktop-client-ndx  
