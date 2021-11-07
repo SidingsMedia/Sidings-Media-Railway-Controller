@@ -86,7 +86,7 @@ issue `#28699`_ for more information on this bug.
 unMaximize()
 """"""""""""
 
-Unmaximizes the window. THis method also emits the ``unmaximize`` event
+Unmaximizes the window. This method also emits the ``unmaximize`` event
 as a work around for `#28699`_.
 
 isMaximized()

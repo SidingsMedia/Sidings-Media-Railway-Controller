@@ -53,7 +53,7 @@ Clients
 
 Just as the boards provide the physical interface between the software and the trains, the 
 clients provide the bridge between the user and the software. They provide easy to use 
-inerfaces to allow the user to control their model railway from the comfort of their device.
+interfaces to allow the user to control their model railway from the comfort of their device.
 
 .. only:: html
 

@@ -2,7 +2,7 @@ Getting Started
 ===============
 
 Getting started on your contribution is often one of the hardest parts
-of opensource, especially if your new. If you have a new idea for a
+of open source, especially if your new. If you have a new idea for a
 feature or have found a bug then you should `create an issue`_ in the
 appropriate repository. More information on which parts of the project
 belong to which repository can be found in the :doc:`/repo-info/repos`
@@ -33,7 +33,7 @@ follows:
     $ git submodule update
 
 In this example we first clone the repository as normal. The next two
-commands initilize the submodules and pull them from their repositories.
+commands initialize the submodules and pull them from their repositories.
 If you are running Git 2.13 or later you can run the following command
 instead:
 
@@ -65,7 +65,7 @@ Giving your issue a title
 
 This is one of the most important parts of creating your issue as this
 is the first thing we see when we scan down the list of new issues and
-pull requests. Your issue title should be breif and to the point, whilst
+pull requests. Your issue title should be brief and to the point, whilst
 also giving some idea about what you want to do. Using the example from
 before, a good title would be something like:
 
@@ -85,16 +85,16 @@ Describing your bug or feature
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 This is key to helping us understand what you want to do. As we said
 before, you should try and be as detailed as possible whilst still being
-breif. Something like this is great:
+brief. Something like this is great:
 
 .. code-block:: none
 
 	I want to update the AJAX requests in the desktop client to use the
 	new fetch method instead of XMLHttpRequest. I think that this would
 	be beneficial as the fetch API is more geared towards the modern web
-	app and provides numerous helpfull features.
+	app and provides numerous helpful features.
 
-This clearly tells us what the contributer wants to do, replace all of
+This clearly tells us what the contributor wants to do, replace all of
 the AJAX calls with a new method, and it tells us why they think it
 would be beneficial to the project, a more modern API designed for web
 apps.
@@ -114,7 +114,7 @@ project. Something like this is good:
 	harder to maintain.
 
 This is good because it details both the pros and cons of the
-alternative. This allows us to form a balanced assesement of what is
+alternative. This allows us to form a balanced assessment of what is
 best for the project.
 
 What to do next
@@ -123,7 +123,7 @@ What to do next
 After you have created your issue, all you need to do is wait. We know
 this may seem a bit boring but we will try to respond to your issue
 within a couple of days. It may take us a little longer if we are really
-busy with a new release or lots of issues are comming in. We may not
+busy with a new release or lots of issues are coming in. We may not
 give you a definite answer at first and we may want to discuss it
 further with you. Don't worry, we are just trying to find out more about
 your idea or bug so we can make a decision on it.

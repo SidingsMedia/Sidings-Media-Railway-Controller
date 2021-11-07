@@ -17,7 +17,7 @@ General Requirements
 --------------------
 
 - Must support updating firmware over USB
-- Must make availible to the firmware the current bootloader version
+- Must make available to the firmware the current bootloader version
 
 Main board
 ----------
@@ -27,7 +27,7 @@ Main board
 Requirements
 ^^^^^^^^^^^^
 
-- Must verify that the firmware being uploaded is correct for the proccessor
+- Must verify that the firmware being uploaded is correct for the processor
 
 Other Boards
 ------------

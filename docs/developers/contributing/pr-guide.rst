@@ -31,10 +31,10 @@ entitled ``Update AJAX requests to use fetch()`` with an issue number of
 
 By referencing the issue number it allows GitHub to automatically link
 the issue to the pull request making tracing the origin of features far
-easier. The repatition of the issue title in the PR title makes it
+easier. The repetition of the issue title in the PR title makes it
 easier to manually link the PR to an issue. Note that if you are
 creating a pull request for documentation that corresponds to a feature
-you are adding in a seperate repository you should refer to the
+you are adding in a separate repository you should refer to the
 :ref:`doc-pr` section of :doc:`/developers/contributing/documentation`.
 
 Describing your PR
@@ -83,7 +83,7 @@ When you are working on your addition to the project, it may be helpful
 for you to create a work in progress pull request. This allows us to
 more easily see who is working on what features and it makes it easier
 for us to give you a hand if you need any help. When creating a work in
-progress PR there is no need to fill out all of the detailes in the
+progress PR there is no need to fill out all of the details in the
 template. These only need to be filled in when you mark the PR ready for
 review. You should replace the ``[FEATURE]:`` or ``[BUG]:`` prefix with
 a ``[WIP]:`` prefix. You should also mark the PR as a draft. You can do
