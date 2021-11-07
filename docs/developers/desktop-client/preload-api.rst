@@ -1,7 +1,7 @@
 Desktop Client Preload API
 ==========================
 
-A number of API endpoints are made availabe to the render process by the preloader script.
+A number of API endpoints are made available to the render process by the preloader script.
 These endpoints can be called by any script running in the render process. They expose various
 methods and data normally unavailable to the render process. To find out more about preloaders
 and the render process as well as context isolation in electron then see https://www.electronjs.org/docs/latest/tutorial/context-isolation. 
