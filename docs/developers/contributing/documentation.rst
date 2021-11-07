@@ -66,5 +66,26 @@ also add a link to the PR in the other repo here as well. You should
 check out `linking pull requests from other issues`_ for more
 information on how to do this.
 
+Checks
+^^^^^^
+
+As with all other pull requests, you must make sure that your PR does
+not break any checks. The most common issue you will have with breaking
+the checks is if you have misspelled any words in your documentation. It
+may be that you have actually misspelled some words in which case you
+should go back and fix your errors, you can see which words are marked
+as incorrect by viewing the `workflow output`_. It may be the case that
+the words marked as errors are not errors but technical language that is
+not included in the standard dictionaries. In this case you should add
+the word to one of the dictionary files in the ``dictionaries/``
+directory.
+
+You may also run into issues with reuse compliance. This just means that
+you have not added the correct licence descriptors to each file. To find
+out how to do this you should consult the `reuse spec`_ for more details
+on how to make a file reuse compliant.
+
 .. _`SMRC-help`: https://gitter.im/SidingsMedia/SMRC-help?utm_source=share-link&utm_medium=link&utm_campaign=share-link
 .. _`linking pull requests from other issues`: https://docs.github.com/en/github/writing-on-github/working-with-advanced-formatting/autolinked-references-and-urls#issues-and-pull-requests
+.. _`workflow output`: https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/using-workflow-run-logs#viewing-logs-to-diagnose-failures
+.. _`reuse spec`: https://reuse.software/spec/#copyright-and-licensing-information

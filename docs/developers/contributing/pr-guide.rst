@@ -92,5 +92,16 @@ to draft`_. When you have finished making your changes then you should
 mark the PR as ready for review and change the title prefix from
 ``[WIP]:`` to one of ``[FEATURE]:`` or ``[BUG]:``.
 
+Checks
+------
+
+As with all other pull requests, you must make sure that your PR does
+not break any checks. The most common errors that you will probably run
+into when working on the project are issues with reuse compliance. This
+just means that you have not added the correct licence descriptors to
+each file. To find out how to do this you should consult the `reuse
+spec`_ for more details on how to make a file reuse compliant.
+
 .. _`creating a pull request`: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request
 .. _`converting a pull request to draft`: https://github.blog/changelog/2020-04-08-convert-pull-request-to-draft/
+.. _`reuse spec`: https://reuse.software/spec/#copyright-and-licensing-information
