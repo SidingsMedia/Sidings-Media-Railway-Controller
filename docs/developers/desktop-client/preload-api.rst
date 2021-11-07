@@ -1,7 +1,7 @@
 Desktop Client Preload API
 ==========================
 
-A number of API endpoints are made availible to the render process by
+A number of API endpoints are made available to the render process by
 the preloader script. These endpoints can be called by any script
 running in the render process. They expose various methods and data
 normally unavailable to the render process. To find out more about
@@ -27,7 +27,7 @@ window.control.registerIPC(channel, callback)
 """""""""""""""""""""""""""""""""""""""""""""
 
 * channel - A string that represents the IPC channel. This should be the
-    same as the ctrlChannel the Window class was initilised with.
+    same as the ctrlChannel the Window class was initialized with.
 * callback - A function that is called when an IPC message is received
     from the main process. 
 
