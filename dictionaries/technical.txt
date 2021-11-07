@@ -51,3 +51,4 @@ bootloader
 githubusercontent
 bw
 dep
+changelog
