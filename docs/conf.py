@@ -24,6 +24,14 @@ project = 'Sidings Media Railway Controller'
 copyright = '2021, Sidings Media'
 author = 'Sidings Media'
 
+# Versions
+# These may get over written later depending upon the branch and tags.
+# The short X.Y version
+version = ''
+# The full version, including alpha/beta/rc tags
+release = ''
+warning = ''
+
 revision = subprocess.check_output(['git', 'rev-parse', '--short', 'HEAD']).strip().decode('ascii')
 out = subprocess.check_output(["git", "branch"]).decode("utf8")
 current = next(line for line in out.split("\n") if line.startswith("*"))
@@ -33,16 +41,27 @@ if branch == 'develop':
 	version = f'DEV-{revision}'
 	release = f'DEV-{revision}'
 	warning = 'This documentation is a development version and as such it is unstable and is prone to change at any time. Stable documentation can be found at https://docs.sidingsmedia.com/projects/smrc/en/stable/.'
+	revisionNotice = f"Revision {revision} on branch {branch}"
 elif branch == 'main':
 	version = f'Latest-{revision}'
 	release = f'Latest-{revision}'
 	warning = 'This document is a pre-release version and as such this documentation may be unstable and may change. Stable documentation can be found at https://docs.sidingsmedia.com/projects/smrc/en/stable/.'
+	revisionNotice = f"Revision {revision} on branch {branch}"
 else:
-	# The short X.Y version
-	version = ''
-	# The full version, including alpha/beta/rc tags
-	release = ''
-	warning = ''
+	# Try to get the current tag
+	try:
+		tag = subprocess.check_output(['git','describe', '--tags', '--abbrev=0', '--exact-match']).strip().decode('ascii')
+	except subprocess.CalledProcessError:
+		tag = None
+	if tag is None:	
+		revisionNotice = f"Revision {revision} on branch {branch}"
+	else:
+		# The short X.Y version
+		version = tag
+		# The full version, including alpha/beta/rc tags
+		release = tag
+		warning = ''
+		revisionNotice = f"Revision {revision} on tag {tag}"
 
 # -- General configuration ---------------------------------------------------
 
@@ -199,12 +218,11 @@ latex_elements = {
 		% add copyright stuff for example at left of footer on odd pages,
 		% which is the case for chapter opening page by default
         \\fancyfoot[LO,RE]{{Copyright \\textcopyright\\ 2021, Sidings
-        Media. Licensed under CC-BY-SA-4.0\\\\Revision {revision} on
-        branch {branch}}}}}
+        Media. Licensed under CC-BY-SA-4.0\\\\{revisionNotice}}}}}
 		}}
     ''',
 	'maketitle': f'''
-	\\newcommand\\sphinxbackoftitlepage{{{{This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.\\\\{warning}}}}}\\sphinxmaketitle
+	\\newcommand\\sphinxbackoftitlepage{{{{This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.\\\\\\\\{warning}}}}}\\sphinxmaketitle
 	'''
     # Latex figure (float) alignment
     #
