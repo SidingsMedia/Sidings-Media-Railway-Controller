@@ -52,3 +52,4 @@ githubusercontent
 bw
 dep
 changelog
+autolinked

@@ -27,14 +27,14 @@ Creating a documentation pull request
 
 .. note:: 
 
-    This is only relavent for creating pull requests for documentation
+    This is only relevant for creating pull requests for documentation
     modifications created as a result of pull requests in other
     repositories. This does not cover creating ordinary pull requests.
     See the :doc:`/developers/contributing/pr-guide` for more
     information on creating normal pull requests.
 
 When you make contributions to the project, you may have to update the
-projects documentation. To do this you will need to open a seperate pull
+projects documentation. To do this you will need to open a separate pull
 request in the ``Sidings Media Railway Controller`` repository. This
 pull request does not have to follow the same standards as stipulated in
 :doc:`/developers/contributing/pr-guide`. Instead you should follow the
@@ -51,7 +51,7 @@ the PR which this documentation links to in the following format:
     [PR]: SidingsMedia/<repo>#<pr number>
 
 This helps us track which documentation is about which contribution.
-Notice the ``[PR]`` prefix, this helps us differenciate a contribution
+Notice the ``[PR]`` prefix, this helps us differentiate a contribution
 pull request from the general ``[FEATURE]`` and ``[BUG]`` which can also
 appear in the docs repository. These two prefixes are used for when a PR
 does not relate to a contribution in another repository.
