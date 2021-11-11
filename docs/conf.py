@@ -44,8 +44,8 @@ if branch == 'develop':
     warning = 'This documentation is a development version and as such it is unstable and is prone to change at any time. Stable documentation can be found at https://docs.sidingsmedia.com/projects/smrc/en/stable/.'
     revisionNotice = f"Revision {revision} on branch {branch}"
 elif branch == 'main':
-    version = f'Latest-{revision}'
-    release = f'Latest-{revision}'
+    version = f'PRE-{revision}'
+    release = f'PRE-{revision}'
     warning = 'This document is a pre-release version and as such this documentation may be unstable and may change. Stable documentation can be found at https://docs.sidingsmedia.com/projects/smrc/en/stable/.'
     revisionNotice = f"Revision {revision} on branch {branch}"
 else:
