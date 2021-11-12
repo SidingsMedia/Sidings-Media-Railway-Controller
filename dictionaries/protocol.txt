@@ -1,0 +1,8 @@
+mailto
+http
+https
+www
+url
+urls
+localhost
+dcc

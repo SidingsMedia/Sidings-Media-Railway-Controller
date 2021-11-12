@@ -1,0 +1,11 @@
+png
+svg
+jpg
+jpeg
+gif
+gifs
+GIFs
+favicon
+favicons
+html
+md
