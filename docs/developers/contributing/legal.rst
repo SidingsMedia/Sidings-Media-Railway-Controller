@@ -1,4 +1,4 @@
-The Legal bit
+The legal bit
 =============
 
 Contributor Covenant Code of Conduct
