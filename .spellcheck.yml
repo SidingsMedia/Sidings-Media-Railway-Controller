@@ -1,0 +1,20 @@
+matrix:
+- name: reST
+  sources:
+  - 'docs/**/*.rst'
+  default_encoding: utf-8
+  hunspell:
+    d: en_GB
+    encoding: utf-8
+  dictionary:
+    wordlists:
+    - dictionaries/companies.txt
+    - dictionaries/englishCorrect.txt
+    - dictionaries/fileextensions.txt
+    - dictionaries/misc.txt
+    - dictionaries/protocol.txt
+    - dictionaries/rst.txt
+    - dictionaries/technical.txt
+    output: build/dictionary/dictionary.dic
+
+

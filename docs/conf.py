@@ -15,6 +15,7 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
+import subprocess
 
 
 # -- Project information -----------------------------------------------------
@@ -23,11 +24,54 @@ project = 'Sidings Media Railway Controller'
 copyright = '2021, Sidings Media'
 author = 'Sidings Media'
 
+# Versions
+# These may get over written later depending upon the branch and tags.
 # The short X.Y version
 version = ''
 # The full version, including alpha/beta/rc tags
 release = ''
+warning = ''
 
+revision = subprocess.check_output(
+    ['git', 'rev-parse', '--short', 'HEAD']).strip().decode('ascii')
+out = subprocess.check_output(["git", "branch"]).decode("utf8")
+current = next(line for line in out.split("\n") if line.startswith("*"))
+branch = current.strip("*").strip()
+# Fix where branch output is (HEAD DETACHED AT ORIGIN/
+if branch[0] == '(':
+    branch = branch[25:-1]
+
+if branch == 'develop':
+    version = f'DEV-{revision}'
+    release = f'DEV-{revision}'
+    warning = 'This documentation is a development version and as such it is unstable and is prone to change at any time. Stable documentation can be found at https://docs.sidingsmedia.com/projects/smrc/en/stable/.'
+    revisionNotice = f"Revision {revision} on branch {branch}"
+elif branch == 'main':
+    version = f'PRE-{revision}'
+    release = f'PRE-{revision}'
+    warning = 'This document is a pre-release version and as such this documentation may be unstable and may change. Stable documentation can be found at https://docs.sidingsmedia.com/projects/smrc/en/stable/.'
+    revisionNotice = f"Revision {revision} on branch {branch}"
+else:
+    # Try to get the current tag
+    try:
+        tag = subprocess.check_output(
+            ['git', 'describe', '--tags', '--abbrev=0', '--exact-match']).strip().decode('ascii')
+    except subprocess.CalledProcessError:
+        tag = None
+    if tag is None:
+        revisionNotice = f"Revision {revision} on branch {branch}"
+        if version == '':
+            version = f"{branch.upper()}-{revision}"
+        if release == '':
+            release = f"{branch.upper()}-{revision}"
+    
+    else:
+        # The short X.Y version
+        version = tag
+        # The full version, including alpha/beta/rc tags
+        release = tag
+        warning = ''
+        revisionNotice = f"Revision {revision} on tag {tag}"
 
 # -- General configuration ---------------------------------------------------
 
@@ -38,7 +82,7 @@ release = ''
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinxcontrib.bibtex']
+extensions = ['sphinxcontrib.bibtex', 'sphinx_rtd_dark_mode']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -101,6 +145,10 @@ html_theme_path = ["_themes", ]
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
+html_js_files = [
+    'stable-warning.js',
+]
+
 html_logo = '_static/track-bw-square-192.png'
 html_favicon = '_static/favicon.ico'
 
@@ -133,62 +181,65 @@ latex_elements = {
     # 'pointsize': '10pt',
 
     # Additional stuff for the LaTeX preamble.
-    'preamble': r'''
+    'preamble': f'''
         %%%%%%%%%%%%%%%%%%%% Meher %%%%%%%%%%%%%%%%%%
         %%%add number to subsubsection 2=subsection, 3=subsubsection
         %%% below subsubsection is not good idea.
-        \setcounter{secnumdepth}{3}
+        \\setcounter{{secnumdepth}}{{3}}
         %
         %%%% Table of content upto 2=subsection, 3=subsubsection
-        \setcounter{tocdepth}{2}
+        \\setcounter{{tocdepth}}{{2}}
 
-        \usepackage{amsmath,amsfonts,amssymb,amsthm}
-        \usepackage{graphicx}
+        \\usepackage{{amsmath,amsfonts,amssymb,amsthm}}
+        \\usepackage{{graphicx}}
 
         %%% reduce spaces for Table of contents, figures and tables
-        %%% it is used "\addtocontents{toc}{\vskip -1.2cm}" etc. in the document
-        \usepackage[notlot,nottoc,notlof]{}
+        %%% it is used "\\addtocontents{{toc}}{{\\vskip -1.2cm}}" etc. in the document
+        \\usepackage[notlot,nottoc,notlof]{{}}
 
-        \usepackage{color}
-        \usepackage{transparent}
-        \usepackage{eso-pic}
-        \usepackage{lipsum}
+        \\usepackage{{color}}
+        \\usepackage{{transparent}}
+        \\usepackage{{eso-pic}}
+        \\usepackage{{lipsum}}
 
-        \usepackage{footnotebackref} %%link at the footnote to go to the place of footnote in the text
+        \\usepackage{{footnotebackref}} %%link at the footnote to go to the place of footnote in the text
 
         %% spacing between line
-        \usepackage{setspace}
-        %%%%\onehalfspacing
-        %%%%\doublespacing
-        \singlespacing
+        \\usepackage{{setspace}}
+        %%%%\\onehalfspacing
+        %%%%\\doublespacing
+        \\singlespacing
 
 
         %%% page number
-        \fancyfoot[CO, CE]{\thepage}
+        \\fancyfoot[CO, CE]{{\\thepage}}
 
 
-        \RequirePackage{tocbibind} %%% comment this to remove page number for following
-        \addto\captionsenglish{\renewcommand{\contentsname}{Table of contents}}
-        % \addto\captionsenglish{\renewcommand{\chaptername}{Chapter}}
+        \\RequirePackage{{tocbibind}} %%% comment this to remove page number for following
+        \\addto\\captionsenglish{{\\renewcommand{{\\contentsname}}{{Table of contents}}}}
+        % \\addto\\captionsenglish{{\\renewcommand{{\\chaptername}}{{Chapter}}}}
 		%%%% Custom copyright
-		\fancyfoot[LO,RE]{{Copyright \textcopyright\ 2021, Sidings Media. Licensed under CC-BY-SA-4.0}}
-		\fancypagestyle{plain}{
-		\fancyhf{}
-		\fancyfoot[LE,RO]{{\thepage}}
-		\renewcommand{\headrulewidth}{0pt}
-		\renewcommand{\footrulewidth}{0.4pt}
+		\\fancyfoot[LO,RE]{{Copyright \\textcopyright\\ 2021, Sidings Media. Licensed under CC-BY-SA-4.0}}
+		\\fancypagestyle{{plain}}{{
+		\\fancyhf{{}}
+		\\fancyfoot[LE,RO]{{\\thepage}}
+		\\renewcommand{{\\headrulewidth}}{{0pt}}
+		\\renewcommand{{\\footrulewidth}}{{0.4pt}}
 		% add copyright stuff for example at left of footer on odd pages,
 		% which is the case for chapter opening page by default
-		\fancyfoot[LO,RE]{{Copyright \textcopyright\ 2021, Sidings Media. Licensed under CC-BY-SA-4.0}}
-		}
+        \\fancyfoot[LO,RE]{{Copyright \\textcopyright\\ 2021, Sidings
+        Media. Licensed under CC-BY-SA-4.0\\\\{revisionNotice}}}}}
+		}}
     ''',
-	'maketitle': r'''
-	\newcommand\sphinxbackoftitlepage{{This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.}}\sphinxmaketitle
+    'maketitle': f'''
+	\\newcommand\\sphinxbackoftitlepage{{{{This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.\\\\\\\\{warning}}}}}\\sphinxmaketitle
 	'''
     # Latex figure (float) alignment
     #
     # 'figure_align': 'htbp',
 }
+
+latex_show_urls = 'footnote'
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,
