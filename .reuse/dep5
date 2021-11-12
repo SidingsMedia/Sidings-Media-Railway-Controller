@@ -10,3 +10,7 @@ License: CC-BY-SA-4.0
 Files: .github/workflows/*
 Copyright: Copyright (c) 2021 Sidings Media
 License: CC0-1.0
+
+Files: dictionaries/*
+Copyright: Copyright (c) 2021 Sidings Media
+License: CC0-1.0

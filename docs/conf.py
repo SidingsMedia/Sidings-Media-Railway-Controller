@@ -32,36 +32,43 @@ version = ''
 release = ''
 warning = ''
 
-revision = subprocess.check_output(['git', 'rev-parse', '--short', 'HEAD']).strip().decode('ascii')
+revision = subprocess.check_output(
+    ['git', 'rev-parse', '--short', 'HEAD']).strip().decode('ascii')
 out = subprocess.check_output(["git", "branch"]).decode("utf8")
 current = next(line for line in out.split("\n") if line.startswith("*"))
-branch = current.strip("*").strip()[25:-1]
+branch = current.strip("*").strip()
 
 if branch == 'develop':
-	version = f'DEV-{revision}'
-	release = f'DEV-{revision}'
-	warning = 'This documentation is a development version and as such it is unstable and is prone to change at any time. Stable documentation can be found at https://docs.sidingsmedia.com/projects/smrc/en/stable/.'
-	revisionNotice = f"Revision {revision} on branch {branch}"
+    version = f'DEV-{revision}'
+    release = f'DEV-{revision}'
+    warning = 'This documentation is a development version and as such it is unstable and is prone to change at any time. Stable documentation can be found at https://docs.sidingsmedia.com/projects/smrc/en/stable/.'
+    revisionNotice = f"Revision {revision} on branch {branch}"
 elif branch == 'main':
-	version = f'Latest-{revision}'
-	release = f'Latest-{revision}'
-	warning = 'This document is a pre-release version and as such this documentation may be unstable and may change. Stable documentation can be found at https://docs.sidingsmedia.com/projects/smrc/en/stable/.'
-	revisionNotice = f"Revision {revision} on branch {branch}"
+    version = f'PRE-{revision}'
+    release = f'PRE-{revision}'
+    warning = 'This document is a pre-release version and as such this documentation may be unstable and may change. Stable documentation can be found at https://docs.sidingsmedia.com/projects/smrc/en/stable/.'
+    revisionNotice = f"Revision {revision} on branch {branch}"
 else:
-	# Try to get the current tag
-	try:
-		tag = subprocess.check_output(['git','describe', '--tags', '--abbrev=0', '--exact-match']).strip().decode('ascii')
-	except subprocess.CalledProcessError:
-		tag = None
-	if tag is None:	
-		revisionNotice = f"Revision {revision} on branch {branch}"
-	else:
-		# The short X.Y version
-		version = tag
-		# The full version, including alpha/beta/rc tags
-		release = tag
-		warning = ''
-		revisionNotice = f"Revision {revision} on tag {tag}"
+    # Try to get the current tag
+    try:
+        tag = subprocess.check_output(
+            ['git', 'describe', '--tags', '--abbrev=0', '--exact-match']).strip().decode('ascii')
+    except subprocess.CalledProcessError:
+        tag = None
+    if tag is None:
+        revisionNotice = f"Revision {revision} on branch {branch}"
+        if version == '':
+            version = f"{branch.upper()}-{revision}"
+        if release == '':
+            release = f"{branch.upper()}-{revision}"
+    
+    else:
+        # The short X.Y version
+        version = tag
+        # The full version, including alpha/beta/rc tags
+        release = tag
+        warning = ''
+        revisionNotice = f"Revision {revision} on tag {tag}"
 
 # -- General configuration ---------------------------------------------------
 
@@ -72,7 +79,7 @@ else:
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinxcontrib.bibtex']
+extensions = ['sphinxcontrib.bibtex', 'sphinx_rtd_dark_mode']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -221,7 +228,7 @@ latex_elements = {
         Media. Licensed under CC-BY-SA-4.0\\\\{revisionNotice}}}}}
 		}}
     ''',
-	'maketitle': f'''
+    'maketitle': f'''
 	\\newcommand\\sphinxbackoftitlepage{{{{This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.\\\\\\\\{warning}}}}}\\sphinxmaketitle
 	'''
     # Latex figure (float) alignment

@@ -53,7 +53,7 @@ Clients
 
 Just as the boards provide the physical interface between the software and the trains, the 
 clients provide the bridge between the user and the software. They provide easy to use 
-inerfaces to allow the user to control their model railway from the comfort of their device.
+interfaces to allow the user to control their model railway from the comfort of their device.
 
 .. only:: html
 
@@ -74,13 +74,16 @@ this is the place for you.
 
 .. only:: html
 
+    * :doc:`developers/contributing`
     * :doc:`developers/logos-ndx`
     * :doc:`developers/desktop-client-ndx`
+    
 
 .. toctree::
     :caption: For developers
     :hidden:
     :maxdepth: 3
     
+    developers/contributing
     developers/logos-ndx
-    developers/desktop-client-ndx
+    developers/desktop-client-ndx  

@@ -3,8 +3,7 @@
 // SPDX-License-Identifier: MIT
 
 function warnUnstable() {
-	var warning = document.createElement('div');
-	warning.setAttribute('class', 'admonition danger');
+    var warning = document.createElement('div');
 	fetch('https://raw.githubusercontent.com/SidingsMedia/Sidings-Media-Railway-Controller/stable/versions.json').then(response => response.json()).then(data => {
 		var version = window.location.pathname.split('/')[4]
 		switch (data[version]) {
@@ -17,13 +16,6 @@ function warnUnstable() {
 					"Documentation is available for the <a href='/projects/smrc/en/stable/'>current stable release</a> and previous versions can be selected by using the &ldquo;v:&rdquo; menu in the navigation pane on the left." +
 					"</p>";
 				break
-			case 'unstable':
-				warning.innerHTML = "<p class='first admonition-title'>Note</p> " +
-					"<p class='last'> " +
-					"This documentation is a development version and as such it is unstable and is prone to change at any time. " +
-					"Documentation is available for the <a href='/projects/smrc/en/stable/'>current stable release</a> and previous versions can be selected by using the &ldquo;v:&rdquo; menu in the navigation pane on the left." +
-					"</p>";
-				break
 			case 'unsupported':
 				warning.innerHTML = "<p class='first admonition-title'>Note</p> " +
 					"<p class='last'> " +
@@ -31,7 +23,15 @@ function warnUnstable() {
 					"Documentation is available for the <a href='/projects/smrc/en/stable/'>current stable release</a> and previous versions can be selected by using the &ldquo;v:&rdquo; menu in the navigation pane on the left." +
 					"</p>";
 				break
+            default:
+                warning.innerHTML = "<p class='first admonition-title'>Note</p> " +
+                    "<p class='last'> " +
+                    "This documentation is a development version and as such it is unstable and is prone to change at any time. " +
+                    "Documentation is available for the <a href='/projects/smrc/en/stable/'>current stable release</a> and previous versions can be selected by using the &ldquo;v:&rdquo; menu in the navigation pane on the left." +
+                    "</p>";
+                break
 		}
+        warning.setAttribute('class', 'admonition danger');
 	})
 	var parent = document.querySelector('div.document')
 	parent.insertBefore(warning, parent.firstChild);
