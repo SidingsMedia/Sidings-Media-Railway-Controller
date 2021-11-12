@@ -18,6 +18,7 @@ technical information.
     :maxdepth: 2
 
     contributing/getting-started
+    contributing/style-guide
     contributing/documentation
     contributing/pr-guide
 
