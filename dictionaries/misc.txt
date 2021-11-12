@@ -3,3 +3,6 @@ quickstart
 recurse
 opensource
 initialised
+styleguide
+cppguide
+htmlcssguide

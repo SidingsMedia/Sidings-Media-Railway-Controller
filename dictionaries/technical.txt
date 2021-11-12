@@ -53,3 +53,9 @@ bw
 dep
 changelog
 autolinked
+kicad
+io
+pageLayout
+tsguide
+wks
+TypeScript
