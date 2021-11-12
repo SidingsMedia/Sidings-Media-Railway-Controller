@@ -37,6 +37,9 @@ revision = subprocess.check_output(
 out = subprocess.check_output(["git", "branch"]).decode("utf8")
 current = next(line for line in out.split("\n") if line.startswith("*"))
 branch = current.strip("*").strip()
+# Fix where branch output is (HEAD DETACHED AT ORIGIN/
+if branch[0] == '(':
+    branch = branch[25:-1]
 
 if branch == 'develop':
     version = f'DEV-{revision}'
