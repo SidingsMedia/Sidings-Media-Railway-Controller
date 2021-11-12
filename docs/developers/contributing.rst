@@ -19,6 +19,7 @@ technical information.
 
     contributing/getting-started
     contributing/style-guide
+    contributing/legal
     contributing/documentation
     contributing/pr-guide
 

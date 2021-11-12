@@ -8,3 +8,4 @@ GIFs
 favicon
 favicons
 html
+md
