@@ -76,6 +76,7 @@ this is the place for you.
 
     * :doc:`developers/logos-ndx`
     * :doc:`developers/desktop-client-ndx`
+    * :doc:`developers/versions`
 
 .. toctree::
     :caption: For developers
@@ -84,3 +85,4 @@ this is the place for you.
     
     developers/logos-ndx
     developers/desktop-client-ndx
+    developers/versions
